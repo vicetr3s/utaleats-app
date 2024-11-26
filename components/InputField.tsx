@@ -13,7 +13,11 @@ export default function InputField({label, placeholder, inputMode, isSecure = fa
 
     return (
         <View>
-            <Text>{label}</Text>
+            <Text style={
+                {
+                    fontSize:MISC.midFontSize,
+                }
+            }>{label}</Text>
             <TextInput placeholder={placeholder} inputMode={inputModeText} style={styles.textField} maxLength={40}
                        secureTextEntry={isSecure}/>
         </View>
@@ -28,8 +32,10 @@ const styles = StyleSheet.create({
         borderColor: COLORS.baseDkr,
         borderWidth: 1,
         height: 35,
-        fontSize: 12,
-        lineHeight: 12,
-        paddingVertical: 0,
+        fontSize: MISC.smallFontSize,
+        lineHeight: MISC.smallFontSize,
+        paddingLeft: 10,
+        paddingTop:0,
+        paddingBottom:0,
     }
 })

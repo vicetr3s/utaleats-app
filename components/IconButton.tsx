@@ -24,7 +24,7 @@ export default function IconButton({icon, label, onPress, btnStyle, primary = tr
                 color={COLORS.fntOverPrimary}
                 size={MISC.midIconSize}
             />}
-            <Text style={colorStyle}>{label}</Text>
+            <Text style={[colorStyle,{fontSize:MISC.largeFontSize}]}>{label}</Text>
         </PlatformPressable>
     )
 }

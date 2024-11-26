@@ -1,5 +1,5 @@
 import {Alert, StyleSheet, Text, View} from "react-native";
-import {COLORS, LIB} from "@/constants/styles";
+import {COLORS, LIB, MISC} from "@/constants/styles";
 import InputField from "@/components/InputField";
 import {Link} from "expo-router";
 import IconButton from "@/components/IconButton";
@@ -48,6 +48,7 @@ const styles = StyleSheet.create({
         marginTop: 60
     },
     register: {
-        textDecorationLine: 'underline'
+        textDecorationLine: 'underline',
+        fontSize: MISC.midFontSize
     }
 })

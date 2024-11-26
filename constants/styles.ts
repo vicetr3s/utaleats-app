@@ -8,6 +8,7 @@ export const COLORS = {
     baseDkr: '#E5E5E5',
     shadow: '#3e3e3e',
     fntOverPrimary: '#ffffff',
+    placeHolderText:'#676767',
 }
 
 export const MISC = {
@@ -16,6 +17,9 @@ export const MISC = {
     midIconSize: 24,
     largeIconSize: 32,
     smallIconSize: 18,
+    smallFontSize:14,
+    midFontSize: 16,
+    largeFontSize: 18,
 }
 
 export const LIB = {
@@ -36,17 +40,17 @@ export const LIB = {
         borderRadius: MISC.borderRadius,
     },
     h1: {
-        fontSize: 28,
+        fontSize: 34,
         fontWeight: 500,
         textAlign: 'center',
     },
     h2: {
-        fontSize: 20,
+        fontSize: 26,
         fontWeight: 500,
         textAlign: 'center',
     },
     h3: {
-        fontSize: 16,
+        fontSize: 20,
         textAlign: 'center',
     },
 }

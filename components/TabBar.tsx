@@ -39,7 +39,8 @@ export default function TabBar({state, navigation}: TapBar) {
                                 size={MISC.midIconSize}
                             />
                             <Text style={{
-                                color: COLORS.fntOverPrimary
+                                color: COLORS.fntOverPrimary,
+                                fontSize:MISC.midFontSize
                             }}>
                                 Profile
                             </Text>
