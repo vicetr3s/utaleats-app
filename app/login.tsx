@@ -1,38 +1,53 @@
-import {StyleSheet, Text, TextInput, View} from "react-native";
-import {LIB} from "@/constants/styles";
+import {Alert, StyleSheet, Text, View} from "react-native";
+import {COLORS, LIB} from "@/constants/styles";
+import InputField from "@/components/InputField";
+import {Link} from "expo-router";
+import IconButton from "@/components/IconButton";
 
 export default function LoginScreen() {
     return (
-        <View style={styles.loginContainer}>
-            <Text style={styles.h1}>Welcome to UtalEats</Text>
-            <Text style={styles.h2}>Your local shop delivery app</Text>
-            <Text style={styles.h1}>Login</Text>
+        <View style={styles.loginPage}>
+            <Text style={[LIB.h1]}>Welcome to
+                <Text style={{color: COLORS.primary}}> UtalEats</Text>
+            </Text>
 
-            <View style={LIB.container}>
-                <Text>Email</Text>
-                <TextInput placeholder={"Email"} inputMode={"email"} style={LIB.textField}/>
-                <Text>Password</Text>
-                <TextInput placeholder={"Password"} secureTextEntry={true} style={LIB.textField}/>
+            <Text style={LIB.h3}>Your local shop delivery app</Text>
+
+            <View style={styles.loginSection}>
+                <Text style={[LIB.h2, {
+                    marginBottom: 10,
+                }]}>Login</Text>
+
+                <View style={[styles.loginContainer, LIB.container, LIB.shadow]}>
+                    <InputField label={'Email'} placeholder={'Email'} inputMode={'email'}/>
+                    <InputField label={'Password'} placeholder={'Password'} isSecure={true}/>
+                    <IconButton label={'Log in'} onPress={() => Alert.alert('hola')} btnStyle={styles.loginBtn}/>
+                    <Link href={'/register'} style={styles.register}>No account?, Create one!</Link>
+                </View>
             </View>
-
         </View>
     )
 }
 
 const styles = StyleSheet.create({
-    loginContainer: {
+    loginSection: {
+        marginTop: 30,
+    },
+    loginPage: {
         flex: 1,
+        marginTop: -60,
         justifyContent: "center",
         alignItems: "center",
     },
-    h1: {
-        fontSize: 26,
-        fontWeight: 500,
-        textAlign: "center",
+    loginContainer: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        gap: 20,
     },
-    h2: {
-        fontSize: 20,
-        textAlign: "center",
+    loginBtn: {
+        marginTop: 60
     },
-
+    register: {
+        textDecorationLine: 'underline'
+    }
 })

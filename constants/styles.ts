@@ -5,7 +5,7 @@ export const COLORS = {
     background: '#FFFFFF',
     base: '#FBFBFB',
     baseDk: '#F2F2F2',
-    baseDkr:'#E5E5E5',
+    baseDkr: '#E5E5E5',
     shadow: '#3e3e3e',
     fntOverPrimary: '#ffffff',
 }
@@ -13,18 +13,13 @@ export const COLORS = {
 export const MISC = {
     borderRadius: 12,
     borderInnerRadius: 8,
-    containerPadding: 24,
     midIconSize: 24,
     largeIconSize: 32,
     smallIconSize: 18,
 }
 
 export const LIB = {
-    container: {
-        minWidth: 300,
-        padding: MISC.containerPadding,
-        backgroundColor: COLORS.base,
-        borderRadius: MISC.borderRadius,
+    shadow: {
         shadowColor: COLORS.shadow,
         shadowOffset: {
             width: 0,
@@ -34,10 +29,24 @@ export const LIB = {
         shadowRadius: 4.65,
         elevation: 6,
     },
-    textField: {
-        backgroundColor: COLORS.baseDk,
-        borderRadius: MISC.borderInnerRadius,
-        borderColor: COLORS.baseDkr,
-        borderWidth: 1,
-    }
+    container: {
+        minWidth: 300,
+        padding: 24,
+        backgroundColor: COLORS.base,
+        borderRadius: MISC.borderRadius,
+    },
+    h1: {
+        fontSize: 28,
+        fontWeight: 500,
+        textAlign: 'center',
+    },
+    h2: {
+        fontSize: 20,
+        fontWeight: 500,
+        textAlign: 'center',
+    },
+    h3: {
+        fontSize: 16,
+        textAlign: 'center',
+    },
 }
