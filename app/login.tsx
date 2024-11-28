@@ -55,7 +55,7 @@ export default function LoginScreen() {
 
     return (
         <View style={styles.loginPage}>
-            <Text style={[LIB.h1]}>Welcome to
+            <Text style={LIB.h1}>Welcome to
                 <Text style={{color: COLORS.primary}}> UtalEats</Text>
             </Text>
 

@@ -4,12 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a459033b-439d-4d63-aac2-72256168ce17" name="Changes" comment="feat: progress in register screen&#10;&#10;added a drop-down input component&#10;added a two input fields component">
+    <list default="true" id="a459033b-439d-4d63-aac2-72256168ce17" name="Changes" comment="feat: user inputs are handled with useState hook in login screen&#10;&#10;when login button is clicked, data is fetched from localhost api">
+      <change afterPath="$PROJECT_DIR$/components/home/CategoriesCarousel.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/home/HomeHeader.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/home/Section.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(tabs)/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/login.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/InputField.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/InputField.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/TwoInputField.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/TwoInputField.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/register.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/register.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/IconButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/IconButton.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/constants/styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/constants/styles.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -95,7 +98,7 @@
       <workItem from="1732659328899" duration="5295000" />
       <workItem from="1732667781163" duration="2472000" />
       <workItem from="1732672255516" duration="2263000" />
-      <workItem from="1732755195394" duration="1948000" />
+      <workItem from="1732755195394" duration="5050000" />
     </task>
     <task id="LOCAL-00001" summary="feat: added profile screen navigation">
       <option name="closed" value="true" />
@@ -129,7 +132,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732664660747</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="feat: user inputs are handled with useState hook in login screen&#10;&#10;when login button is clicked, data is fetched from localhost api">
+      <option name="closed" value="true" />
+      <created>1732758559643</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1732758559643</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,6 +162,7 @@
     <MESSAGE value="feat: added tab bar at the bottom of the screen&#10;&#10;progress in login page" />
     <MESSAGE value="feat: finished login screen ui&#10;&#10;progress in register screen" />
     <MESSAGE value="feat: progress in register screen&#10;&#10;added a drop-down input component&#10;added a two input fields component" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: progress in register screen&#10;&#10;added a drop-down input component&#10;added a two input fields component" />
+    <MESSAGE value="feat: user inputs are handled with useState hook in login screen&#10;&#10;when login button is clicked, data is fetched from localhost api" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: user inputs are handled with useState hook in login screen&#10;&#10;when login button is clicked, data is fetched from localhost api" />
   </component>
 </project>

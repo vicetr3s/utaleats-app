@@ -1,3 +1,5 @@
+import {StyleSheet} from 'react-native';
+
 export const COLORS = {
     primary: '#F03E41',
     secondary: '#FEBEC4',
@@ -8,7 +10,7 @@ export const COLORS = {
     baseDkr: '#E5E5E5',
     shadow: '#3e3e3e',
     fntOverPrimary: '#ffffff',
-    placeHolderText:'#676767',
+    placeHolderText: '#676767',
 }
 
 export const MISC = {
@@ -17,13 +19,13 @@ export const MISC = {
     midIconSize: 24,
     largeIconSize: 32,
     smallIconSize: 18,
-    smallFontSize:14,
+    smallFontSize: 14,
     midFontSize: 16,
     largeFontSize: 18,
     largerFontSize: 24,
 }
 
-export const LIB = {
+export const LIB = StyleSheet.create({
     shadow: {
         shadowColor: COLORS.shadow,
         shadowOffset: {
@@ -53,5 +55,5 @@ export const LIB = {
     h3: {
         fontSize: 20,
         textAlign: 'center',
-    },
-}
+    }
+})

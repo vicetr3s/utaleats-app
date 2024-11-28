@@ -8,12 +8,12 @@ type Props = {
     label: string;
     onPress: () => void;
     primary?: boolean;
-    btnStyle?: object
+    btnStyle?: any;
 };
 
 export default function IconButton({icon, label, onPress, btnStyle, primary = true}: Props) {
     const colorStyle = primary ? styles.primary : styles.secondary;
-
+    const colorTextStyle = primary ? styles.primaryText : styles.secondaryText;
     return (
         <PlatformPressable style={[styles.btn, colorStyle, LIB.shadow, btnStyle]} android_ripple={{
             foreground: true,
@@ -24,7 +24,7 @@ export default function IconButton({icon, label, onPress, btnStyle, primary = tr
                 color={COLORS.fntOverPrimary}
                 size={MISC.midIconSize}
             />}
-            <Text style={[colorStyle,{fontSize:MISC.largeFontSize}]}>{label}</Text>
+            <Text style={[colorTextStyle, {fontSize: MISC.largeFontSize}]}>{label}</Text>
         </PlatformPressable>
     )
 }
@@ -32,13 +32,17 @@ export default function IconButton({icon, label, onPress, btnStyle, primary = tr
 const styles = StyleSheet.create({
     primary: {
         backgroundColor: COLORS.primary,
-        color: COLORS.fntOverPrimary,
-        textAlign: 'center'
 
     },
     secondary: {
         backgroundColor: COLORS.secondary,
-        textAlign: 'center'
+    },
+    primaryText: {
+        color: COLORS.fntOverPrimary,
+        textAlign: 'center',
+    },
+    secondaryText: {
+        textAlign: 'center',
     },
     btn: {
         flexDirection: 'row',

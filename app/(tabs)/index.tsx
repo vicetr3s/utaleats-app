@@ -1,9 +1,15 @@
-import {Text, View} from "react-native";
+import {View} from "react-native";
+import HomeHeader from "@/components/home/HomeHeader";
+import CategoriesCarousel from "@/components/home/CategoriesCarousel";
+import Section from "@/components/home/Section";
 
 export default function Index() {
     return (
         <View>
-            <Text>Home Screen</Text>
+            <HomeHeader/>
+            <Section label={'Categories'}>
+                <CategoriesCarousel/>
+            </Section>
         </View>
     );
 }

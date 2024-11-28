@@ -8,7 +8,12 @@ import DropDownInputField from "@/components/DropDownInputField";
 
 export default function RegisterScreen() {
     const [secondRegisterStep, setSecondRegisterStep] = useState<boolean>(false);
-
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [phoneNumber, setPhoneNumber] = useState('');
+    const [address, setAddress] = useState('');
     const [selectedCity, setSelectedCity] = useState<string>('');
     const [cities, setCities] = useState([
         {label: 'Curicó', value: 'curico'},
@@ -23,16 +28,19 @@ export default function RegisterScreen() {
     if (!secondRegisterStep) {
         return (
             <View style={styles.registerPage}>
-                <Text style={[LIB.h2]}>Let's create an
+                <Text style={LIB.h2}>Let's create an
                     <Text style={{color: COLORS.primary}}> account</Text>
                 </Text>
 
                 <Text style={LIB.h3}>We need some information about you</Text>
 
                 <View style={[styles.registerContainer, LIB.container, LIB.shadow]}>
-                    <InputField label={'Email'} placeholder={'Email'} inputMode={'email'}/>
-                    <InputField label={'Password'} placeholder={'Password'} isSecure={true}/>
-                    <TwoInputField label={'Full name'} placeholders={['First Name', 'Last Name']}/>
+                    <InputField label={'Email'} placeholder={'Email'} inputMode={'email'} value={email}
+                                setValue={setEmail}/>
+                    <InputField label={'Password'} placeholder={'Password'} isSecure={true} value={password}
+                                setValue={setPassword}/>
+                    <TwoInputField label={'Full name'} placeholders={['First Name', 'Last Name']}
+                                   values={[firstName, lastName]} setValues={[setFirstName, setLastName]}/>
                     <IconButton label={'Continue'} onPress={handleClick} btnStyle={styles.continueBtn}/>
                 </View>
             </View>
@@ -41,12 +49,13 @@ export default function RegisterScreen() {
 
     return (
         <View style={styles.registerPage}>
-            <Text style={[LIB.h2]}>You're almost ready</Text>
+            <Text style={LIB.h2}>You're almost ready</Text>
 
             <Text style={LIB.h3}>Local shops are waiting</Text>
 
             <View style={[styles.registerContainer, LIB.container, LIB.shadow]}>
-                <InputField label={'Phone number'} placeholder={'Eg: +569XXXXXXXX'}/>
+                <InputField label={'Phone number'} placeholder={'Eg: +569XXXXXXXX'} value={phoneNumber}
+                            setValue={setPhoneNumber}/>
 
                 <DropDownInputField
                     open={dropdownOpen}
@@ -58,7 +67,8 @@ export default function RegisterScreen() {
                     placeholder={'Select your city'}
                     label={'City'}/>
 
-                <InputField label={'Street Address'} placeholder={'Eg: Mulberry Street 147'}/>
+                <InputField label={'Street Address'} placeholder={'Eg: Mulberry Street 147'} value={address}
+                            setValue={setAddress}/>
                 <IconButton label={'Create'} onPress={() => Alert.alert('hola')} btnStyle={styles.continueBtn}/>
             </View>
         </View>
