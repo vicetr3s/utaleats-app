@@ -1,13 +1,17 @@
-import {Alert, StyleSheet, Text, View} from "react-native";
-import {COLORS, LIB} from "@/constants/styles";
+import {StyleSheet, Text, View} from "react-native";
+import {COLORS, LIB, MISC} from "@/constants/styles";
 import InputField from "@/components/InputField";
 import IconButton from "@/components/IconButton";
 import TwoInputField from "@/components/TwoInputField";
 import {useState} from "react";
 import DropDownInputField from "@/components/DropDownInputField";
+import {fetchUrl} from "@/lib/fetchUrl";
+import {useAuthContext} from "@/components/AuthContext";
 
 export default function RegisterScreen() {
     const [secondRegisterStep, setSecondRegisterStep] = useState<boolean>(false);
+    const [error, setError] = useState<boolean>(false);
+    const [errorMsg, setErrorMsg] = useState<string>('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [firstName, setFirstName] = useState('');
@@ -20,9 +24,80 @@ export default function RegisterScreen() {
         {label: 'Talca', value: 'talca'},
     ]);
     const [dropdownOpen, setDropdownOpen] = useState<boolean>(false);
+    const {userId, setUserId} = useAuthContext();
 
-    const handleClick = () => {
+    const handleFirstClick = () => {
+        setErrorMsg('');
+        setError(false);
+
+        if (!email || email.length <= 0) {
+            setErrorMsg('Please enter a valid email address');
+            setError(true);
+            return;
+        }
+
+        if (!password || password.length <= 0) {
+            setErrorMsg('Please enter a password');
+            setError(true);
+            return;
+        }
+
+        if ((!firstName || firstName.length <= 0) || (!lastName || lastName.length <= 0)) {
+            setErrorMsg('Please enter a valid name');
+            setError(true);
+            return;
+        }
+
         setSecondRegisterStep(true);
+    }
+
+    const handleSecondClick = () => {
+        setErrorMsg('');
+        setError(false);
+
+        if (!phoneNumber || phoneNumber.length <= 0) {
+            setErrorMsg('Please enter a valid phone number');
+            setError(true);
+            return;
+        }
+
+        if (!selectedCity || selectedCity.length <= 0) {
+            setErrorMsg('Please enter a valid city');
+            setError(true);
+            return;
+        }
+
+        if (!address || address.length <= 0) {
+            setErrorMsg('Please enter a valid street address');
+            setError(true);
+            return;
+        }
+
+        const bodyData = JSON.stringify({
+            email: email,
+            password: password,
+            name: firstName + ' ' + lastName,
+            phone: phoneNumber,
+            city: selectedCity,
+            streetAddress: address,
+        });
+
+        (async () => {
+            try {
+                const {error, errorMsg, data} = await fetchUrl({
+                    endPoint: 'account/register',
+                    body: bodyData,
+                    method: 'POST'
+                })
+
+                setError(error);
+                setErrorMsg(errorMsg);
+                setUserId(data.id);
+            } catch (error) {
+                setError(true);
+                setErrorMsg('Something happened');
+            }
+        })();
     }
 
     if (!secondRegisterStep) {
@@ -41,7 +116,12 @@ export default function RegisterScreen() {
                                 setValue={setPassword}/>
                     <TwoInputField label={'Full name'} placeholders={['First Name', 'Last Name']}
                                    values={[firstName, lastName]} setValues={[setFirstName, setLastName]}/>
-                    <IconButton label={'Continue'} onPress={handleClick} btnStyle={styles.continueBtn}/>
+                    {error &&
+                        <Text style={{
+                            fontSize: MISC.smallFontSize
+                        }}>{errorMsg}</Text>}
+
+                    <IconButton label={'Continue'} onPress={handleFirstClick} btnStyle={styles.continueBtn}/>
                 </View>
             </View>
         )
@@ -69,7 +149,11 @@ export default function RegisterScreen() {
 
                 <InputField label={'Street Address'} placeholder={'Eg: Mulberry Street 147'} value={address}
                             setValue={setAddress}/>
-                <IconButton label={'Create'} onPress={() => Alert.alert('hola')} btnStyle={styles.continueBtn}/>
+                {error &&
+                    <Text style={{
+                        fontSize: MISC.smallFontSize
+                    }}>{errorMsg}</Text>}
+                <IconButton label={'Create'} onPress={handleSecondClick} btnStyle={styles.continueBtn}/>
             </View>
         </View>
     )

@@ -1,15 +1,25 @@
 import {StyleSheet, Text, View} from "react-native";
 import {COLORS, LIB, MISC} from "@/constants/styles";
 import InputField from "@/components/InputField";
-import {Link} from "expo-router";
+import {Link, useRouter} from "expo-router";
 import IconButton from "@/components/IconButton";
-import {useState} from "react";
+import {useEffect, useState} from "react";
+import {fetchUrl} from "@/lib/fetchUrl";
+import {useAuthContext} from "@/components/AuthContext";
 
 export default function LoginScreen() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState<boolean>(false);
     const [errorMsg, setErrorMsg] = useState<string>('');
+    const router = useRouter();
+    const {userId, setUserId} = useAuthContext();
+
+    useEffect(() => {
+        if (userId) {
+            router.replace('/');
+        }
+    }, [userId]);
 
     const handleClick = () => {
         setErrorMsg('');
@@ -26,31 +36,31 @@ export default function LoginScreen() {
             return;
         }
 
-        const fetchData = async () => {
+        const bodyData = JSON.stringify({
+            email: email,
+            password: password,
+        });
+
+        (async () => {
             try {
-                const response = await fetch('http://localhost/account/login', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        email: email,
-                        password: password,
-                    })
-                });
+                const {error, errorMsg, data} = await fetchUrl({
+                    endPoint: 'account/login',
+                    body: bodyData,
+                    method: 'POST'
+                })
 
-                if (!response.ok) return;
+                setError(error);
+                setErrorMsg(errorMsg);
 
-                const json = await response.json();
+                if (data.accountId) {
+                    setUserId(String(data.accountId));
+                }
 
             } catch (error) {
-                console.log(error);
                 setError(true);
                 setErrorMsg('Something happened');
             }
-        }
-
-        fetchData();
+        })();
     }
 
     return (

@@ -4,16 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a459033b-439d-4d63-aac2-72256168ce17" name="Changes" comment="feat: user inputs are handled with useState hook in login screen&#10;&#10;when login button is clicked, data is fetched from localhost api">
-      <change afterPath="$PROJECT_DIR$/components/home/CategoriesCarousel.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/home/HomeHeader.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/home/Section.tsx" afterDir="false" />
+    <list default="true" id="a459033b-439d-4d63-aac2-72256168ce17" name="Changes" comment="feat: progress in home screen ui&#10;&#10;added a header&#10;added a categories carousel component">
+      <change afterPath="$PROJECT_DIR$/components/AuthContext.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/home/RatingView.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/home/Store.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fetchUrl.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/handleUserId.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(tabs)/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(tabs)/profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/profile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/_layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/login.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/register.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/register.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/IconButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/IconButton.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/constants/styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/constants/styles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/home/CategoriesCarousel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/CategoriesCarousel.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +49,9 @@
     &quot;accountId&quot;: &quot;aec1a9da-06b9-4448-b976-e9338cdb2cdd&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 6
@@ -72,6 +81,7 @@
       <recent name="C:\Users\viced\Desktop\tests\utaleats-app\components" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\viced\Desktop\tests\utaleats-app" />
       <recent name="C:\Users\viced\Desktop\tests\utaleats-app\constants" />
       <recent name="C:\Users\viced\Desktop\tests\utaleats-app\assets\styles" />
       <recent name="C:\Users\viced\Desktop\tests\utaleats-app\app\(tabs)" />
@@ -98,7 +108,9 @@
       <workItem from="1732659328899" duration="5295000" />
       <workItem from="1732667781163" duration="2472000" />
       <workItem from="1732672255516" duration="2263000" />
-      <workItem from="1732755195394" duration="5050000" />
+      <workItem from="1732755195394" duration="5224000" />
+      <workItem from="1732797588629" duration="8861000" />
+      <workItem from="1732810994589" duration="7083000" />
     </task>
     <task id="LOCAL-00001" summary="feat: added profile screen navigation">
       <option name="closed" value="true" />
@@ -140,7 +152,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732758559643</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="feat: progress in home screen ui&#10;&#10;added a header&#10;added a categories carousel component">
+      <option name="closed" value="true" />
+      <created>1732761431221</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1732761431221</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -163,6 +183,7 @@
     <MESSAGE value="feat: finished login screen ui&#10;&#10;progress in register screen" />
     <MESSAGE value="feat: progress in register screen&#10;&#10;added a drop-down input component&#10;added a two input fields component" />
     <MESSAGE value="feat: user inputs are handled with useState hook in login screen&#10;&#10;when login button is clicked, data is fetched from localhost api" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: user inputs are handled with useState hook in login screen&#10;&#10;when login button is clicked, data is fetched from localhost api" />
+    <MESSAGE value="feat: progress in home screen ui&#10;&#10;added a header&#10;added a categories carousel component" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: progress in home screen ui&#10;&#10;added a header&#10;added a categories carousel component" />
   </component>
 </project>

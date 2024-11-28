@@ -37,7 +37,7 @@ export default function CategoriesCarousel() {
 const styles = StyleSheet.create({
     container: {
         justifyContent: 'center',
-        alignItems: 'center',
+        alignItems: 'flex-start',
     },
     flatListContent: {
         paddingVertical: 5,
