@@ -1,4 +1,4 @@
-import {FlatList, Text, View} from "react-native";
+import {FlatList, View} from "react-native";
 import HomeHeader from "@/components/home/HomeHeader";
 import CategoriesCarousel from "@/components/home/CategoriesCarousel";
 import Section from "@/components/home/Section";
@@ -87,8 +87,7 @@ export default function Index() {
 
     return (
         <View>
-            <HomeHeader/>
-            {userCity && <Text>{userCity}</Text>}
+            <HomeHeader city={userCity}/>
             <Section label={'Categories'}>
                 <CategoriesCarousel/>
             </Section>

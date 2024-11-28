@@ -2,7 +2,11 @@ import {StyleSheet, Text, View} from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import {COLORS, MISC} from "@/constants/styles";
 
-export default function HomeHeader() {
+type props = {
+    city?: string;
+}
+
+export default function HomeHeader({city}: props) {
     return (
         <View style={styles.nav}>
             <View style={styles.city}>
@@ -11,7 +15,7 @@ export default function HomeHeader() {
                     color={'#000000'}
                     size={MISC.largeIconSize}
                 />
-                <Text style={styles.cityText}>usercity</Text>
+                <Text style={styles.cityText}>{city ? city : 'Unknown city'}</Text>
             </View>
             <View style={styles.utalEats}>
                 <Text style={styles.utalEatsText}>UtalEats</Text>
