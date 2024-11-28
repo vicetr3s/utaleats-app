@@ -1,9 +1,11 @@
-import {Text, View} from "react-native";
+import {FlatList, Text, View} from "react-native";
 import HomeHeader from "@/components/home/HomeHeader";
 import CategoriesCarousel from "@/components/home/CategoriesCarousel";
 import Section from "@/components/home/Section";
 import Store from "@/components/home/Store";
 import {useAuthContext} from "@/components/AuthContext";
+import {fetchUrl} from "@/lib/fetchUrl";
+import {useEffect, useState} from "react";
 
 type store = {
     id: string;
@@ -16,6 +18,56 @@ type store = {
 
 export default function Index() {
     const {userId, setUserId} = useAuthContext();
+    const [error, setError] = useState<boolean>(false);
+    const [userCity, setUserCity] = useState<string>('');
+    const [stores, setStores] = useState<store[]>([]);
+
+    useEffect(() => {
+        const fetchProfile = async () => {
+            try {
+                const {error, errorMsg, data} = await fetchUrl({
+                    endPoint: `profile?accountId=${userId}`,
+                    method: 'GET'
+                });
+
+                setError(error);
+
+                if (data.city) {
+                    setUserCity(data.city);
+                }
+
+            } catch (error) {
+                setError(true);
+            }
+        };
+
+        fetchProfile();
+    }, [userId]);
+
+    useEffect(() => {
+        const fetchStores = async () => {
+            if (!userCity) return;
+
+            try {
+                const {error, errorMsg, data} = await fetchUrl({
+                    endPoint: `store?city=${userCity}`,
+                    method: 'GET'
+                });
+
+                setError(error);
+
+                if (data.stores) {
+                    setStores(data.stores);
+                }
+
+            } catch (error) {
+                setError(true);
+            }
+        };
+
+        fetchStores();
+    }, [userCity]);
+
 
     const storesData = [
         {
@@ -28,17 +80,20 @@ export default function Index() {
         },
     ]
 
-    const renderStore = (item: store, _index: number) => (
-        <Store id={item.name} name={item.name} category={item.category} rating={item.rating} reviews={item.reviews}
+    const renderStore = ({item, index}: { item: store, index: number }) => (
+        <Store id={item.id} name={item.name} category={item.category} rating={item.rating} reviews={item.reviews}
                imageUrl={item.url}/>
     )
 
     return (
         <View>
             <HomeHeader/>
-            {userId && <Text>{userId}</Text>}
+            {userCity && <Text>{userCity}</Text>}
             <Section label={'Categories'}>
                 <CategoriesCarousel/>
+            </Section>
+            <Section label={'Stores'}>
+                <FlatList data={storesData} renderItem={renderStore} keyExtractor={item => item.id}/>
             </Section>
         </View>
     );

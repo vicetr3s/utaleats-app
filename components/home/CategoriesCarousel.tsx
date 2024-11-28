@@ -38,6 +38,9 @@ const styles = StyleSheet.create({
     container: {
         justifyContent: 'center',
         alignItems: 'flex-start',
+        transform: [
+            {translateY: -5},
+        ],
     },
     flatListContent: {
         paddingVertical: 5,

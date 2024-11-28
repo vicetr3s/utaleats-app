@@ -3,7 +3,7 @@ import {Platform} from "react-native";
 type props = {
     endPoint: string,
     method: 'GET' | 'POST';
-    body: any;
+    body?: any;
 }
 
 type fetchUrl = {
@@ -20,13 +20,28 @@ export async function fetchUrl({endPoint, body, method}: props): Promise<fetchUr
     });
 
     try {
-        const response = await fetch(BASE_URL + endPoint, {
-            method: method,
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: body
-        });
+        let response;
+
+        switch (method) {
+            case 'POST':
+                response = await fetch(BASE_URL + endPoint, {
+                    method: method,
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: body
+                });
+                break;
+            case 'GET':
+                response = await fetch(BASE_URL + endPoint, {
+                    method: method,
+                    headers: {
+                        'Accept': 'application/json',
+                    }
+                });
+                break;
+
+        }
 
         if (!response.ok) {
             return {error: true, errorMsg: 'Something happened', data: null};

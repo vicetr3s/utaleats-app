@@ -8,7 +8,7 @@ export const COLORS = {
     base: '#FBFBFB',
     baseDk: '#F2F2F2',
     baseDkr: '#E5E5E5',
-    shadow: '#3e3e3e',
+    shadow: 'rgba(181,181,181,0.47)',
     fntOverPrimary: '#ffffff',
     placeHolderText: '#676767',
 }
@@ -27,14 +27,7 @@ export const MISC = {
 
 export const LIB = StyleSheet.create({
     shadow: {
-        shadowColor: COLORS.shadow,
-        shadowOffset: {
-            width: 0,
-            height: 3,
-        },
-        shadowOpacity: 0.27,
-        shadowRadius: 4.65,
-        elevation: 6,
+        boxShadow: '0 3 5 3 rgba(181,181,181,0.47)',
     },
     container: {
         minWidth: 300,
