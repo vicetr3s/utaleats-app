@@ -1,25 +1,28 @@
 import {StyleSheet, Text, TextInput, View} from "react-native";
 import {COLORS, MISC} from "@/constants/styles";
+import React from "react";
 
 type InputField = {
     label: string,
     placeholder: string,
     isSecure?: boolean,
-    inputMode?: string
+    inputMode?: string,
+    value: string,
+    setValue: React.Dispatch<React.SetStateAction<string>>,
 }
 
-export default function InputField({label, placeholder, inputMode, isSecure = false}: InputField) {
+export default function InputField({label, placeholder, inputMode, isSecure = false, value, setValue}: InputField) {
     const inputModeText = inputMode === undefined ? 'text' : inputMode;
 
     return (
         <View>
             <Text style={
                 {
-                    fontSize:MISC.midFontSize,
+                    fontSize: MISC.midFontSize,
                 }
             }>{label}</Text>
             <TextInput placeholder={placeholder} inputMode={inputModeText} style={styles.textField} maxLength={40}
-                       secureTextEntry={isSecure}/>
+                       secureTextEntry={isSecure} value={value} onChangeText={setValue}/>
         </View>
     )
 }
@@ -35,7 +38,7 @@ const styles = StyleSheet.create({
         fontSize: MISC.smallFontSize,
         lineHeight: MISC.smallFontSize,
         paddingLeft: 10,
-        paddingTop:0,
-        paddingBottom:0,
+        paddingTop: 0,
+        paddingBottom: 0,
     }
 })

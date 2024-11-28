@@ -4,18 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a459033b-439d-4d63-aac2-72256168ce17" name="Changes" comment="feat: finished login screen ui&#10;&#10;progress in register screen">
-      <change afterPath="$PROJECT_DIR$/components/DropDownInputField.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/TwoInputField.tsx" afterDir="false" />
+    <list default="true" id="a459033b-439d-4d63-aac2-72256168ce17" name="Changes" comment="feat: progress in register screen&#10;&#10;added a drop-down input component&#10;added a two input fields component">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(tabs)/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/login.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/register.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/register.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/IconButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/IconButton.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/InputField.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/InputField.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/TabBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/TabBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/TwoInputField.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/TwoInputField.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/constants/styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/constants/styles.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +92,10 @@
       <workItem from="1732577388388" duration="10000" />
       <workItem from="1732577405064" duration="7001000" />
       <workItem from="1732624138526" duration="21191000" />
-      <workItem from="1732659328899" duration="5159000" />
+      <workItem from="1732659328899" duration="5295000" />
+      <workItem from="1732667781163" duration="2472000" />
+      <workItem from="1732672255516" duration="2263000" />
+      <workItem from="1732755195394" duration="1948000" />
     </task>
     <task id="LOCAL-00001" summary="feat: added profile screen navigation">
       <option name="closed" value="true" />
@@ -123,7 +121,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732654559430</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="feat: progress in register screen&#10;&#10;added a drop-down input component&#10;added a two input fields component">
+      <option name="closed" value="true" />
+      <created>1732664660747</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1732664660747</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,6 +150,7 @@
     <MESSAGE value="feat: added profile screen navigation" />
     <MESSAGE value="feat: added tab bar at the bottom of the screen&#10;&#10;progress in login page" />
     <MESSAGE value="feat: finished login screen ui&#10;&#10;progress in register screen" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: finished login screen ui&#10;&#10;progress in register screen" />
+    <MESSAGE value="feat: progress in register screen&#10;&#10;added a drop-down input component&#10;added a two input fields component" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: progress in register screen&#10;&#10;added a drop-down input component&#10;added a two input fields component" />
   </component>
 </project>

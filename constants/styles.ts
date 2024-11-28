@@ -20,6 +20,7 @@ export const MISC = {
     smallFontSize:14,
     midFontSize: 16,
     largeFontSize: 18,
+    largerFontSize: 24,
 }
 
 export const LIB = {

@@ -1,14 +1,24 @@
 import {StyleSheet, Text, TextInput, View} from "react-native";
 import {COLORS, MISC} from "@/constants/styles";
+import React from "react";
 
 type InputField = {
     label: string,
     placeholders: string[],
     isSecure?: boolean,
-    inputMode?: string
+    inputMode?: string,
+    values: string[],
+    setValues: React.Dispatch<React.SetStateAction<string>>[],
 }
 
-export default function TwoInputField({label, placeholders, inputMode, isSecure = false}: InputField) {
+export default function TwoInputField({
+                                          label,
+                                          placeholders,
+                                          inputMode,
+                                          isSecure = false,
+                                          values,
+                                          setValues
+                                      }: InputField) {
     const inputModeText = inputMode === undefined ? 'text' : inputMode;
 
     return (
@@ -19,10 +29,10 @@ export default function TwoInputField({label, placeholders, inputMode, isSecure 
             <View style={styles.twoInputs}>
                 <TextInput placeholder={placeholders[0]} inputMode={inputModeText} style={styles.textField}
                            maxLength={20}
-                           secureTextEntry={isSecure}/>
+                           secureTextEntry={isSecure} value={values[0]} onChangeText={setValues[0]}/>
                 <TextInput placeholder={placeholders[1]} inputMode={inputModeText} style={styles.textField}
                            maxLength={20}
-                           secureTextEntry={isSecure}/>
+                           secureTextEntry={isSecure} value={values[1]} onChangeText={setValues[1]}/>
             </View>
         </View>
     )
