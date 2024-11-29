@@ -1,11 +1,11 @@
-import {FlatList, View} from "react-native";
+import {View} from "react-native";
 import HomeHeader from "@/components/home/HomeHeader";
 import CategoriesCarousel from "@/components/home/CategoriesCarousel";
 import Section from "@/components/home/Section";
-import Store from "@/components/home/Store";
 import {useAuthContext} from "@/components/AuthContext";
 import {fetchUrl} from "@/lib/fetchUrl";
 import {useEffect, useState} from "react";
+import StoresCarousel from "@/components/home/StoresCarousel";
 
 type store = {
     id: string;
@@ -78,12 +78,49 @@ export default function Index() {
             rating: '4.0',
             reviews: '200'
         },
+        {
+            id: '2',
+            name: 'macdonaaal',
+            category: 'FastFood',
+            url: 'https://pbs.twimg.com/profile_images/1840790946826354689/yLfoJJt6_400x400.png',
+            rating: '4.0',
+            reviews: '200'
+        },
+        {
+            id: '3',
+            name: 'macdonasdal',
+            category: 'FastFood',
+            url: 'https://pbs.twimg.com/profile_images/1840790946826354689/yLfoJJt6_400x400.png',
+            rating: '4.0',
+            reviews: '200'
+        },
+
+        {
+            id: '4',
+            name: 'macdonasdal',
+            category: 'FastFood',
+            url: 'https://pbs.twimg.com/profile_images/1840790946826354689/yLfoJJt6_400x400.png',
+            rating: '4.0',
+            reviews: '200'
+        },
+        {
+            id: '5',
+            name: 'macdonasdal',
+            category: 'FastFood',
+            url: 'https://pbs.twimg.com/profile_images/1840790946826354689/yLfoJJt6_400x400.png',
+            rating: '4.0',
+            reviews: '200'
+        },
+        {
+            id: '6',
+            name: 'macdonasdal',
+            category: 'FastFood',
+            url: 'https://pbs.twimg.com/profile_images/1840790946826354689/yLfoJJt6_400x400.png',
+            rating: '4.0',
+            reviews: '200'
+        },
     ]
 
-    const renderStore = ({item, index}: { item: store, index: number }) => (
-        <Store id={item.id} name={item.name} category={item.category} rating={item.rating} reviews={item.reviews}
-               imageUrl={item.url}/>
-    )
 
     return (
         <View>
@@ -91,8 +128,8 @@ export default function Index() {
             <Section label={'Categories'}>
                 <CategoriesCarousel/>
             </Section>
-            <Section label={'Stores'}>
-                <FlatList data={storesData} renderItem={renderStore} keyExtractor={item => item.id}/>
+            <Section label={'Stores'} style={{height:'65%'}}>
+                <StoresCarousel storesData={storesData}/>
             </Section>
         </View>
     );

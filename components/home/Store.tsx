@@ -30,18 +30,16 @@ export default function Store({id, name, category, imageUrl, rating, reviews}: p
             foreground: true,
             borderless: false,
         }}>
-            <View style={[styles.shadowContainer]}>
-                <View style={[styles.container]}>
-                    <View style={styles.logo}>
-                        <Image style={styles.image} source={{uri: imageUrl}}/>
-                        <View style={styles.label}>
-                            <Text style={styles.name}>{name}</Text>
-                            <Text style={styles.category}>{category}</Text>
-                        </View>
+            <View style={[styles.container]}>
+                <View style={styles.logo}>
+                    <Image style={styles.image} source={{uri: imageUrl}}/>
+                    <View style={styles.label}>
+                        <Text style={styles.name}>{name}</Text>
+                        <Text style={styles.category}>{category}</Text>
                     </View>
-                    <View style={styles.rating}>
-                        <RatingView rating={rating} reviews={reviews}/>
-                    </View>
+                </View>
+                <View style={styles.rating}>
+                    <RatingView rating={rating} reviews={reviews}/>
                 </View>
             </View>
         </PlatformPressable>
@@ -73,9 +71,10 @@ const styles = StyleSheet.create({
         padding: 10,
         borderRadius: MISC.borderRadius,
         backgroundColor: COLORS.base,
+        height: 90,
+
 
     },
-    shadowContainer: {},
     logo: {
         flexDirection: 'row',
         alignItems: 'center',

@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a459033b-439d-4d63-aac2-72256168ce17" name="Changes" comment="feat: finished store component in home&#10;&#10;clicking on a store redirects to the store's page&#10;used dynamic routes for the store page">
+    <list default="true" id="a459033b-439d-4d63-aac2-72256168ce17" name="Changes" comment="fix: HomeHeader gets the user's city as a prop">
+      <change afterPath="$PROJECT_DIR$/components/home/StoresCarousel.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(tabs)/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/home/HomeHeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/HomeHeader.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/home/Section.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/Section.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/home/Store.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/Store.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +100,8 @@
       <workItem from="1732672255516" duration="2263000" />
       <workItem from="1732755195394" duration="5224000" />
       <workItem from="1732797588629" duration="8861000" />
-      <workItem from="1732810994589" duration="15766000" />
+      <workItem from="1732810994589" duration="15973000" />
+      <workItem from="1732888523172" duration="1263000" />
     </task>
     <task id="LOCAL-00001" summary="feat: added profile screen navigation">
       <option name="closed" value="true" />
@@ -164,7 +167,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732830747290</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="fix: HomeHeader gets the user's city as a prop">
+      <option name="closed" value="true" />
+      <created>1732830922867</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1732830922867</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -190,6 +201,7 @@
     <MESSAGE value="feat: progress in home screen ui&#10;&#10;added a header&#10;added a categories carousel component" />
     <MESSAGE value="feat: user can log in and create an account&#10;&#10;used React Context and Expo Secure Store to handle user auth&#10;progress in home screen ui" />
     <MESSAGE value="feat: finished store component in home&#10;&#10;clicking on a store redirects to the store's page&#10;used dynamic routes for the store page" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: finished store component in home&#10;&#10;clicking on a store redirects to the store's page&#10;used dynamic routes for the store page" />
+    <MESSAGE value="fix: HomeHeader gets the user's city as a prop" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: HomeHeader gets the user's city as a prop" />
   </component>
 </project>
