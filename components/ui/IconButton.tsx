@@ -4,7 +4,7 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import {PlatformPressable} from "@react-navigation/elements";
 
 type Props = {
-    icon?: any;
+    icon?: string;
     label: string;
     onPress: () => void;
     primary?: boolean;
@@ -32,7 +32,6 @@ export default function IconButton({icon, label, onPress, btnStyle, primary = tr
 const styles = StyleSheet.create({
     primary: {
         backgroundColor: COLORS.primary,
-
     },
     secondary: {
         backgroundColor: COLORS.secondary,
@@ -53,5 +52,6 @@ const styles = StyleSheet.create({
         borderRadius: 26,
         minWidth: 90,
         overflow: 'hidden',
+        gap: 12,
     }
 })

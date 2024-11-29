@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {FlatList, StyleSheet, View} from 'react-native';
-import IconButton from "@/components/IconButton";
+import IconButton from "@/components/ui/IconButton";
 import {COLORS} from "@/constants/styles";
 
 export default function CategoriesCarousel() {

@@ -14,14 +14,14 @@ type props = {
     imageUrl: string;
 }
 
-export default function Store({id, name, category, imageUrl, rating, reviews}: props) {
+export default function StoreItem({id, name, category, imageUrl, rating, reviews}: props) {
     const router = useRouter();
 
     const handleClick = () => {
         router.replace(
             {
                 pathname: `/(tabs)/stores/[id]`,
-                params: {id}
+                params: {id, name}
             });
     }
 

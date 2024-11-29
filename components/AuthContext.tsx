@@ -3,6 +3,10 @@ import {createContext, useContext} from 'react';
 interface AuthContextType {
     userId: string | null;
     setUserId: (id: string | null) => void;
+    userCity: string | null;
+    setUserCity: (city: string | null) => void;
+    userName: string | null;
+    setUserName: (name: string | null) => void;
 }
 
 export const AuthContext = createContext<AuthContextType | undefined>(undefined);

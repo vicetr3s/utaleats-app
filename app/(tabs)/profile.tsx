@@ -1,11 +1,12 @@
-import {Text, View} from "react-native";
+import {View} from "react-native";
 import {useRouter} from "expo-router";
-import IconButton from "@/components/IconButton";
 import {useAuthContext} from "@/components/AuthContext";
 import {useEffect} from "react";
+import ProfileHeader from "@/components/profile/ProfileHeader";
+import Section from "@/components/home/Section";
 
 export default function ProfileScreen() {
-    const {userId, setUserId} = useAuthContext();
+    const {userId} = useAuthContext();
     const router = useRouter();
 
     useEffect(() => {
@@ -14,14 +15,13 @@ export default function ProfileScreen() {
         }
     }, [userId]);
 
-    function handleClick() {
-        setUserId(null);
-    }
 
     return (
         <View>
-            <Text>Profile Screen</Text>
-            <IconButton label={'Log out'} onPress={handleClick}/>
+            <ProfileHeader/>
+            <Section label={'My orders'}>
+
+            </Section>
         </View>
 
     )

@@ -2,6 +2,7 @@ import {StyleSheet, Text, View} from "react-native";
 import {COLORS, MISC} from "@/constants/styles";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import {PlatformPressable} from '@react-navigation/elements';
+import {useAuthContext} from "@/components/AuthContext";
 
 type TapBar = {
     state: any,
@@ -9,6 +10,8 @@ type TapBar = {
 }
 
 export default function TabBar({state, navigation}: TapBar) {
+    const {userName} = useAuthContext();
+
     return (
         <View style={styles.tabBar}>
             {state.routes.map((route: any, index: any) => {
@@ -40,9 +43,9 @@ export default function TabBar({state, navigation}: TapBar) {
                             />
                             <Text style={{
                                 color: COLORS.fntOverPrimary,
-                                fontSize:MISC.midFontSize
+                                fontSize: MISC.midFontSize
                             }}>
-                                Profile
+                                {userName ? userName : 'Profile'}
                             </Text>
                         </PlatformPressable>
                     );

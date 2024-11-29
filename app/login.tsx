@@ -1,8 +1,8 @@
 import {StyleSheet, Text, View} from "react-native";
 import {COLORS, LIB, MISC} from "@/constants/styles";
-import InputField from "@/components/InputField";
+import InputField from "@/components/ui/InputField";
 import {Link, useRouter} from "expo-router";
-import IconButton from "@/components/IconButton";
+import IconButton from "@/components/ui/IconButton";
 import {useEffect, useState} from "react";
 import {fetchUrl} from "@/lib/fetchUrl";
 import {useAuthContext} from "@/components/AuthContext";

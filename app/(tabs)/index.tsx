@@ -17,32 +17,9 @@ type store = {
 }
 
 export default function Index() {
-    const {userId, setUserId} = useAuthContext();
+    const {userCity} = useAuthContext();
     const [error, setError] = useState<boolean>(false);
-    const [userCity, setUserCity] = useState<string>('');
     const [stores, setStores] = useState<store[]>([]);
-
-    useEffect(() => {
-        const fetchProfile = async () => {
-            try {
-                const {error, errorMsg, data} = await fetchUrl({
-                    endPoint: `profile?accountId=${userId}`,
-                    method: 'GET'
-                });
-
-                setError(error);
-
-                if (data.city) {
-                    setUserCity(data.city);
-                }
-
-            } catch (error) {
-                setError(true);
-            }
-        };
-
-        fetchProfile();
-    }, [userId]);
 
     useEffect(() => {
         const fetchStores = async () => {
@@ -128,7 +105,7 @@ export default function Index() {
             <Section label={'Categories'}>
                 <CategoriesCarousel/>
             </Section>
-            <Section label={'Stores'} style={{height:'65%'}}>
+            <Section label={'Stores'} style={{height: '65%'}}>
                 <StoresCarousel storesData={storesData}/>
             </Section>
         </View>

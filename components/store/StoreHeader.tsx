@@ -1,24 +1,26 @@
 import {StyleSheet, Text, View} from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import {COLORS, MISC} from "@/constants/styles";
+import {MISC} from "@/constants/styles";
+import IconButton from "@/components/ui/IconButton";
 
 type props = {
-    city?: string | null;
+    name: string;
+    onPress: () => void;
 }
 
-export default function HomeHeader({city}: props) {
+export default function StoreHeader({name, onPress}: props) {
     return (
         <View style={styles.nav}>
-            <View style={styles.city}>
+            <View style={styles.store}>
                 <Ionicons
-                    name={'navigate-circle'}
+                    name={'basket'}
                     color={'#000000'}
                     size={MISC.largeIconSize}
                 />
-                <Text style={styles.cityText}>{city ? city : 'Unknown city'}</Text>
+                <Text style={styles.storeName}>{name}</Text>
             </View>
-            <View style={styles.utalEats}>
-                <Text style={styles.utalEatsText}>UtalEats</Text>
+            <View style={styles.cart}>
+                <IconButton label={'0'} icon={'cart'} onPress={onPress}/>
             </View>
         </View>
     )
@@ -32,23 +34,18 @@ const styles = StyleSheet.create({
         paddingHorizontal: 15,
         paddingVertical: 25,
     },
-    city: {
+    store: {
         flexDirection: 'row',
         alignItems: 'center',
         gap: 5,
     },
-    cityText: {
+    storeName: {
         color: '#000000',
         fontSize: MISC.largeFontSize,
         fontWeight: 500,
         textTransform: 'capitalize',
     },
-    utalEats: {
+    cart: {
         width: 'auto',
     },
-    utalEatsText: {
-        color: COLORS.primary,
-        fontSize: MISC.largerFontSize,
-        fontWeight: 700,
-    }
 })

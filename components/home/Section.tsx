@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     },
     sectionLabel: {
         fontSize: 20,
-        fontWeight: 700,
+        fontWeight: 600,
         marginBottom: 10,
     }
 })

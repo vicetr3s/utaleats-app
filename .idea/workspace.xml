@@ -4,12 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a459033b-439d-4d63-aac2-72256168ce17" name="Changes" comment="fix: HomeHeader gets the user's city as a prop">
-      <change afterPath="$PROJECT_DIR$/components/home/StoresCarousel.tsx" afterDir="false" />
+    <list default="true" id="a459033b-439d-4d63-aac2-72256168ce17" name="Changes" comment="fix: Stores carousel was not working correctly">
+      <change afterPath="$PROJECT_DIR$/components/profile/ProfileHeader.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/store/Item.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/store/ItemContainer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/store/StoreHeader.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(tabs)/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(tabs)/profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/profile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(tabs)/stores/[id].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/stores/[id].tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/_layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/register.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/register.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/AuthContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/AuthContext.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/DropDownInputField.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/DropDownInputField.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/IconButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/IconButton.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/InputField.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/InputField.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/TabBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/TabBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/TwoInputField.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/TwoInputField.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/home/CategoriesCarousel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/CategoriesCarousel.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/home/HomeHeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/HomeHeader.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/home/Section.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/Section.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/home/Store.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/Store.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/home/Store.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/StoreItem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/home/StoresCarousel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/StoresCarousel.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +89,7 @@
       <recent name="C:\Users\viced\Desktop\tests\utaleats-app\components" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\viced\Desktop\tests\utaleats-app\components\ui" />
       <recent name="C:\Users\viced\Desktop\tests\utaleats-app" />
       <recent name="C:\Users\viced\Desktop\tests\utaleats-app\constants" />
       <recent name="C:\Users\viced\Desktop\tests\utaleats-app\assets\styles" />
@@ -101,7 +120,7 @@
       <workItem from="1732755195394" duration="5224000" />
       <workItem from="1732797588629" duration="8861000" />
       <workItem from="1732810994589" duration="15973000" />
-      <workItem from="1732888523172" duration="1263000" />
+      <workItem from="1732888523172" duration="7680000" />
     </task>
     <task id="LOCAL-00001" summary="feat: added profile screen navigation">
       <option name="closed" value="true" />
@@ -175,7 +194,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732830922867</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="fix: Stores carousel was not working correctly">
+      <option name="closed" value="true" />
+      <created>1732889859308</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1732889859308</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -202,6 +229,7 @@
     <MESSAGE value="feat: user can log in and create an account&#10;&#10;used React Context and Expo Secure Store to handle user auth&#10;progress in home screen ui" />
     <MESSAGE value="feat: finished store component in home&#10;&#10;clicking on a store redirects to the store's page&#10;used dynamic routes for the store page" />
     <MESSAGE value="fix: HomeHeader gets the user's city as a prop" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: HomeHeader gets the user's city as a prop" />
+    <MESSAGE value="fix: Stores carousel was not working correctly" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: Stores carousel was not working correctly" />
   </component>
 </project>

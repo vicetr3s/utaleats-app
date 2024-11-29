@@ -1,12 +1,13 @@
 import {StyleSheet, Text, View} from "react-native";
 import {COLORS, LIB, MISC} from "@/constants/styles";
-import InputField from "@/components/InputField";
-import IconButton from "@/components/IconButton";
-import TwoInputField from "@/components/TwoInputField";
+import InputField from "@/components/ui/InputField";
+import IconButton from "@/components/ui/IconButton";
+import TwoInputField from "@/components/ui/TwoInputField";
 import {useState} from "react";
-import DropDownInputField from "@/components/DropDownInputField";
+import DropDownInputField from "@/components/ui/DropDownInputField";
 import {fetchUrl} from "@/lib/fetchUrl";
 import {useAuthContext} from "@/components/AuthContext";
+import {Link} from "expo-router";
 
 export default function RegisterScreen() {
     const [secondRegisterStep, setSecondRegisterStep] = useState<boolean>(false);
@@ -78,8 +79,8 @@ export default function RegisterScreen() {
             password: password,
             name: firstName + ' ' + lastName,
             phone: phoneNumber,
+            address: address,
             city: selectedCity,
-            streetAddress: address,
         });
 
         (async () => {
@@ -92,7 +93,7 @@ export default function RegisterScreen() {
 
                 setError(error);
                 setErrorMsg(errorMsg);
-                setUserId(data.id);
+                setUserId(String(data.id));
             } catch (error) {
                 setError(true);
                 setErrorMsg('Something happened');
@@ -122,6 +123,8 @@ export default function RegisterScreen() {
                         }}>{errorMsg}</Text>}
 
                     <IconButton label={'Continue'} onPress={handleFirstClick} btnStyle={styles.continueBtn}/>
+                    <Link href={'/login'} style={styles.login}>I have an account</Link>
+
                 </View>
             </View>
         )
@@ -154,6 +157,8 @@ export default function RegisterScreen() {
                         fontSize: MISC.smallFontSize
                     }}>{errorMsg}</Text>}
                 <IconButton label={'Create'} onPress={handleSecondClick} btnStyle={styles.continueBtn}/>
+                <Link href={'/login'} style={styles.login}>I have an account</Link>
+
             </View>
         </View>
     )
@@ -174,5 +179,9 @@ const styles = StyleSheet.create({
     },
     continueBtn: {
         marginTop: 30
+    },
+    login: {
+        textDecorationLine: 'underline',
+        fontSize: MISC.midFontSize
     }
 })
