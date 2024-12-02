@@ -43,14 +43,18 @@ export default function LoginScreen() {
 
         (async () => {
             try {
-                const {error, errorMsg, data} = await fetchUrl({
+                const {error, data} = await fetchUrl({
                     endPoint: 'account/login',
                     body: bodyData,
                     method: 'POST'
                 })
 
                 setError(error);
-                setErrorMsg(errorMsg);
+
+                if (!error && Object.keys(data).length === 0) {
+                    setError(true);
+                    setErrorMsg('Incorrect email or password. Please try again.');
+                }
 
                 if (data.accountId) {
                     setUserId(String(data.accountId));

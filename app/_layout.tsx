@@ -18,7 +18,7 @@ export default function RootLayout() {
             if (id) {
                 setCurrentUserId(id);
                 try {
-                    const {error, errorMsg, data} = await fetchUrl({
+                    const {error, data} = await fetchUrl({
                         endPoint: `profile?accountId=${id}`,
                         method: 'GET'
                     });

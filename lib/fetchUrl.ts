@@ -8,7 +8,6 @@ type props = {
 
 type fetchUrl = {
     error: boolean;
-    errorMsg: string;
     data: any;
 }
 
@@ -44,13 +43,13 @@ export async function fetchUrl({endPoint, body, method}: props): Promise<fetchUr
         }
 
         if (!response.ok) {
-            return {error: true, errorMsg: 'Something happened', data: null};
+            return {error: true, data: null};
         }
 
         const json = await response.json();
 
-        return {error: false, errorMsg: '', data: json};
+        return {error: false, data: json};
     } catch (error) {
-        return {error: true, errorMsg: 'Something happened', data: null};
+        return {error: true, data: null};
     }
 }

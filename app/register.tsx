@@ -3,11 +3,12 @@ import {COLORS, LIB, MISC} from "@/constants/styles";
 import InputField from "@/components/ui/InputField";
 import IconButton from "@/components/ui/IconButton";
 import TwoInputField from "@/components/ui/TwoInputField";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import DropDownInputField from "@/components/ui/DropDownInputField";
 import {fetchUrl} from "@/lib/fetchUrl";
 import {useAuthContext} from "@/components/AuthContext";
 import {Link} from "expo-router";
+import {cityDropDownSchema, storeSchema} from "@/constants/schemas";
 
 export default function RegisterScreen() {
     const [secondRegisterStep, setSecondRegisterStep] = useState<boolean>(false);
@@ -20,12 +21,39 @@ export default function RegisterScreen() {
     const [phoneNumber, setPhoneNumber] = useState('');
     const [address, setAddress] = useState('');
     const [selectedCity, setSelectedCity] = useState<string>('');
-    const [cities, setCities] = useState([
-        {label: 'Curicó', value: 'curico'},
-        {label: 'Talca', value: 'talca'},
-    ]);
+    const [cities, setCities] = useState<cityDropDownSchema[]>([]);
     const [dropdownOpen, setDropdownOpen] = useState<boolean>(false);
     const {userId, setUserId} = useAuthContext();
+
+    useEffect(() => {
+        const fetchStores = async () => {
+
+            try {
+                const {error, data} = await fetchUrl({
+                    endPoint: `store?cityName=`,
+                    method: 'GET'
+                });
+
+                setError(error);
+
+                if (data) {
+                    const availableCities = data
+                        .map((store: storeSchema) => ({
+                            label: store.cityName,
+                            value: store.cityName,
+                        }))
+                        .filter((city: cityDropDownSchema) => city.label);
+
+                    setCities(availableCities);
+                }
+
+            } catch (error) {
+                setError(true);
+            }
+        };
+
+        fetchStores();
+    }, []);
 
     const handleFirstClick = () => {
         setErrorMsg('');
@@ -85,7 +113,7 @@ export default function RegisterScreen() {
 
         (async () => {
             try {
-                const {error, errorMsg, data} = await fetchUrl({
+                const {error, data} = await fetchUrl({
                     endPoint: 'account/register',
                     body: bodyData,
                     method: 'POST'

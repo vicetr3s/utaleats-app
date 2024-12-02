@@ -6,35 +6,28 @@ import {useAuthContext} from "@/components/AuthContext";
 import {fetchUrl} from "@/lib/fetchUrl";
 import {useEffect, useState} from "react";
 import StoresCarousel from "@/components/home/StoresCarousel";
-
-type store = {
-    id: string;
-    name: string;
-    category: string;
-    url: string;
-    rating: string;
-    reviews: string;
-}
+import {storeSchema} from "@/constants/schemas";
 
 export default function Index() {
     const {userCity} = useAuthContext();
     const [error, setError] = useState<boolean>(false);
-    const [stores, setStores] = useState<store[]>([]);
+    const [storesRaw, setStoresRaw] = useState<storeSchema[]>([]);
+    const [stores, setStores] = useState<storeSchema[]>([]);
 
     useEffect(() => {
         const fetchStores = async () => {
             if (!userCity) return;
 
             try {
-                const {error, errorMsg, data} = await fetchUrl({
-                    endPoint: `store?city=${userCity}`,
+                const {error, data} = await fetchUrl({
+                    endPoint: `store?cityName=${userCity}`,
                     method: 'GET'
                 });
 
                 setError(error);
 
-                if (data.stores) {
-                    setStores(data.stores);
+                if (data) {
+                    setStoresRaw(data);
                 }
 
             } catch (error) {
@@ -45,58 +38,38 @@ export default function Index() {
         fetchStores();
     }, [userCity]);
 
+    useEffect(() => {
+        if (!storesRaw) return;
 
-    const storesData = [
-        {
-            id: '1',
-            name: 'macdonal',
-            category: 'FastFood',
-            url: 'https://pbs.twimg.com/profile_images/1840790946826354689/yLfoJJt6_400x400.png',
-            rating: '4.0',
-            reviews: '200'
-        },
-        {
-            id: '2',
-            name: 'macdonaaal',
-            category: 'FastFood',
-            url: 'https://pbs.twimg.com/profile_images/1840790946826354689/yLfoJJt6_400x400.png',
-            rating: '4.0',
-            reviews: '200'
-        },
-        {
-            id: '3',
-            name: 'macdonasdal',
-            category: 'FastFood',
-            url: 'https://pbs.twimg.com/profile_images/1840790946826354689/yLfoJJt6_400x400.png',
-            rating: '4.0',
-            reviews: '200'
-        },
+        const fetchRatingAndReviews = async () => {
+            try {
+                const fetchPromises = storesRaw.map(async (store: storeSchema) => {
+                    const {error, data} = await fetchUrl({
+                        endPoint: `rating?storeId=${store.storeId}`,
+                        method: 'GET',
+                    });
 
-        {
-            id: '4',
-            name: 'macdonasdal',
-            category: 'FastFood',
-            url: 'https://pbs.twimg.com/profile_images/1840790946826354689/yLfoJJt6_400x400.png',
-            rating: '4.0',
-            reviews: '200'
-        },
-        {
-            id: '5',
-            name: 'macdonasdal',
-            category: 'FastFood',
-            url: 'https://pbs.twimg.com/profile_images/1840790946826354689/yLfoJJt6_400x400.png',
-            rating: '4.0',
-            reviews: '200'
-        },
-        {
-            id: '6',
-            name: 'macdonasdal',
-            category: 'FastFood',
-            url: 'https://pbs.twimg.com/profile_images/1840790946826354689/yLfoJJt6_400x400.png',
-            rating: '4.0',
-            reviews: '200'
-        },
-    ]
+                    if (error) {
+                        return store;
+                    }
+
+                    return {
+                        ...store,
+                        rating: data?.averageRating || '0',
+                        reviews: data?.comments.length || '0',
+                    };
+                });
+
+                const updatedStores = await Promise.all(fetchPromises);
+
+                setStores(updatedStores);
+            } catch (error) {
+                setError(true);
+            }
+        };
+
+        fetchRatingAndReviews();
+    }, [storesRaw]);
 
 
     return (
@@ -106,7 +79,7 @@ export default function Index() {
                 <CategoriesCarousel/>
             </Section>
             <Section label={'Stores'} style={{height: '65%'}}>
-                <StoresCarousel storesData={storesData}/>
+                <StoresCarousel storesData={stores}/>
             </Section>
         </View>
     );
