@@ -17,6 +17,7 @@ export type ProductSchema = {
     imagePath: string;
     name: string;
     price: string;
+    amount: number;
 }
 
 export type ReviewSchema = {

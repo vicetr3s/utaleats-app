@@ -2,18 +2,20 @@ import {StyleSheet, Text, View} from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import {MISC} from "@/constants/styles";
 import IconButton from "@/components/ui/IconButton";
-import {router} from "expo-router";
+import {router, useLocalSearchParams} from "expo-router";
 import {useCartContext} from "@/components/contexts/CartContext";
 
-type props = {
-    name: string;
-}
-
-export default function StoreHeader({name}: props) {
-    const {cartItems} = useCartContext();
+export default function StoreHeader() {
+    const {id, name, rating} = useLocalSearchParams();
+    const {cartProducts} = useCartContext();
+    const productsAmount = cartProducts ? cartProducts.reduce((total, item) => total + item.amount, 0) : 0;
 
     const handleClick = () => {
-        router.replace('/cart');
+        router.replace(
+            {
+                pathname: `/cart`,
+                params: {id, name, rating}
+            });
     }
 
     return (
@@ -27,7 +29,7 @@ export default function StoreHeader({name}: props) {
                 <Text style={styles.storeName}>{name}</Text>
             </View>
             <View style={styles.cart}>
-                <IconButton label={String(cartItems?.length)} icon={'cart'} onPress={handleClick}/>
+                <IconButton label={String(productsAmount)} icon={'cart'} onPress={handleClick}/>
             </View>
         </View>
     )

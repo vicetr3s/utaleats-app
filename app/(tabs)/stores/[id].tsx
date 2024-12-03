@@ -14,10 +14,10 @@ export default function ProfileScreen() {
     const storeName = Array.isArray(name) ? name[0] : name;
     const [items, setItems] = useState<ProductSchema[]>([]);
     const [reviews, setReviews] = useState<ReviewSchema[]>([]);
-    const {setCartItems} = useCartContext();
+    const {setCartProducts} = useCartContext();
 
     useEffect(() => {
-        setCartItems([]);
+        setCartProducts([]);
 
         const fetchStoreItems = async () => {
             try {

@@ -2,15 +2,15 @@ import {ReactNode} from "react";
 import {StyleSheet, Text, View} from "react-native";
 
 type props = {
-    label: string,
+    label?: string,
     children: ReactNode,
     style?: any,
 }
 
 export default function Section({label, children, style}: props) {
     return (
-        <View style={[styles.container,style]}>
-            <Text style={styles.sectionLabel}>{label}</Text>
+        <View style={[styles.container, style]}>
+            {label && <Text style={styles.sectionLabel}>{label}</Text>}
             {children}
         </View>
     )

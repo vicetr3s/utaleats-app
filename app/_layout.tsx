@@ -10,7 +10,7 @@ export default function RootLayout() {
     const [currentUserId, setCurrentUserId] = useState<string | null>(null);
     const [userName, setUserName] = useState<string | null>(null);
     const [userCity, setUserCity] = useState<string | null>(null);
-    const [cartItems, setCartItems] = useState<ProductSchema[]>([]);
+    const [cartProducts, setCartProducts] = useState<ProductSchema[]>([]);
     const router = useRouter();
 
     useEffect(() => {
@@ -62,8 +62,8 @@ export default function RootLayout() {
             }}>
             <CartContext.Provider
                 value={{
-                    cartItems: cartItems,
-                    setCartItems: setCartItems,
+                    cartProducts: cartProducts,
+                    setCartProducts: setCartProducts,
                 }}>
                 <Stack>
                     <Stack.Screen name="login"/>

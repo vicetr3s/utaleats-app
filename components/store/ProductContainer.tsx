@@ -13,10 +13,22 @@ export default function ProductContainer({data}: props) {
     const {width} = useWindowDimensions();
     const itemColumns = Math.floor((width / 125) - 0.5);
     const columnGap = 60 / itemColumns;
-    const {cartItems, setCartItems} = useCartContext();
+    const {setCartProducts} = useCartContext();
 
     const handleClick = (item: ProductSchema) => {
-        setCartItems(prevItems => [...prevItems, item]);
+        setCartProducts((prevItems) => {
+            const itemIndex = prevItems.findIndex((product) => product.name === item.name);
+
+            if (itemIndex !== -1) {
+                return prevItems.map((product, index) =>
+                    index === itemIndex
+                        ? {...product, amount: product.amount + 1}
+                        : product
+                );
+            } else {
+                return [...prevItems, {...item, amount: 1}];
+            }
+        });
     }
 
     const renderItem = ({item, index}: { item: ProductSchema, index: number }) => (

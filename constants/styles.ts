@@ -17,6 +17,7 @@ export const COLORS = {
 
 export const MISC = {
     borderRadius: 12,
+    borderRounderRadius: 24,
     borderInnerRadius: 8,
     midIconSize: 24,
     largeIconSize: 32,

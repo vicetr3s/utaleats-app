@@ -9,19 +9,24 @@ type Props = {
     onPress: () => void;
     primary?: boolean;
     btnStyle?: any;
+    iconColor?: any;
+    shadow?: boolean;
 };
 
-export default function IconButton({icon, label, onPress, btnStyle, primary = true}: Props) {
+export default function IconButton({icon, label, onPress, btnStyle, primary = true, iconColor, shadow = true}: Props) {
     const colorStyle = primary ? styles.primary : styles.secondary;
     const colorTextStyle = primary ? styles.primaryText : styles.secondaryText;
+    const colorIcon = iconColor ? iconColor : COLORS.fntOverPrimary;
+    const definitiveStyle = shadow ? [styles.btn, colorStyle, LIB.shadow, btnStyle] : [styles.btn, colorStyle, btnStyle];
+
     return (
-        <PlatformPressable style={[styles.btn, colorStyle, LIB.shadow, btnStyle]} android_ripple={{
+        <PlatformPressable style={definitiveStyle} android_ripple={{
             foreground: true,
             borderless: false,
         }} onPress={onPress}>
             {icon && <Ionicons
                 name={icon}
-                color={COLORS.fntOverPrimary}
+                color={colorIcon}
                 size={MISC.midIconSize}
             />}
             {label && <Text style={[colorTextStyle, {fontSize: MISC.largeFontSize}]}>{label}</Text>}

@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
         width: 125,
         height: 'auto',
         minHeight: 130,
-        borderRadius: MISC.borderRadius * 1.5,
+        borderRadius: MISC.borderRounderRadius,
         padding: 10,
     },
     btn: {
