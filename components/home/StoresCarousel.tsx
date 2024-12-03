@@ -1,5 +1,5 @@
 import {FlatList} from "react-native";
-import StoreItem from "@/components/home/StoreItem";
+import Store from "@/components/home/Store";
 
 type store = {
     storeId: string;
@@ -12,9 +12,9 @@ type store = {
 
 export default function StoresCarousel({storesData}: { storesData: store[] }) {
     const renderStore = ({item, index}: { item: store, index: number }) => (
-        <StoreItem id={item.storeId} name={item.storeName} category={item.storeCategory} rating={item.rating}
-                   reviews={item.reviews}
-                   imageUrl={item.imagePath}/>
+        <Store id={item.storeId} name={item.storeName} category={item.storeCategory} rating={item.rating}
+               reviews={item.reviews}
+               imageUrl={item.imagePath}/>
     )
 
     return (

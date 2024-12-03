@@ -1,4 +1,4 @@
-import {Platform} from "react-native";
+import {getPlatformUrl} from "@/lib/getPlatformUrl";
 
 type props = {
     endPoint: string,
@@ -12,11 +12,7 @@ type fetchUrl = {
 }
 
 export async function fetchUrl({endPoint, body, method}: props): Promise<fetchUrl> {
-    const BASE_URL = Platform.select({
-        ios: 'http://localhost/api/',
-        android: 'http://10.0.2.2/api/',
-        default: 'http://localhost/api/',
-    });
+    const BASE_URL = getPlatformUrl();
 
     try {
         let response;

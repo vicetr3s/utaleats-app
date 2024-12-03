@@ -44,7 +44,7 @@ export default function LoginScreen() {
         (async () => {
             try {
                 const {error, data} = await fetchUrl({
-                    endPoint: 'account/login',
+                    endPoint: 'api/account/login',
                     body: bodyData,
                     method: 'POST'
                 })

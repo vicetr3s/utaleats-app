@@ -12,8 +12,9 @@ export default function ProfileHeader() {
 
     return (
         <View style={styles.nav}>
-            <View>
-                <Text style={styles.userName}>{userName ? userName : 'Unknown username'} profile</Text>
+            <View style={styles.headerText}>
+                <Text style={[styles.userName, styles.capitalize]}>{userName ? userName : 'Unknown username'}</Text>
+                <Text style={styles.userName}>profile</Text>
             </View>
             <View style={styles.logout}>
                 <IconButton label={'Log out'} onPress={handleClick} primary={false}/>
@@ -30,13 +31,20 @@ const styles = StyleSheet.create({
         paddingHorizontal: 15,
         paddingVertical: 25,
     },
+    capitalize: {
+        textTransform: 'capitalize',
+    },
     userName: {
         color: '#000000',
         fontSize: MISC.largeFontSize,
         fontWeight: 600,
-        textTransform: 'capitalize',
     },
     logout: {
         width: 'auto',
     },
+    headerText: {
+        justifyContent: 'center',
+        flexDirection: 'row',
+        gap: 5,
+    }
 })

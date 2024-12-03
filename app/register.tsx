@@ -23,14 +23,14 @@ export default function RegisterScreen() {
     const [selectedCity, setSelectedCity] = useState<string>('');
     const [cities, setCities] = useState<cityDropDownSchema[]>([]);
     const [dropdownOpen, setDropdownOpen] = useState<boolean>(false);
-    const {userId, setUserId} = useAuthContext();
+    const {setUserId} = useAuthContext();
 
     useEffect(() => {
         const fetchStores = async () => {
 
             try {
                 const {error, data} = await fetchUrl({
-                    endPoint: `store?cityName=`,
+                    endPoint: `api/store?cityName=`,
                     method: 'GET'
                 });
 
@@ -114,7 +114,7 @@ export default function RegisterScreen() {
         (async () => {
             try {
                 const {error, data} = await fetchUrl({
-                    endPoint: 'account/register',
+                    endPoint: 'api/account/register',
                     body: bodyData,
                     method: 'POST'
                 })

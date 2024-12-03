@@ -5,7 +5,7 @@ import {PlatformPressable} from "@react-navigation/elements";
 
 type Props = {
     icon?: string;
-    label: string;
+    label?: string;
     onPress: () => void;
     primary?: boolean;
     btnStyle?: any;
@@ -24,7 +24,8 @@ export default function IconButton({icon, label, onPress, btnStyle, primary = tr
                 color={COLORS.fntOverPrimary}
                 size={MISC.midIconSize}
             />}
-            <Text style={[colorTextStyle, {fontSize: MISC.largeFontSize}]}>{label}</Text>
+            {label && <Text style={[colorTextStyle, {fontSize: MISC.largeFontSize}]}>{label}</Text>}
+
         </PlatformPressable>
     )
 }
@@ -44,6 +45,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
     },
     btn: {
+        textAlign: 'center',
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',

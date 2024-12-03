@@ -20,7 +20,7 @@ export default function Index() {
 
             try {
                 const {error, data} = await fetchUrl({
-                    endPoint: `store?cityName=${userCity}`,
+                    endPoint: `api/store?cityName=${userCity}`,
                     method: 'GET'
                 });
 
@@ -45,7 +45,7 @@ export default function Index() {
             try {
                 const fetchPromises = storesRaw.map(async (store: storeSchema) => {
                     const {error, data} = await fetchUrl({
-                        endPoint: `rating?storeId=${store.storeId}`,
+                        endPoint: `api/rating?storeId=${store.storeId}`,
                         method: 'GET',
                     });
 

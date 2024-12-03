@@ -1,14 +1,71 @@
-import {Text, View} from "react-native";
+import {StyleSheet, Text, View} from "react-native";
 import {Image} from "expo-image";
 import IconButton from "@/components/ui/IconButton";
+import {COLORS, MISC} from "@/constants/styles";
+import {getPlatformUrl} from "@/lib/getPlatformUrl";
 
-export default function Item() {
+type props = {
+    imagePath: string;
+    name: string;
+    price: string;
+    onPress: () => void;
+}
+
+export default function Item({imagePath, name, price, onPress}: props) {
+    const BASE_URL = getPlatformUrl();
+
     return (
-        <View>
-            <Image/>
-            <Text>Item 1</Text>
-            <Text>Item 2</Text>
-            <IconButton label={} onPress={}/>
+        <View style={styles.item}>
+            <Image source={BASE_URL + imagePath} style={styles.image}/>
+            <Text style={styles.text}>{name}</Text>
+            <View style={styles.price}>
+                <Text style={styles.text}>CLP </Text>
+                <Text style={[styles.text, styles.priceText]}>${price}</Text>
+            </View>
+            <IconButton icon={'add'} onPress={onPress} btnStyle={styles.btn}/>
         </View>
     )
 }
+
+const styles = StyleSheet.create({
+    item: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: COLORS.base,
+        width: 125,
+        height: 'auto',
+        minHeight: 130,
+        borderRadius: MISC.borderRadius * 1.5,
+        padding: 10,
+    },
+    btn: {
+        position: 'absolute',
+        gap: 0,
+        paddingVertical: 0,
+        paddingHorizontal: 0,
+        minWidth: 35,
+        maxWidth: 35,
+        minHeight: 35,
+        maxHeight: 35,
+        transform: [
+            {translateY: '210%'},
+        ],
+    },
+    price: {
+        flexDirection: 'row',
+        marginBottom: 10,
+    },
+    text: {
+        fontSize: MISC.smallFontSize,
+        textAlign: 'center',
+    },
+    priceText: {
+        fontWeight: 600,
+    },
+    image: {
+        height: 60,
+        width: 60,
+        borderRadius: MISC.borderInnerRadius,
+        marginBottom: 5,
+    }
+})

@@ -4,7 +4,6 @@ import {useEffect, useState} from "react";
 import {deleteUserId, getUserId, saveUserId} from "@/lib/handleUserId";
 import {fetchUrl} from "@/lib/fetchUrl";
 
-
 export default function RootLayout() {
     const [currentUserId, setCurrentUserId] = useState<string | null>(null);
     const [userName, setUserName] = useState<string | null>(null);
@@ -19,7 +18,7 @@ export default function RootLayout() {
                 setCurrentUserId(id);
                 try {
                     const {error, data} = await fetchUrl({
-                        endPoint: `profile?accountId=${id}`,
+                        endPoint: `api/profile?accountId=${id}`,
                         method: 'GET'
                     });
 
