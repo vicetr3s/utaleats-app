@@ -3,14 +3,14 @@ import {AuthContext} from "@/components/contexts/AuthContext";
 import {useEffect, useState} from "react";
 import {deleteUserId, getUserId, saveUserId} from "@/lib/handleUserId";
 import {fetchUrl} from "@/lib/fetchUrl";
-import {productSchema} from "@/constants/schemas";
+import {ProductSchema} from "@/constants/schemas";
 import {CartContext} from "@/components/contexts/CartContext";
 
 export default function RootLayout() {
     const [currentUserId, setCurrentUserId] = useState<string | null>(null);
     const [userName, setUserName] = useState<string | null>(null);
     const [userCity, setUserCity] = useState<string | null>(null);
-    const [cartItems, setCartItems] = useState<productSchema[]>([]);
+    const [cartItems, setCartItems] = useState<ProductSchema[]>([]);
     const router = useRouter();
 
     useEffect(() => {

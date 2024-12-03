@@ -8,7 +8,7 @@ import DropDownInputField from "@/components/ui/DropDownInputField";
 import {fetchUrl} from "@/lib/fetchUrl";
 import {useAuthContext} from "@/components/contexts/AuthContext";
 import {Link} from "expo-router";
-import {cityDropDownSchema, storeSchema} from "@/constants/schemas";
+import {CityDropDownSchema, StoreSchema} from "@/constants/schemas";
 
 export default function RegisterScreen() {
     const [secondRegisterStep, setSecondRegisterStep] = useState<boolean>(false);
@@ -21,7 +21,7 @@ export default function RegisterScreen() {
     const [phoneNumber, setPhoneNumber] = useState('');
     const [address, setAddress] = useState('');
     const [selectedCity, setSelectedCity] = useState<string>('');
-    const [cities, setCities] = useState<cityDropDownSchema[]>([]);
+    const [cities, setCities] = useState<CityDropDownSchema[]>([]);
     const [dropdownOpen, setDropdownOpen] = useState<boolean>(false);
     const {setUserId} = useAuthContext();
 
@@ -38,11 +38,11 @@ export default function RegisterScreen() {
 
                 if (data) {
                     const availableCities = data
-                        .map((store: storeSchema) => ({
+                        .map((store: StoreSchema) => ({
                             label: store.cityName,
                             value: store.cityName,
                         }))
-                        .filter((city: cityDropDownSchema) => city.label);
+                        .filter((city: CityDropDownSchema) => city.label);
 
                     setCities(availableCities);
                 }

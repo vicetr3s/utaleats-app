@@ -1,9 +1,9 @@
 import React, {createContext, useContext} from 'react';
-import {productSchema} from "@/constants/schemas";
+import {ProductSchema} from "@/constants/schemas";
 
 interface CartContextType {
-    cartItems: productSchema[] | null;
-    setCartItems: React.Dispatch<React.SetStateAction<productSchema[]>>;
+    cartItems: ProductSchema[] | null;
+    setCartItems: React.Dispatch<React.SetStateAction<ProductSchema[]>>;
 }
 
 export const CartContext = createContext<CartContextType | undefined>(undefined);

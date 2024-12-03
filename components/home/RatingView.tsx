@@ -5,16 +5,19 @@ import {StyleSheet, Text, View} from "react-native";
 type props = {
     rating: string;
     reviews?: string;
+    small?: boolean;
 }
 
-export default function RatingView({rating, reviews}: props) {
+export default function RatingView({rating, reviews, small}: props) {
+    const size = small ? MISC.smallIconSize : MISC.midIconSize;
+
     return (
         <View style={styles.container}>
             <View style={styles.starContainer}>
                 <Ionicons
                     name={'star'}
                     color={'#000000'}
-                    size={MISC.midIconSize}
+                    size={size}
                 />
                 <Text style={styles.text}>{rating}</Text>
             </View>

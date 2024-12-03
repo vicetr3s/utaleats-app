@@ -6,13 +6,13 @@ import {useAuthContext} from "@/components/contexts/AuthContext";
 import {fetchUrl} from "@/lib/fetchUrl";
 import {useEffect, useState} from "react";
 import StoresCarousel from "@/components/home/StoresCarousel";
-import {storeSchema} from "@/constants/schemas";
+import {StoreSchema} from "@/constants/schemas";
 
 export default function Index() {
     const {userCity} = useAuthContext();
     const [error, setError] = useState<boolean>(false);
-    const [storesRaw, setStoresRaw] = useState<storeSchema[]>([]);
-    const [stores, setStores] = useState<storeSchema[]>([]);
+    const [storesRaw, setStoresRaw] = useState<StoreSchema[]>([]);
+    const [stores, setStores] = useState<StoreSchema[]>([]);
 
     useEffect(() => {
         const fetchStores = async () => {
@@ -43,7 +43,7 @@ export default function Index() {
 
         const fetchRatingAndReviews = async () => {
             try {
-                const fetchPromises = storesRaw.map(async (store: storeSchema) => {
+                const fetchPromises = storesRaw.map(async (store: StoreSchema) => {
                     const {error, data} = await fetchUrl({
                         endPoint: `api/rating?storeId=${store.storeId}`,
                         method: 'GET',

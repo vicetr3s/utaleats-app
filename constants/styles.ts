@@ -8,6 +8,8 @@ export const COLORS = {
     base: '#FBFBFB',
     baseDk: '#F2F2F2',
     baseDkr: '#E5E5E5',
+    baseDkrr: '#cacaca',
+    baseDks: '#A4A4A4',
     shadow: 'rgba(181,181,181,0.47)',
     fntOverPrimary: '#ffffff',
     placeHolderText: '#676767',

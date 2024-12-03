@@ -23,7 +23,7 @@ export default function Store({id, name, category, imageUrl, rating, reviews}: p
         router.replace(
             {
                 pathname: `/(tabs)/stores/[id]`,
-                params: {id, name}
+                params: {id, name, rating}
             });
     }
 
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
         textTransform: "capitalize",
     },
     category: {
-        fontSize: MISC.smallFontSize,
+        fontSize: MISC.midFontSize,
     },
     container: {
         width: '100%',

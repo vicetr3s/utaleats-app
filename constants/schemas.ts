@@ -1,20 +1,26 @@
-export type storeSchema = {
+export type StoreSchema = {
     storeId: string;
     storeName: string;
     cityName: string;
-    storeCategory: string;
+    category: string;
     imagePath: string;
     rating: string;
     reviews: string;
 }
 
-export type cityDropDownSchema = {
+export type CityDropDownSchema = {
     label: string;
     value: string;
 }
 
-export type productSchema = {
+export type ProductSchema = {
     imagePath: string;
     name: string;
     price: string;
+}
+
+export type ReviewSchema = {
+    userId: string;
+    rating: string;
+    comment: string;
 }

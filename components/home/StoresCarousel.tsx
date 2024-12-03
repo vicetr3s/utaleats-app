@@ -1,18 +1,10 @@
 import {FlatList} from "react-native";
 import Store from "@/components/home/Store";
+import {StoreSchema} from "@/constants/schemas";
 
-type store = {
-    storeId: string;
-    storeName: string;
-    storeCategory: string;
-    imagePath: string;
-    rating: string;
-    reviews: string;
-}
-
-export default function StoresCarousel({storesData}: { storesData: store[] }) {
-    const renderStore = ({item, index}: { item: store, index: number }) => (
-        <Store id={item.storeId} name={item.storeName} category={item.storeCategory} rating={item.rating}
+export default function StoresCarousel({storesData}: { storesData: StoreSchema[] }) {
+    const renderStore = ({item, index}: { item: StoreSchema, index: number }) => (
+        <Store id={item.storeId} name={item.storeName} category={item.category} rating={item.rating}
                reviews={item.reviews}
                imageUrl={item.imagePath}/>
     )

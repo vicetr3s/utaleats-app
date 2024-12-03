@@ -4,24 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a459033b-439d-4d63-aac2-72256168ce17" name="Changes" comment="feat: store products are shown in store page&#10;&#10;The number of columns in the product list of the store depends on the width of the device">
-      <change afterPath="$PROJECT_DIR$/app/(tabs)/cart.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/contexts/CartContext.tsx" afterDir="false" />
+    <list default="true" id="a459033b-439d-4d63-aac2-72256168ce17" name="Changes" comment="feat: you can click on a product and save it in the shopping cart&#10;&#10;finished products container style&#10;used React context for the shopping cart">
+      <change afterPath="$PROJECT_DIR$/components/store/Review.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/store/ReviewsCarousel.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(tabs)/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(tabs)/profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/profile.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(tabs)/stores/[id].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/stores/[id].tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/_layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/login.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/register.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/register.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/AuthContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/contexts/AuthContext.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/TabBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/TabBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/profile/ProfileHeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/profile/ProfileHeader.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/store/Item.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/store/Item.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/store/ItemContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/store/ItemContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/store/StoreHeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/store/StoreHeader.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/contexts/CartContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/contexts/CartContext.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/home/RatingView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/RatingView.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/home/Store.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/Store.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/home/StoresCarousel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/StoresCarousel.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/store/ProductContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/store/ProductContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants/schemas.ts" beforeDir="false" afterPath="$PROJECT_DIR$/constants/schemas.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/constants/styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/constants/styles.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +114,7 @@
       <workItem from="1732888523172" duration="7977000" />
       <workItem from="1733149268098" duration="9124000" />
       <workItem from="1733181202887" duration="11245000" />
-      <workItem from="1733236294944" duration="3155000" />
+      <workItem from="1733236294944" duration="7167000" />
     </task>
     <task id="LOCAL-00001" summary="feat: added profile screen navigation">
       <option name="closed" value="true" />
@@ -223,7 +220,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733195305689</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="feat: you can click on a product and save it in the shopping cart&#10;&#10;finished products container style&#10;used React context for the shopping cart">
+      <option name="closed" value="true" />
+      <created>1733239816276</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1733239816276</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -254,6 +259,7 @@
     <MESSAGE value="fix: finished home screen&#10;&#10;added username and user's city to react context&#10;progress in profile screen ui" />
     <MESSAGE value="feat: the available cities are fetched from the store database and are used as values in the user's city input&#10;&#10;deleted dummy store values in home page" />
     <MESSAGE value="feat: store products are shown in store page&#10;&#10;The number of columns in the product list of the store depends on the width of the device" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: store products are shown in store page&#10;&#10;The number of columns in the product list of the store depends on the width of the device" />
+    <MESSAGE value="feat: you can click on a product and save it in the shopping cart&#10;&#10;finished products container style&#10;used React context for the shopping cart" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: you can click on a product and save it in the shopping cart&#10;&#10;finished products container style&#10;used React context for the shopping cart" />
   </component>
 </project>
