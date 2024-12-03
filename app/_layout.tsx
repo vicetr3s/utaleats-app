@@ -1,13 +1,16 @@
 import {Stack, useRouter} from "expo-router";
-import {AuthContext} from "@/components/AuthContext";
+import {AuthContext} from "@/components/contexts/AuthContext";
 import {useEffect, useState} from "react";
 import {deleteUserId, getUserId, saveUserId} from "@/lib/handleUserId";
 import {fetchUrl} from "@/lib/fetchUrl";
+import {productSchema} from "@/constants/schemas";
+import {CartContext} from "@/components/contexts/CartContext";
 
 export default function RootLayout() {
     const [currentUserId, setCurrentUserId] = useState<string | null>(null);
     const [userName, setUserName] = useState<string | null>(null);
     const [userCity, setUserCity] = useState<string | null>(null);
+    const [cartItems, setCartItems] = useState<productSchema[]>([]);
     const router = useRouter();
 
     useEffect(() => {
@@ -38,7 +41,6 @@ export default function RootLayout() {
         fetchUserProfileData();
     }, [currentUserId]);
 
-
     const handleSetUserId = async (id: string | null) => {
         if (id) {
             await saveUserId(id);
@@ -58,12 +60,18 @@ export default function RootLayout() {
                 userCity: userCity,
                 setUserCity: setUserCity
             }}>
-            <Stack>
-                <Stack.Screen name="login"/>
-                <Stack.Screen name="register"/>
-                <Stack.Screen name="(tabs)" options={{headerShown: false}}/>
-                <Stack.Screen name="+not-found"/>
-            </Stack>
+            <CartContext.Provider
+                value={{
+                    cartItems: cartItems,
+                    setCartItems: setCartItems,
+                }}>
+                <Stack>
+                    <Stack.Screen name="login"/>
+                    <Stack.Screen name="register"/>
+                    <Stack.Screen name="(tabs)" options={{headerShown: false}}/>
+                    <Stack.Screen name="+not-found"/>
+                </Stack>
+            </CartContext.Provider>
         </AuthContext.Provider>
     );
 }

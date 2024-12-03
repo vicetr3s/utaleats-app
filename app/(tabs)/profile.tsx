@@ -1,6 +1,6 @@
 import {View} from "react-native";
 import {useRouter} from "expo-router";
-import {useAuthContext} from "@/components/AuthContext";
+import {useAuthContext} from "@/components/contexts/AuthContext";
 import {useEffect} from "react";
 import ProfileHeader from "@/components/profile/ProfileHeader";
 import Section from "@/components/home/Section";

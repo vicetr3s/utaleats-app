@@ -1,7 +1,7 @@
 import {StyleSheet, Text, View} from "react-native";
 import {MISC} from "@/constants/styles";
 import IconButton from "@/components/ui/IconButton";
-import {useAuthContext} from "@/components/AuthContext";
+import {useAuthContext} from "@/components/contexts/AuthContext";
 
 export default function ProfileHeader() {
     const {userName, setUserId} = useAuthContext();

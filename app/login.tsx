@@ -5,7 +5,7 @@ import {Link, useRouter} from "expo-router";
 import IconButton from "@/components/ui/IconButton";
 import {useEffect, useState} from "react";
 import {fetchUrl} from "@/lib/fetchUrl";
-import {useAuthContext} from "@/components/AuthContext";
+import {useAuthContext} from "@/components/contexts/AuthContext";
 
 export default function LoginScreen() {
     const [email, setEmail] = useState('');

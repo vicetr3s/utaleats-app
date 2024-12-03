@@ -2,7 +2,7 @@ import {View} from "react-native";
 import HomeHeader from "@/components/home/HomeHeader";
 import CategoriesCarousel from "@/components/home/CategoriesCarousel";
 import Section from "@/components/home/Section";
-import {useAuthContext} from "@/components/AuthContext";
+import {useAuthContext} from "@/components/contexts/AuthContext";
 import {fetchUrl} from "@/lib/fetchUrl";
 import {useEffect, useState} from "react";
 import StoresCarousel from "@/components/home/StoresCarousel";

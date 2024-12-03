@@ -29,6 +29,9 @@ export const LIB = StyleSheet.create({
     shadow: {
         boxShadow: '0 3 5 3 rgba(181,181,181,0.47)',
     },
+    insetShadow: {
+        boxShadow: 'inset 0 3 5 3 rgba(181,181,181,0.47)',
+    },
     container: {
         minWidth: 300,
         padding: 24,

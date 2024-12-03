@@ -1,7 +1,7 @@
 import {StyleSheet, Text, View} from "react-native";
 import {Image} from "expo-image";
 import IconButton from "@/components/ui/IconButton";
-import {COLORS, MISC} from "@/constants/styles";
+import {COLORS, LIB, MISC} from "@/constants/styles";
 import {getPlatformUrl} from "@/lib/getPlatformUrl";
 
 type props = {
@@ -11,18 +11,18 @@ type props = {
     onPress: () => void;
 }
 
-export default function Item({imagePath, name, price, onPress}: props) {
+export default function Product({imagePath, name, price, onPress}: props) {
     const BASE_URL = getPlatformUrl();
 
     return (
-        <View style={styles.item}>
+        <View style={[styles.item, LIB.shadow]}>
             <Image source={BASE_URL + imagePath} style={styles.image}/>
             <Text style={styles.text}>{name}</Text>
             <View style={styles.price}>
                 <Text style={styles.text}>CLP </Text>
                 <Text style={[styles.text, styles.priceText]}>${price}</Text>
             </View>
-            <IconButton icon={'add'} onPress={onPress} btnStyle={styles.btn}/>
+            <IconButton icon={'add'} onPress={onPress} btnStyle={[styles.btn, LIB.shadow]}/>
         </View>
     )
 }
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
     },
     priceText: {
-        fontWeight: 600,
+        fontWeight: 700,
     },
     image: {
         height: 60,

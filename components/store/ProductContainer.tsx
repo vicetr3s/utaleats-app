@@ -1,21 +1,26 @@
 import {FlatList, StyleSheet, useWindowDimensions, View} from "react-native";
 import React from "react";
-import {COLORS, MISC} from "@/constants/styles";
-import {itemStoreSchema} from "@/constants/schemas";
-import Item from "@/components/store/Item";
+import {COLORS, LIB, MISC} from "@/constants/styles";
+import {productSchema} from "@/constants/schemas";
+import Product from "@/components/store/Product";
+import {useCartContext} from "@/components/contexts/CartContext";
 
 type props = {
-    data: itemStoreSchema[];
+    data: productSchema[];
 }
 
-export default function ItemContainer({data}: props) {
+export default function ProductContainer({data}: props) {
     const {width} = useWindowDimensions();
     const itemColumns = Math.floor((width / 125) - 0.5);
     const columnGap = 40 / itemColumns;
+    const {cartItems, setCartItems} = useCartContext();
 
-    const renderItem = ({item, index}: { item: itemStoreSchema, index: number }) => (
-        <Item imagePath={item.imagePath} name={item.name} price={item.price} onPress={() => {
-        }}/>
+    const handleClick = (item: productSchema) => {
+        setCartItems(prevItems => [...prevItems, item]);
+    }
+
+    const renderItem = ({item, index}: { item: productSchema, index: number }) => (
+        <Product imagePath={item.imagePath} name={item.name} price={item.price} onPress={() => handleClick(item)}/>
     )
 
     if (itemColumns === 1) {
@@ -33,7 +38,7 @@ export default function ItemContainer({data}: props) {
     }
 
     return (
-        <View style={styles.container}>
+        <View style={[styles.container, LIB.insetShadow]}>
             <FlatList
                 data={data}
                 renderItem={renderItem}

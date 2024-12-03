@@ -2,7 +2,7 @@ import {StyleSheet, Text, View} from "react-native";
 import {COLORS, MISC} from "@/constants/styles";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import {PlatformPressable} from '@react-navigation/elements';
-import {useAuthContext} from "@/components/AuthContext";
+import {useAuthContext} from "@/components/contexts/AuthContext";
 
 type TapBar = {
     state: any,

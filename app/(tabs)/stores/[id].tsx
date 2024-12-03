@@ -2,17 +2,21 @@ import {View} from "react-native";
 import {useLocalSearchParams} from "expo-router";
 import StoreHeader from "@/components/store/StoreHeader";
 import Section from "@/components/home/Section";
-import ItemContainer from "@/components/store/ItemContainer";
+import ProductContainer from "@/components/store/ProductContainer";
 import {useEffect, useState} from "react";
-import {itemStoreSchema} from "@/constants/schemas";
+import {productSchema} from "@/constants/schemas";
 import {fetchUrl} from "@/lib/fetchUrl";
+import {useCartContext} from "@/components/contexts/CartContext";
 
 export default function ProfileScreen() {
     const {id, name} = useLocalSearchParams();
     const storeName = Array.isArray(name) ? name[0] : name;
-    const [items, setItems] = useState<itemStoreSchema[]>([]);
+    const [items, setItems] = useState<productSchema[]>([]);
+    const {setCartItems} = useCartContext();
 
     useEffect(() => {
+        setCartItems([]);
+
         const fetchStoreItems = async () => {
             try {
                 const {error, data} = await fetchUrl({
@@ -39,10 +43,9 @@ export default function ProfileScreen() {
 
     return (
         <View>
-            <StoreHeader name={storeName} onPress={() => {
-            }}/>
+            <StoreHeader name={storeName}/>
             <Section label={'Items'} style={{height: '65%'}}>
-                <ItemContainer data={items}/>
+                <ProductContainer data={items}/>
             </Section>
             <Section label={'Reviews'}>
 
