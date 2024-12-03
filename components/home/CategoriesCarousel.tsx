@@ -3,7 +3,16 @@ import {FlatList, StyleSheet, View} from 'react-native';
 import IconButton from "@/components/ui/IconButton";
 import {COLORS} from "@/constants/styles";
 
-export default function CategoriesCarousel() {
+type props = {
+    setCategory: (newCategory: string) => void;
+}
+
+type category = {
+    id: string;
+    label: string;
+}
+
+export default function CategoriesCarousel({setCategory}: props) {
     const [selectedIndex, setSelectedIndex] = useState(0);
 
     //Fetch categories maybe
@@ -15,8 +24,14 @@ export default function CategoriesCarousel() {
         {id: '5', label: 'FastFood'},
     ];
 
+    const handleClick = (index: number) => {
+        setSelectedIndex(index);
+        const selectedCategory : category = data[index];
+        setCategory(selectedCategory.label);
+    }
+
     const renderItem = ({item, index}: { item: { id: string; label: string }; index: number }) => (
-        <IconButton label={item.label} onPress={() => setSelectedIndex(index)}
+        <IconButton label={item.label} onPress={() => handleClick(index)}
                     btnStyle={[selectedIndex === index && styles.selectedBtn, styles.categoryBtn]} primary={false}/>
     );
 

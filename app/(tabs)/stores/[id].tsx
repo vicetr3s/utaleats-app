@@ -79,7 +79,7 @@ export default function ProfileScreen() {
 
     return (
         <View>
-            <StoreHeader name={storeName}/>
+            <StoreHeader/>
             <Section label={'Items'} style={{height: '55%'}}>
                 <ProductContainer data={items}/>
             </Section>

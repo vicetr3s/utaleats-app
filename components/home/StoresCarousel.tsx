@@ -2,7 +2,14 @@ import {FlatList} from "react-native";
 import Store from "@/components/home/Store";
 import {StoreSchema} from "@/constants/schemas";
 
-export default function StoresCarousel({storesData}: { storesData: StoreSchema[] }) {
+type props = {
+    storesData: StoreSchema[];
+    category: string;
+}
+
+export default function StoresCarousel({storesData, category}: props) {
+    const filteredData = storesData.filter((store) => store.category === category || category === 'All');
+
     const renderStore = ({item, index}: { item: StoreSchema, index: number }) => (
         <Store id={item.storeId} name={item.storeName} category={item.category} rating={item.rating}
                reviews={item.reviews}
@@ -10,6 +17,6 @@ export default function StoresCarousel({storesData}: { storesData: StoreSchema[]
     )
 
     return (
-        <FlatList data={storesData} renderItem={renderStore} keyExtractor={item => item.storeId} numColumns={1}/>
+        <FlatList data={filteredData} renderItem={renderStore} keyExtractor={item => item.storeId} numColumns={1}/>
     )
 }

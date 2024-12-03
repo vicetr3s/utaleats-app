@@ -13,6 +13,7 @@ export default function Index() {
     const [error, setError] = useState<boolean>(false);
     const [storesRaw, setStoresRaw] = useState<StoreSchema[]>([]);
     const [stores, setStores] = useState<StoreSchema[]>([]);
+    const [category, setCategory] = useState<string>('All');
 
     useEffect(() => {
         const fetchStores = async () => {
@@ -71,15 +72,14 @@ export default function Index() {
         fetchRatingAndReviews();
     }, [storesRaw]);
 
-
     return (
         <View>
             <HomeHeader city={userCity}/>
             <Section label={'Categories'}>
-                <CategoriesCarousel/>
+                <CategoriesCarousel setCategory={setCategory}/>
             </Section>
             <Section label={'Stores'} style={{height: '65%'}}>
-                <StoresCarousel storesData={stores}/>
+                <StoresCarousel storesData={stores} category={category}/>
             </Section>
         </View>
     );

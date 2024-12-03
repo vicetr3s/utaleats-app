@@ -8,7 +8,7 @@ import Section from "@/components/home/Section";
 
 export default function CartScreen() {
     const {id, name, rating} = useLocalSearchParams();
-    const {cartProducts} = useCartContext();
+    const {cartProducts, setCartProducts} = useCartContext();
 
     const goBack = () => {
         router.replace(
@@ -18,15 +18,30 @@ export default function CartScreen() {
             });
     }
 
+    const clearCart = () => {
+        setCartProducts([]);
+    }
+
+    const checkoutCart = () => {
+
+    }
+
     return (
         <View>
             <View style={styles.header}>
                 <Text style={styles.cartTitle}>Your cart</Text>
                 <IconButton onPress={goBack} icon={'arrow-back'} btnStyle={styles.btn}/>
             </View>
-            <Section style={{height: '65%'}}>
+            <Section style={{height: '50%'}}>
                 <CartProductCarousel data={cartProducts}/>
             </Section>
+            <Section style={{height: '35%'}}>
+                <View style={styles.actions}>
+                    <IconButton label={'Clear'} primary={false} onPress={clearCart}/>
+                    <IconButton label={'Checkout'} onPress={checkoutCart}/>
+                </View>
+            </Section>
+
         </View>
 
     )
@@ -52,5 +67,12 @@ const styles = StyleSheet.create({
     cartTitle: {
         fontSize: MISC.largerFontSize,
         fontWeight: 600,
+    },
+    actions: {
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'flex-end',
+        gap: 30,
     }
 })
