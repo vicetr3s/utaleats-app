@@ -24,7 +24,7 @@ export async function fetchUrl({endPoint, body, method}: props): Promise<fetchUr
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: body
+                    body: JSON.stringify(body),
                 });
                 break;
             case 'GET':
@@ -42,9 +42,18 @@ export async function fetchUrl({endPoint, body, method}: props): Promise<fetchUr
             return {error: true, data: null};
         }
 
-        const json = await response.json();
+        const contentType = response.headers.get('Content-Type') || '';
 
-        return {error: false, data: json};
+        if (contentType.includes('application/json')) {
+            const json = await response.json();
+
+            return {error: false, data: json};
+        } else {
+            const text = await response.text();
+
+            return {error: false, data: text};
+        }
+
     } catch (error) {
         return {error: true, data: null};
     }

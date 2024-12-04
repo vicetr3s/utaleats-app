@@ -9,9 +9,8 @@ import {fetchUrl} from "@/lib/fetchUrl";
 import {useCartContext} from "@/components/contexts/CartContext";
 import ReviewsCarousel from "@/components/store/ReviewsCarousel";
 
-export default function ProfileScreen() {
-    const {id, name, rating} = useLocalSearchParams();
-    const storeName = Array.isArray(name) ? name[0] : name;
+export default function StoreScreen() {
+    const {id} = useLocalSearchParams();
     const [items, setItems] = useState<ProductSchema[]>([]);
     const [reviews, setReviews] = useState<ReviewSchema[]>([]);
     const {setCartProducts} = useCartContext();
@@ -66,15 +65,15 @@ export default function ProfileScreen() {
     const dummyData = [
         {
             userId: '1',
-            rating: '4.5',
+            score: '4.5',
             comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse  laoreet volutpat lorem, eget hendrerit odio mollis id. Phasellus ac  dapibus enim. Ut fringilla sodales aliq....'
         },
         {
             userId: '2',
-            rating: '3.5',
+            score: '3.5',
             comment: 'Mmamabuebo eget hendrerit odio mollis id. Phasellus ac  dapibus enim. Ut fringilla sodales aliq....'
         },
-        {userId: '3', rating: '4.7', comment: 'Ta weno el local si'},
+        {userId: '3', score: '4.7', comment: 'Ta weno el local si'},
     ]
 
     return (

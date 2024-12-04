@@ -36,10 +36,10 @@ export default function LoginScreen() {
             return;
         }
 
-        const bodyData = JSON.stringify({
+        const bodyData = {
             email: email,
             password: password,
-        });
+        };
 
         (async () => {
             try {

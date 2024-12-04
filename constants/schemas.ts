@@ -21,7 +21,28 @@ export type ProductSchema = {
 }
 
 export type ReviewSchema = {
-    userId: string;
-    rating: string;
+    score: string;
     comment: string;
+}
+
+export type ProductOrderSchema = {
+    product: string;
+    quantity: number;
+    price: number;
+}
+
+export type PastOrderRawSchema = {
+    storeName: string;
+    total: number;
+    storeImgPath: string;
+    id: string;
+    storeId: string;
+    products: ProductOrderSchema[];
+}
+
+export type PastOrderSchema = {
+    storeName: string;
+    total: number;
+    storeImgPath: string;
+    id: string;
 }

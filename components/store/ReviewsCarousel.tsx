@@ -5,11 +5,12 @@ import {COLORS, MISC} from "@/constants/styles";
 
 export default function ReviewsCarousel({reviews}: { reviews: ReviewSchema[] }) {
     const renderReview = ({item, index}: { item: ReviewSchema, index: number }) => (
-        <Review rating={item.rating} comment={item.comment} userId={item.userId}/>
+        <Review score={item.score} comment={item.comment}/>
     )
 
     return (
-        <FlatList data={reviews} renderItem={renderReview} keyExtractor={item => item.userId} style={styles.container}
+        <FlatList data={reviews} renderItem={renderReview} keyExtractor={item => item.comment + item.score}
+                  style={styles.container}
                   contentContainerStyle={styles.content}/>
     )
 }

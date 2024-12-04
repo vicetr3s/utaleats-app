@@ -4,13 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a459033b-439d-4d63-aac2-72256168ce17" name="Changes" comment="feat: products are shown in the cart page&#10;&#10;you can modify the product quantity in the cart page">
+    <list default="true" id="a459033b-439d-4d63-aac2-72256168ce17" name="Changes" comment="feat: you can check out your cart&#10;&#10;user's orders are shown on the profile page">
+      <change afterPath="$PROJECT_DIR$/app/(tabs)/order.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/profile/Order.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/profile/OrderCarousel.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(tabs)/cart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/cart.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(tabs)/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(tabs)/profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/profile.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(tabs)/stores/[id].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/stores/[id].tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/home/CategoriesCarousel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/CategoriesCarousel.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/home/StoresCarousel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/StoresCarousel.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/register.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/register.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/store/Review.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/store/Review.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/store/ReviewsCarousel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/store/ReviewsCarousel.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants/schemas.ts" beforeDir="false" afterPath="$PROJECT_DIR$/constants/schemas.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/fetchUrl.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/fetchUrl.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +114,8 @@
       <workItem from="1733149268098" duration="9124000" />
       <workItem from="1733181202887" duration="11245000" />
       <workItem from="1733236294944" duration="10991000" />
-      <workItem from="1733256888706" duration="4966000" />
+      <workItem from="1733256888706" duration="8961000" />
+      <workItem from="1733340180199" duration="5977000" />
     </task>
     <task id="LOCAL-00001" summary="feat: added profile screen navigation">
       <option name="closed" value="true" />
@@ -237,7 +245,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733260767466</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="feat: you can filter the stores by category in home page">
+      <option name="closed" value="true" />
+      <created>1733262125380</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1733262125380</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -271,6 +287,8 @@
     <MESSAGE value="feat: you can click on a product and save it in the shopping cart&#10;&#10;finished products container style&#10;used React context for the shopping cart" />
     <MESSAGE value="feat: reviews are shown in the store page" />
     <MESSAGE value="feat: products are shown in the cart page&#10;&#10;you can modify the product quantity in the cart page" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: products are shown in the cart page&#10;&#10;you can modify the product quantity in the cart page" />
+    <MESSAGE value="feat: you can filter the stores by category in home page" />
+    <MESSAGE value="feat: you can check out your cart&#10;&#10;user's orders are shown on the profile page" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: you can check out your cart&#10;&#10;user's orders are shown on the profile page" />
   </component>
 </project>

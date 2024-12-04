@@ -4,7 +4,7 @@ import RatingView from "@/components/home/RatingView";
 import {COLORS, MISC} from "@/constants/styles";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
-export default function Review({rating, comment, userId}: ReviewSchema) {
+export default function Review({score, comment}: ReviewSchema) {
 
     return (
         <View style={styles.container}>
@@ -16,7 +16,7 @@ export default function Review({rating, comment, userId}: ReviewSchema) {
                         size={MISC.midIconSize}
                     />
                 </View>
-                <RatingView rating={rating} small={true}/>
+                <RatingView rating={score} small={true}/>
             </View>
             <Text style={styles.comment}>{comment}</Text>
         </View>

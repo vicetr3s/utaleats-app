@@ -102,14 +102,14 @@ export default function RegisterScreen() {
             return;
         }
 
-        const bodyData = JSON.stringify({
+        const bodyData = {
             email: email,
             password: password,
             name: firstName + ' ' + lastName,
             phone: phoneNumber,
             address: address,
             city: selectedCity,
-        });
+        };
 
         (async () => {
             try {
