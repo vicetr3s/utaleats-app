@@ -9,6 +9,7 @@ import {fetchUrl} from "@/lib/fetchUrl";
 import {useState} from "react";
 import {useAuthContext} from "@/components/contexts/AuthContext";
 import {ProductSchema} from "@/constants/schemas";
+import CartAndCheckoutHeader from "@/components/ui/CartAndCheckoutHeader";
 
 export default function CartScreen() {
     const {id, name, rating} = useLocalSearchParams();
@@ -68,7 +69,7 @@ export default function CartScreen() {
         if (!error) {
             router.replace(
                 {
-                    pathname: `/(tabs)/order`,
+                    pathname: `/(tabs)/checkout`,
                     params: {id}
                 });
         }
@@ -76,10 +77,7 @@ export default function CartScreen() {
 
     return (
         <View>
-            <View style={styles.header}>
-                <Text style={styles.cartTitle}>Your cart</Text>
-                <IconButton onPress={goBack} icon={'arrow-back'} btnStyle={styles.btn}/>
-            </View>
+            <CartAndCheckoutHeader label={'Your cart'} onPress={goBack}/>
             <Section style={{height: '50%'}}>
                 <CartProductCarousel data={cartProducts}/>
             </Section>
@@ -97,26 +95,6 @@ export default function CartScreen() {
 }
 
 const styles = StyleSheet.create({
-    btn: {
-        gap: 0,
-        paddingVertical: 0,
-        paddingHorizontal: 0,
-        minWidth: 35,
-        maxWidth: 35,
-        minHeight: 35,
-        maxHeight: 35,
-    },
-    header: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        paddingHorizontal: 15,
-        paddingVertical: 25,
-    },
-    cartTitle: {
-        fontSize: MISC.largerFontSize,
-        fontWeight: 600,
-    },
     actions: {
         flex: 1,
         flexDirection: 'row',

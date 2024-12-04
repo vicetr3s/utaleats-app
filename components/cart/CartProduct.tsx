@@ -110,5 +110,6 @@ const styles = StyleSheet.create({
     product: {
         flexDirection: 'row',
         gap: 10,
+        alignItems:'center',
     }
 })
