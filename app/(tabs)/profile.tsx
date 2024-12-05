@@ -1,5 +1,5 @@
 import {View} from "react-native";
-import {useRouter} from "expo-router";
+import {useNavigation, useRouter} from "expo-router";
 import {useAuthContext} from "@/components/contexts/AuthContext";
 import {useEffect, useState} from "react";
 import ProfileHeader from "@/components/profile/ProfileHeader";
@@ -13,6 +13,42 @@ export default function ProfileScreen() {
     const router = useRouter();
     const [pastOrdersRaw, setPastOrdersRaw] = useState<PastOrderRawSchema[]>([]);
     const [pastOrders, setPastOrders] = useState<PastOrderSchema[]>([]);
+    const navigation = useNavigation();
+
+    const fetchOrdersRaw = async () => {
+        try {
+            const {error, data} = await fetchUrl({
+                endPoint: `api/order?accountId=${userId}`,
+                method: 'GET',
+            });
+
+            if (data) {
+
+                const orders = data.map((item: any) => {
+                    const total = item.products.reduce((total: number, item: ProductOrderSchema) => total + (item.price * item.quantity), 0);
+
+                    return (
+                        {
+                            id: item._id,
+                            storeId: item.storeId,
+                            total: total,
+                            products: item.products,
+                        }
+                    )
+                });
+
+                setPastOrdersRaw(orders);
+            }
+
+        } catch (error) {
+        }
+    };
+
+    useEffect(() => {
+        return navigation.addListener('focus', () => {
+            fetchOrdersRaw();
+        });
+    }, [navigation]);
 
     useEffect(() => {
         if (!userId) {
@@ -22,33 +58,6 @@ export default function ProfileScreen() {
 
     useEffect(() => {
         if (!userId) return;
-
-        const fetchOrdersRaw = async () => {
-            try {
-                const {error, data} = await fetchUrl({
-                    endPoint: `api/order?accountId=${userId}`,
-                    method: 'GET',
-                });
-
-                if (data) {
-                    const orders = data.map((item: any) => {
-                        const total = data.products.reduce((total: number, item: ProductOrderSchema) => total + (item.price * item.quantity), 0);
-
-                        return (
-                            {
-                                storeId: item.storeId,
-                                total: total,
-                                products: item.products,
-                            }
-                        )
-                    });
-
-                    setPastOrdersRaw(orders);
-                }
-
-            } catch (error) {
-            }
-        };
 
         fetchOrdersRaw();
     }, [userId]);
@@ -64,12 +73,11 @@ export default function ProfileScreen() {
                 });
 
                 const orders = pastOrdersRaw.map((item: PastOrderRawSchema) => {
-                    const store = data.find((store: StoreSchema) => store.storeId === item.storeId);
-                    const id = String(item.storeName + item.total + item.products);
+                    const store = data.find((store: StoreSchema) => store.storeId == item.storeId);
 
                     return (
                         {
-                            id: id,
+                            id: item.id,
                             storeName: store.storeName,
                             storeImgPath: store.imagePath,
                             total: item.total,
@@ -78,7 +86,6 @@ export default function ProfileScreen() {
                 });
 
                 setPastOrders(orders);
-
             } catch (error) {
             }
         };
@@ -86,20 +93,11 @@ export default function ProfileScreen() {
         fetchOrders();
     }, [pastOrdersRaw]);
 
-    const dummyValues = [
-        {id: '1', storeName: 'Pollo bravoss', total: 25000, storeImgPath: '/api/store/images/polloBravos.jpeg'},
-        {id: '2', storeName: 'Pollo bravoss', total: 25000, storeImgPath: '/api/store/images/polloBravos.jpeg'},
-        {id: '3', storeName: 'Pollo bravoss', total: 25000, storeImgPath: '/api/store/images/polloBravos.jpeg'},
-        {id: '4', storeName: 'Pollo bravoss', total: 25000, storeImgPath: '/api/store/images/polloBravos.jpeg'},
-        {id: '5', storeName: 'Pollo bravoss', total: 25000, storeImgPath: '/api/store/images/polloBravos.jpeg'},
-        {id: '6', storeName: 'Pollo bravoss', total: 25000, storeImgPath: '/api/store/images/polloBravos.jpeg'},
-    ]
-
     return (
         <View>
             <ProfileHeader/>
             <Section label={'My orders'} style={{height: '65%'}}>
-                <OrderCarousel data={dummyValues}/>
+                <OrderCarousel data={pastOrders}/>
             </Section>
         </View>
 

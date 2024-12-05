@@ -5,9 +5,11 @@ import {getPlatformUrl} from "@/lib/getPlatformUrl";
 import IconButton from "@/components/ui/IconButton";
 import {COLORS, MISC} from "@/constants/styles";
 import {useCartContext} from "@/components/contexts/CartContext";
+import {getCurrency} from "@/lib/getCurrency";
 
 export default function CartProduct({imagePath, name, price, amount}: ProductSchema) {
     const BASE_URL = getPlatformUrl();
+    const currency = getCurrency();
     const {setCartProducts} = useCartContext();
 
     const modifyProduct = (increment: number) => {
@@ -40,7 +42,7 @@ export default function CartProduct({imagePath, name, price, amount}: ProductSch
                         <Text style={{
                             fontSize: MISC.midFontSize
 
-                        }}>CLP </Text>
+                        }}>{currency} </Text>
                         <Text style={styles.priceText}>${price}</Text>
                     </View>
                 </View>

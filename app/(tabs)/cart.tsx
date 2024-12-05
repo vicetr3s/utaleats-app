@@ -43,6 +43,7 @@ export default function CartScreen() {
             const products = cartProducts?.map((item: ProductSchema) => ({
                 product: item.name,
                 quantity: item.amount,
+                price: item.price,
             }))
 
             const bodyData = {
