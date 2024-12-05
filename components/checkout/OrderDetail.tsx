@@ -14,6 +14,7 @@ type props = {
 export default function OrderDetail({imagePath, name, quantity, price}: props) {
     const BASE_URL = getPlatformUrl();
     const currency = getCurrency();
+    const subTotal = (price * quantity).toFixed(2);
 
     return (
         <View style={styles.container}>
@@ -24,8 +25,8 @@ export default function OrderDetail({imagePath, name, quantity, price}: props) {
                     <Text style={styles.text}>{currency} ${price} x {quantity}</Text>
                 </View>
             </View>
-            <View style={styles.total}>
-                <Text style={styles.priceText}>{currency} ${price * quantity}</Text>
+            <View style={styles.subTotal}>
+                <Text style={styles.priceText}>{currency} ${subTotal}</Text>
             </View>
         </View>
     )
@@ -68,7 +69,7 @@ const styles = StyleSheet.create({
         gap: 10,
         alignItems: 'flex-end',
     },
-    total: {
+    subTotal: {
         flexDirection: 'row',
         alignItems: 'flex-end',
         height: '100%',

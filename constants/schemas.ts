@@ -16,7 +16,7 @@ export type CityDropDownSchema = {
 export type ProductSchema = {
     imagePath: string;
     name: string;
-    price: string;
+    price: number;
     amount: number;
 }
 

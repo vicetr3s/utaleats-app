@@ -1,12 +1,13 @@
 import {View} from "react-native";
 import CartAndCheckoutHeader from "@/components/ui/CartAndCheckoutHeader";
 import {router, useLocalSearchParams} from "expo-router";
-import OrderDetail from "@/components/checkout/OrderDetail";
 import {useCartContext} from "@/components/contexts/CartContext";
+import OrderDetailCarousel from "@/components/checkout/OrderDetailCarousel";
+import Section from "@/components/home/Section";
 
 export default function CheckoutScreen() {
     const {id, name, rating} = useLocalSearchParams();
-    const {cartProducts, setCartProducts} = useCartContext();
+    const {cartProducts} = useCartContext();
 
     const goBack = () => {
         router.replace(
@@ -19,8 +20,9 @@ export default function CheckoutScreen() {
     return (
         <View>
             <CartAndCheckoutHeader label={'Order details'} onPress={goBack}/>
-            <OrderDetail imagePath={'/api/store/images/polloBravos.jpeg'} name={'hamrubeuses cheese'} quantity={3}
-                         price={5700}/>
+            <Section style={{height: '60%'}}>
+                <OrderDetailCarousel data={cartProducts}/>
+            </Section>
         </View>
 
     )
