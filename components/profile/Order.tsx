@@ -21,7 +21,7 @@ export default function Order({storeName, storeImgPath, total}: props) {
                 <Text style={styles.storeName}>{storeName}</Text>
                 <View style={styles.priceText}>
                     <Text style={styles.currency}>Total: {currency} </Text>
-                    <Text style={styles.priceTotal}>${total}</Text>
+                    <Text style={styles.priceTotal}>${total.toFixed(2)}</Text>
                 </View>
             </View>
         </View>

@@ -62,20 +62,6 @@ export default function StoreScreen() {
         fetchReviews();
     }, [id]);
 
-    const dummyData = [
-        {
-            userId: '1',
-            score: '4.5',
-            comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse  laoreet volutpat lorem, eget hendrerit odio mollis id. Phasellus ac  dapibus enim. Ut fringilla sodales aliq....'
-        },
-        {
-            userId: '2',
-            score: '3.5',
-            comment: 'Mmamabuebo eget hendrerit odio mollis id. Phasellus ac  dapibus enim. Ut fringilla sodales aliq....'
-        },
-        {userId: '3', score: '4.7', comment: 'Ta weno el local si'},
-    ]
-
     return (
         <View>
             <StoreHeader/>
@@ -83,7 +69,7 @@ export default function StoreScreen() {
                 <ProductContainer data={items}/>
             </Section>
             <Section label={'Reviews'} style={{height: '30%'}}>
-                <ReviewsCarousel reviews={dummyData}/>
+                <ReviewsCarousel reviews={reviews}/>
             </Section>
         </View>
 

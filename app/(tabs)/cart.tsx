@@ -15,6 +15,7 @@ export default function CartScreen() {
     const {id, name, rating} = useLocalSearchParams();
     const {cartProducts, setCartProducts} = useCartContext();
     const {userId} = useAuthContext();
+    const [orderId, setOrderId] = useState<string>('');
     const [error, setError] = useState<boolean>(false);
     const [errorMsg, setErrorMsg] = useState<string>('Could not checkout');
 
@@ -53,11 +54,15 @@ export default function CartScreen() {
             }
 
             try {
-                const {error} = await fetchUrl({
+                const {error, data} = await fetchUrl({
                     endPoint: 'api/order',
                     body: bodyData,
                     method: 'POST'
                 })
+
+                if (data) {
+                    setOrderId(data.orderId);
+                }
 
                 setError(error);
 
@@ -71,7 +76,7 @@ export default function CartScreen() {
             router.replace(
                 {
                     pathname: `/(tabs)/checkout`,
-                    params: {id}
+                    params: {id, orderId}
                 });
         }
     }
