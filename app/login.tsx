@@ -6,6 +6,7 @@ import IconButton from "@/components/ui/IconButton";
 import {useEffect, useState} from "react";
 import {fetchUrl} from "@/lib/fetchUrl";
 import {useAuthContext} from "@/components/contexts/AuthContext";
+import {LogInSchema} from "@/constants/schemas";
 
 export default function LoginScreen() {
     const [email, setEmail] = useState('');
@@ -25,14 +26,19 @@ export default function LoginScreen() {
         setErrorMsg('');
         setError(false);
 
-        if (!email || email.length <= 0) {
-            setErrorMsg('Please enter a valid email address');
+        const validateFields = LogInSchema.safeParse({
+            email: email,
+            password: password,
+        })
+
+        if (!validateFields.success) {
+            const errors = validateFields.error.flatten().fieldErrors;
+
             setError(true);
-            return;
-        }
-        if (!password || password.length <= 0) {
-            setErrorMsg('Please enter a password');
-            setError(true);
+
+            if (errors.password) setErrorMsg(errors.password[0]);
+            if (errors.email) setErrorMsg(errors.email[0]);
+
             return;
         }
 

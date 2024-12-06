@@ -1,3 +1,5 @@
+import {z} from "zod";
+
 export type StoreSchema = {
     storeId: string;
     storeName: string;
@@ -46,3 +48,31 @@ export type PastOrderSchema = {
     storeImgPath: string;
     id: string;
 }
+
+export const FirstSignUpSchema = z.object({
+    email: z.string().email({message: 'Please enter a valid email'}).trim(),
+    password: z
+        .string()
+        .min(6, {message: 'Password must be at least 6 characters'})
+        .regex(/[0-9]/, {message: 'Password must contain at least one number'})
+        .regex(/[^a-zA-Z0-9]/, {
+            message: 'Password must contain at least one special character'
+        })
+        .trim(),
+    firstName: z.string().min(4, {message: 'First name must be at least 4 characters'}).trim(),
+    lastName: z.string().min(4, {message: 'Last name must be at least 4 characters'}).trim(),
+})
+
+export const SecondSignUpSchema = z.object({
+    phoneNumber: z.string().regex(/^\+569\d{8}$/, {message: 'Phone number must be a chilean number'}).trim(),
+    city: z.string().trim(),
+    streetAddress: z.string().min(8, {message: 'Street must be at least 8 characters'}).trim(),
+})
+
+export const LogInSchema = z.object({
+    email: z.string().email({message: 'Please enter a valid email'}).trim(),
+    password: z
+        .string()
+        .min(6, {message: 'Password must be at least 6 characters'})
+        .trim(),
+})

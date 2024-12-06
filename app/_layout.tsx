@@ -66,10 +66,10 @@ export default function RootLayout() {
                     setCartProducts: setCartProducts,
                 }}>
                 <Stack>
-                    <Stack.Screen name="login"/>
-                    <Stack.Screen name="register"/>
+                    <Stack.Screen name="login" options={{headerShown: false}}/>
+                    <Stack.Screen name="register" options={{headerShown: false}}/>
                     <Stack.Screen name="(tabs)" options={{headerShown: false}}/>
-                    <Stack.Screen name="+not-found"/>
+                    <Stack.Screen name="+not-found" options={{headerShown: false}}/>
                 </Stack>
             </CartContext.Provider>
         </AuthContext.Provider>

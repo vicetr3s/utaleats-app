@@ -8,7 +8,7 @@ import DropDownInputField from "@/components/ui/DropDownInputField";
 import {fetchUrl} from "@/lib/fetchUrl";
 import {useAuthContext} from "@/components/contexts/AuthContext";
 import {Link} from "expo-router";
-import {CityDropDownSchema, StoreSchema} from "@/constants/schemas";
+import {CityDropDownSchema, FirstSignUpSchema, SecondSignUpSchema, StoreSchema} from "@/constants/schemas";
 
 export default function RegisterScreen() {
     const [secondRegisterStep, setSecondRegisterStep] = useState<boolean>(false);
@@ -59,21 +59,23 @@ export default function RegisterScreen() {
         setErrorMsg('');
         setError(false);
 
-        if (!email || email.length <= 0) {
-            setErrorMsg('Please enter a valid email address');
-            setError(true);
-            return;
-        }
+        const validateFields = FirstSignUpSchema.safeParse({
+            email: email,
+            password: password,
+            firstName: firstName,
+            lastName: lastName,
+        })
 
-        if (!password || password.length <= 0) {
-            setErrorMsg('Please enter a password');
-            setError(true);
-            return;
-        }
+        if (!validateFields.success) {
+            const errors = validateFields.error.flatten().fieldErrors;
 
-        if ((!firstName || firstName.length <= 0) || (!lastName || lastName.length <= 0)) {
-            setErrorMsg('Please enter a valid name');
             setError(true);
+
+            if (errors.lastName) setErrorMsg(errors.lastName[0]);
+            if (errors.firstName) setErrorMsg(errors.firstName[0]);
+            if (errors.password) setErrorMsg(errors.password[0]);
+            if (errors.email) setErrorMsg(errors.email[0]);
+
             return;
         }
 
@@ -84,21 +86,21 @@ export default function RegisterScreen() {
         setErrorMsg('');
         setError(false);
 
-        if (!phoneNumber || phoneNumber.length <= 0) {
-            setErrorMsg('Please enter a valid phone number');
-            setError(true);
-            return;
-        }
+        const validateFields = SecondSignUpSchema.safeParse({
+            phoneNumber: phoneNumber,
+            city: selectedCity,
+            streetAddress: address,
+        })
 
-        if (!selectedCity || selectedCity.length <= 0) {
-            setErrorMsg('Please enter a valid city');
-            setError(true);
-            return;
-        }
+        if (!validateFields.success) {
+            const errors = validateFields.error.flatten().fieldErrors;
 
-        if (!address || address.length <= 0) {
-            setErrorMsg('Please enter a valid street address');
             setError(true);
+
+            if (errors.streetAddress) setErrorMsg(errors.streetAddress[0]);
+            if (errors.phoneNumber) setErrorMsg(errors.phoneNumber[0]);
+            if (errors.city) setErrorMsg(errors.city[0]);
+
             return;
         }
 

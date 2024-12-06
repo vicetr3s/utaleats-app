@@ -5,6 +5,7 @@ import {COLORS, MISC} from "@/constants/styles";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
 export default function Review({score, comment}: ReviewSchema) {
+    const review = comment ? comment : 'This user didn\'t leave a review';
 
     return (
         <View style={styles.container}>
@@ -18,7 +19,7 @@ export default function Review({score, comment}: ReviewSchema) {
                 </View>
                 <RatingView rating={score} small={true}/>
             </View>
-            <Text style={styles.comment}>{comment}</Text>
+            <Text style={styles.comment}>{review}</Text>
         </View>
     )
 }

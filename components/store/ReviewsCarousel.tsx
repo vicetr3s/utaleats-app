@@ -9,7 +9,7 @@ export default function ReviewsCarousel({reviews}: { reviews: ReviewSchema[] }) 
     )
 
     return (
-        <FlatList data={reviews} renderItem={renderReview} keyExtractor={item => item.comment + item.score}
+        <FlatList data={reviews} renderItem={renderReview} keyExtractor={item => (item.comment + item.score + Math.random().toString(36).slice(2,8))}
                   style={styles.container}
                   contentContainerStyle={styles.content}/>
     )
