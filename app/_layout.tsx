@@ -30,8 +30,10 @@ export default function RootLayout() {
                         setUserName(data.name);
                     }
                 } catch (error) {
+                    setCurrentUserId(null);
                     setUserCity(null);
                     setUserName(null);
+                    router.replace('/login');
                 }
             } else {
                 router.replace('/login');

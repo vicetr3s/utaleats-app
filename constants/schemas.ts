@@ -64,7 +64,7 @@ export const FirstSignUpSchema = z.object({
 })
 
 export const SecondSignUpSchema = z.object({
-    phoneNumber: z.string().regex(/^\+569\d{8}$/, {message: 'Phone number must be a chilean number'}).trim(),
+    phoneNumber: z.string().min(8, {message: 'Phone number must be at least 8 characters'}),
     city: z.string().trim(),
     streetAddress: z.string().min(8, {message: 'Street must be at least 8 characters'}).trim(),
 })

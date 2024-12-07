@@ -31,7 +31,7 @@ export default function ProductContainer({data}: props) {
         });
     }
 
-    const renderItem = ({item, index}: { item: ProductSchema, index: number }) => (
+    const renderItem = ({item}: { item: ProductSchema }) => (
         <Product imagePath={item.imagePath} name={item.name} price={item.price} onPress={() => handleClick(item)}/>
     )
 
@@ -77,6 +77,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         gap: 30,
         padding: 20,
+        paddingBottom: 30,
     }
 })
 

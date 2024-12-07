@@ -4,13 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a459033b-439d-4d63-aac2-72256168ce17" name="Changes" comment="feat: user can rate and leave a review on checkout page">
+    <list default="true" id="a459033b-439d-4d63-aac2-72256168ce17" name="Changes" comment="feat: user can decide, on checkout page,  to rate the store later &#10;&#10;user has to type only the 8 numbers in the phone number entry field on the registration page, instead of adding the +569 prefix as well&#10;&#10;fixed issues where components were not re-rendering as expected">
+      <change afterPath="$PROJECT_DIR$/components/ui/PhoneNumberInputField.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(tabs)/cart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/cart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(tabs)/checkout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/checkout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(tabs)/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(tabs)/stores/[id].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/stores/[id].tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/_layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/login.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/register.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/register.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/TabBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/TabBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/home/Store.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/Store.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/home/StoresCarousel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/StoresCarousel.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/store/Product.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/store/Product.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/store/ProductContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/store/ProductContainer.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/store/Review.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/store/Review.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/store/ReviewsCarousel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/store/ReviewsCarousel.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/CartAndCheckoutHeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/cart/CartHeader.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/InputField.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/InputField.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/constants/schemas.ts" beforeDir="false" afterPath="$PROJECT_DIR$/constants/schemas.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
@@ -60,7 +71,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/viced/Desktop/tests/utaleats-app/components&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/viced/Desktop/tests/utaleats-app/components/ui&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -72,14 +83,15 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\viced\Desktop\tests\utaleats-app\components\ui" />
       <recent name="C:\Users\viced\Desktop\tests\utaleats-app\components" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\viced\Desktop\tests\utaleats-app\components\cart" />
       <recent name="C:\Users\viced\Desktop\tests\utaleats-app\components\contexts" />
       <recent name="C:\Users\viced\Desktop\tests\utaleats-app\components\ui" />
       <recent name="C:\Users\viced\Desktop\tests\utaleats-app" />
       <recent name="C:\Users\viced\Desktop\tests\utaleats-app\constants" />
-      <recent name="C:\Users\viced\Desktop\tests\utaleats-app\assets\styles" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -116,7 +128,10 @@
       <workItem from="1733405372129" duration="5750000" />
       <workItem from="1733429759934" duration="5218000" />
       <workItem from="1733448151432" duration="128000" />
-      <workItem from="1733448407502" duration="2808000" />
+      <workItem from="1733448407502" duration="3068000" />
+      <workItem from="1733533989193" duration="5266000" />
+      <workItem from="1733590752935" duration="751000" />
+      <workItem from="1733609329182" duration="4000000" />
     </task>
     <task id="LOCAL-00001" summary="feat: added profile screen navigation">
       <option name="closed" value="true" />
@@ -294,7 +309,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733434176645</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="feat: validate login and signup user fields using Zod">
+      <option name="closed" value="true" />
+      <created>1733451393383</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1733451393383</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -334,6 +357,8 @@
     <MESSAGE value="feat: previous user orders are shown on profile page" />
     <MESSAGE value="feat: order details are shown on checkout page" />
     <MESSAGE value="feat: user can rate and leave a review on checkout page" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: user can rate and leave a review on checkout page" />
+    <MESSAGE value="feat: validate login and signup user fields using Zod" />
+    <MESSAGE value="feat: user can decide, on checkout page,  to rate the store later &#10;&#10;user has to type only the 8 numbers in the phone number entry field on the registration page, instead of adding the +569 prefix as well&#10;&#10;fixed issues where components were not re-rendering as expected" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: user can decide, on checkout page,  to rate the store later &#10;&#10;user has to type only the 8 numbers in the phone number entry field on the registration page, instead of adding the +569 prefix as well&#10;&#10;fixed issues where components were not re-rendering as expected" />
   </component>
 </project>

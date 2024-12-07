@@ -1,4 +1,4 @@
-import {StyleSheet, Text, TextInput, View} from "react-native";
+import {InputModeOptions, StyleSheet, Text, TextInput, View} from "react-native";
 import {COLORS, MISC} from "@/constants/styles";
 import React from "react";
 
@@ -12,7 +12,7 @@ type InputField = {
 }
 
 export default function InputField({label, placeholder, inputMode, isSecure = false, value, setValue}: InputField) {
-    const inputModeText = inputMode === undefined ? 'text' : inputMode;
+    const inputModeText = (inputMode ?? 'text') as InputModeOptions;
 
     return (
         <View>

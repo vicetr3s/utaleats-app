@@ -9,6 +9,7 @@ import {fetchUrl} from "@/lib/fetchUrl";
 import {useAuthContext} from "@/components/contexts/AuthContext";
 import {Link} from "expo-router";
 import {CityDropDownSchema, FirstSignUpSchema, SecondSignUpSchema, StoreSchema} from "@/constants/schemas";
+import PhoneNumberInputField from "@/components/ui/PhoneNumberInputField";
 
 export default function RegisterScreen() {
     const [secondRegisterStep, setSecondRegisterStep] = useState<boolean>(false);
@@ -167,8 +168,7 @@ export default function RegisterScreen() {
             <Text style={LIB.h3}>Local shops are waiting</Text>
 
             <View style={[styles.registerContainer, LIB.container, LIB.shadow]}>
-                <InputField label={'Phone number'} placeholder={'Eg: +569XXXXXXXX'} value={phoneNumber}
-                            setValue={setPhoneNumber}/>
+                <PhoneNumberInputField value={phoneNumber} setValue={setPhoneNumber}/>
 
                 <DropDownInputField
                     open={dropdownOpen}

@@ -1,5 +1,4 @@
 import {StyleSheet, Text, View} from "react-native";
-import CartAndCheckoutHeader from "@/components/ui/CartAndCheckoutHeader";
 import {router, useLocalSearchParams} from "expo-router";
 import {useCartContext} from "@/components/contexts/CartContext";
 import OrderDetailCarousel from "@/components/checkout/OrderDetailCarousel";
@@ -12,22 +11,23 @@ import {fetchUrl} from "@/lib/fetchUrl";
 import {MISC} from "@/constants/styles";
 
 export default function CheckoutScreen() {
-    const {id, name, rating, orderId} = useLocalSearchParams();
-    const {cartProducts} = useCartContext();
+    const {id, orderId} = useLocalSearchParams();
+    const {cartProducts, setCartProducts} = useCartContext();
     const [userRating, setUserRating] = useState<number>(0);
     const [userReview, setUserReview] = useState<string>('');
     const [error, setError] = useState<boolean>(false);
     const [errorMsg, setErrorMsg] = useState<string>('Could not send your review');
 
-    const goBack = () => {
+    const goHome = () => {
         router.replace(
             {
-                pathname: `/(tabs)/stores/[id]`,
-                params: {id, name, rating}
+                pathname: `/(tabs)`,
             });
 
         setUserRating(0);
         setUserReview('');
+        setCartProducts([]);
+        setError(false);
     }
 
     const sendRatingAndReview = () => {
@@ -58,16 +58,23 @@ export default function CheckoutScreen() {
                 setError(error);
                 setErrorMsg('Could not send your review');
 
+                if (!error) {
+                    goHome();
+                }
+
             } catch (error) {
                 setError(true);
                 setErrorMsg('Could not send your review');
             }
         })();
 
+
     }
     return (
         <View>
-            <CartAndCheckoutHeader label={'Order details'} onPress={goBack}/>
+            <View style={styles.header}>
+                <Text style={styles.label}>Order details</Text>
+            </View>
             <Section style={{height: '45%'}}>
                 <OrderDetailCarousel data={cartProducts}/>
             </Section>
@@ -75,7 +82,12 @@ export default function CheckoutScreen() {
                 <View style={styles.rating}>
                     <RatingInput rating={userRating} onChange={setUserRating}/>
                     <TextAreaInputField review={userReview} setReview={setUserReview}/>
-                    <IconButton onPress={sendRatingAndReview} label={'Send'} btnStyle={styles.sendBtn}/>
+                    <View style={styles.actions}>
+
+                        <IconButton onPress={goHome} label={'Maybe later'} primary={false}/>
+                        <IconButton onPress={sendRatingAndReview} label={'Send'}/>
+                    </View>
+
                 </View>
                 {error && <Text style={styles.errorMsg}>{errorMsg}</Text>}
             </Section>
@@ -88,11 +100,23 @@ const styles = StyleSheet.create({
     rating: {
         gap: 15,
     },
-    sendBtn: {
-        marginLeft: 'auto'
-    },
     errorMsg: {
         textAlign: 'center',
         fontSize: MISC.midFontSize,
+    },
+    header: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        paddingHorizontal: 15,
+        paddingVertical: 25,
+    },
+    label: {
+        fontSize: MISC.largerFontSize,
+        fontWeight: 600,
+    },
+    actions: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
     }
 })

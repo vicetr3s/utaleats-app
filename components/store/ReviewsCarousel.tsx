@@ -4,14 +4,15 @@ import Review from "@/components/store/Review";
 import {COLORS, MISC} from "@/constants/styles";
 
 export default function ReviewsCarousel({reviews}: { reviews: ReviewSchema[] }) {
-    const renderReview = ({item, index}: { item: ReviewSchema, index: number }) => (
+    const renderReview = ({item}: { item: ReviewSchema }) => (
         <Review score={item.score} comment={item.comment}/>
     )
 
     return (
-        <FlatList data={reviews} renderItem={renderReview} keyExtractor={item => (item.comment + item.score + Math.random().toString(36).slice(2,8))}
+        <FlatList data={reviews} renderItem={renderReview}
+                  keyExtractor={item => (item.comment + item.score + Math.random().toString(36).slice(2, 8))}
                   style={styles.container}
-                  contentContainerStyle={styles.content}/>
+                  contentContainerStyle={styles.content} inverted={true}/>
     )
 }
 

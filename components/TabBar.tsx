@@ -61,7 +61,7 @@ export default function TabBar({state, navigation}: TapBar) {
                                 borderless: true,
                                 radius: styles.homeTab.borderRadius
                             }}
-                            style={styles.homeTab}
+                            style={[styles.homeTab, ]}
                         >
                             <Ionicons
                                 name={'home-sharp'}

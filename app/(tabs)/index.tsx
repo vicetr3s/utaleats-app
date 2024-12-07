@@ -7,6 +7,7 @@ import {fetchUrl} from "@/lib/fetchUrl";
 import {useEffect, useState} from "react";
 import StoresCarousel from "@/components/home/StoresCarousel";
 import {StoreSchema} from "@/constants/schemas";
+import {useNavigation} from "expo-router";
 
 export default function Index() {
     const {userCity} = useAuthContext();
@@ -14,28 +15,36 @@ export default function Index() {
     const [storesRaw, setStoresRaw] = useState<StoreSchema[]>([]);
     const [stores, setStores] = useState<StoreSchema[]>([]);
     const [category, setCategory] = useState<string>('All');
+    const navigation = useNavigation();
+
+    const fetchStores = async () => {
+        if (!userCity) return;
+
+        try {
+            const {error, data} = await fetchUrl({
+                endPoint: `api/store?cityName=${userCity}`,
+                method: 'GET'
+            });
+
+            setError(error);
+
+            if (data) {
+                setStoresRaw(data);
+            }
+
+        } catch (error) {
+            setError(true);
+        }
+    };
 
     useEffect(() => {
-        const fetchStores = async () => {
-            if (!userCity) return;
+        return navigation.addListener('focus', () => {
+            fetchStores();
+        });
 
-            try {
-                const {error, data} = await fetchUrl({
-                    endPoint: `api/store?cityName=${userCity}`,
-                    method: 'GET'
-                });
+    }, [navigation]);
 
-                setError(error);
-
-                if (data) {
-                    setStoresRaw(data);
-                }
-
-            } catch (error) {
-                setError(true);
-            }
-        };
-
+    useEffect(() => {
         fetchStores();
     }, [userCity]);
 

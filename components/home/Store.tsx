@@ -41,7 +41,7 @@ export default function Store({id, name, category, imageUrl, rating, reviews}: p
                     </View>
                 </View>
                 <View style={styles.rating}>
-                    <RatingView rating={rating} reviews={reviews}/>
+                    <RatingView rating={Number(rating).toFixed(1)} reviews={reviews}/>
                 </View>
             </View>
         </PlatformPressable>

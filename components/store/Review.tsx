@@ -9,7 +9,7 @@ export default function Review({score, comment}: ReviewSchema) {
 
     return (
         <View style={styles.container}>
-            <View>
+            <View style={styles.userImgAndRating}>
                 <View style={styles.userImg}>
                     <Ionicons
                         name={'person'}
@@ -40,8 +40,13 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1,
         borderBottomColor: COLORS.baseDkrr,
         gap: 15,
+        alignItems: 'center',
     },
     comment: {
         width: '80%',
+        height: '85%',
+    },
+    userImgAndRating: {
+        alignItems:'center'
     }
 })

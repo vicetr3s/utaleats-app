@@ -10,13 +10,13 @@ type props = {
 export default function StoresCarousel({storesData, category}: props) {
     const filteredData = storesData.filter((store) => store.category === category || category === 'All');
 
-    const renderStore = ({item, index}: { item: StoreSchema, index: number }) => (
+    const renderStore = ({item}: { item: StoreSchema}) => (
         <Store id={item.storeId} name={item.storeName} category={item.category} rating={item.rating}
                reviews={item.reviews}
                imageUrl={item.imagePath}/>
     )
 
     return (
-        <FlatList data={filteredData} renderItem={renderStore} keyExtractor={item => item.storeId} numColumns={1}/>
+        <FlatList data={filteredData} renderItem={renderStore} keyExtractor={item => item.storeId}/>
     )
 }

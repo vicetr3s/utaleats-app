@@ -7,7 +7,7 @@ type props = {
     onPress: () => void;
 }
 
-export default function CartAndCheckoutHeader({label, onPress}: props) {
+export default function CartHeader({label, onPress}: props) {
     return (
         <View style={styles.header}>
             <Text style={styles.label}>{label}</Text>

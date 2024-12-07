@@ -9,13 +9,12 @@ import {fetchUrl} from "@/lib/fetchUrl";
 import {useState} from "react";
 import {useAuthContext} from "@/components/contexts/AuthContext";
 import {ProductSchema} from "@/constants/schemas";
-import CartAndCheckoutHeader from "@/components/ui/CartAndCheckoutHeader";
+import CartHeader from "@/components/cart/CartHeader";
 
 export default function CartScreen() {
     const {id, name, rating} = useLocalSearchParams();
     const {cartProducts, setCartProducts} = useCartContext();
     const {userId} = useAuthContext();
-    const [orderId, setOrderId] = useState<string>('');
     const [error, setError] = useState<boolean>(false);
     const [errorMsg, setErrorMsg] = useState<string>('Could not checkout');
 
@@ -25,6 +24,7 @@ export default function CartScreen() {
         router.replace(
             {
                 pathname: `/(tabs)/stores/[id]`,
+                // @ts-ignore
                 params: {id, name, rating}
             });
     }
@@ -36,8 +36,6 @@ export default function CartScreen() {
     }
 
     const checkoutCart = () => {
-        setError(true);
-
         if (cartProducts && cartProducts.length <= 0) return;
 
         (async () => {
@@ -60,11 +58,15 @@ export default function CartScreen() {
                     method: 'POST'
                 })
 
-                if (data) {
-                    setOrderId(data.orderId);
-                }
-
                 setError(error);
+
+                if (data && !error) {
+                    router.replace(
+                        {
+                            pathname: `/(tabs)/checkout`,
+                            params: {id, orderId: data.orderId}
+                        });
+                }
 
             } catch (error) {
                 setError(true);
@@ -72,18 +74,11 @@ export default function CartScreen() {
             }
         })();
 
-        if (!error) {
-            router.replace(
-                {
-                    pathname: `/(tabs)/checkout`,
-                    params: {id, orderId}
-                });
-        }
     }
 
     return (
         <View>
-            <CartAndCheckoutHeader label={'Your cart'} onPress={goBack}/>
+            <CartHeader label={'Your cart'} onPress={goBack}/>
             <Section style={{height: '50%'}}>
                 <CartProductCarousel data={cartProducts}/>
             </Section>

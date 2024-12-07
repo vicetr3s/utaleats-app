@@ -8,7 +8,7 @@ import {getCurrency} from "@/lib/getCurrency";
 type props = {
     imagePath: string;
     name: string;
-    price: string;
+    price: number;
     onPress: () => void;
 }
 

@@ -1,5 +1,5 @@
 import {View} from "react-native";
-import {useLocalSearchParams} from "expo-router";
+import {useLocalSearchParams, useNavigation} from "expo-router";
 import StoreHeader from "@/components/store/StoreHeader";
 import Section from "@/components/home/Section";
 import ProductContainer from "@/components/store/ProductContainer";
@@ -14,6 +14,27 @@ export default function StoreScreen() {
     const [items, setItems] = useState<ProductSchema[]>([]);
     const [reviews, setReviews] = useState<ReviewSchema[]>([]);
     const {setCartProducts} = useCartContext();
+    const navigation = useNavigation();
+
+    const fetchReviews = async () => {
+        try {
+            const {error, data} = await fetchUrl({
+                endPoint: `api/rating?storeId=${id}`,
+                method: 'GET',
+            });
+
+            if (data) {
+                setReviews(data.comments);
+            }
+        } catch (error) {
+        }
+    };
+
+    useEffect(() => {
+        return navigation.addListener('focus', () => {
+            fetchReviews();
+        });
+    }, [navigation]);
 
     useEffect(() => {
         setCartProducts([]);
@@ -44,20 +65,6 @@ export default function StoreScreen() {
 
     useEffect(() => {
         if (!id) return;
-
-        const fetchReviews = async () => {
-            try {
-                const {error, data} = await fetchUrl({
-                    endPoint: `api/rating?storeId=${id}`,
-                    method: 'GET',
-                });
-
-                if (data) {
-                    setReviews(data.comments);
-                }
-            } catch (error) {
-            }
-        };
 
         fetchReviews();
     }, [id]);
