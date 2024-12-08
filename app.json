@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "utaleats-app",
+    "name": "UtalEats",
     "slug": "utaleats-app",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -10,10 +10,12 @@
     "ios": {
       "supportsTablet": true
     },
+    "icon": "./assets/images/icon.png",
     "android": {
       "adaptiveIcon": {
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.vicetres.utaleatsapp"
     },
     "web": {
       "bundler": "metro",
@@ -24,6 +26,7 @@
       [
         "expo-splash-screen",
         {
+          "image": "./assets/images/splash-icon.png",
           "imageWidth": 200,
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
@@ -33,6 +36,14 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "39a23f33-b369-437d-b469-4311a1fd77c5"
+      }
     }
   }
 }
