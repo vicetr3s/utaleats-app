@@ -1,4 +1,4 @@
-import {StyleSheet, Text, TextInput, View} from "react-native";
+import {InputModeOptions, StyleSheet, Text, TextInput, View} from "react-native";
 import {COLORS, MISC} from "@/constants/styles";
 import React from "react";
 
@@ -19,7 +19,7 @@ export default function TwoInputField({
                                           values,
                                           setValues
                                       }: InputField) {
-    const inputModeText = inputMode === undefined ? 'text' : inputMode;
+    const inputModeText = (inputMode ?? 'text') as InputModeOptions;
 
     return (
         <View>
@@ -41,7 +41,7 @@ export default function TwoInputField({
 
 const styles = StyleSheet.create({
     textField: {
-        width: 100,
+        width: 115,
         backgroundColor: COLORS.baseDk,
         borderRadius: MISC.borderInnerRadius,
         borderColor: COLORS.baseDkr,
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     },
     twoInputs: {
         width: 'auto',
-        gap: 50,
+        gap: 20,
         flexDirection: 'row',
         justifyContent: 'space-between',
     }

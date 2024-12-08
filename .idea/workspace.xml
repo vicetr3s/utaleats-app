@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a459033b-439d-4d63-aac2-72256168ce17" name="Changes" comment="feat: improved error handling on register and login pages&#10;&#10;fixed duplicated cities in city dropdown input field on register page&#10;&#10;user can go back to the first step of registration on register page">
+    <list default="true" id="a459033b-439d-4d63-aac2-72256168ce17" name="Changes" comment="fix: category filter on the index page only shows categories based on the current stores&#10;&#10;fixed overflow in Store component on the index page when the store name was too long">
+      <change afterPath="$PROJECT_DIR$/components/ui/PasswordInputField.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(tabs)/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/login.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/home/RatingView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/RatingView.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/home/Store.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/Store.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/register.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/register.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/TwoInputField.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/TwoInputField.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +117,7 @@
       <workItem from="1733533989193" duration="5266000" />
       <workItem from="1733590752935" duration="751000" />
       <workItem from="1733609329182" duration="11277000" />
-      <workItem from="1733669796914" duration="5824000" />
+      <workItem from="1733669796914" duration="11311000" />
     </task>
     <task id="LOCAL-00001" summary="feat: added profile screen navigation">
       <option name="closed" value="true" />
@@ -327,7 +327,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733673013421</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="fix: category filter on the index page only shows categories based on the current stores&#10;&#10;fixed overflow in Store component on the index page when the store name was too long">
+      <option name="closed" value="true" />
+      <created>1733675858532</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1733675858532</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -345,7 +353,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: added tab bar at the bottom of the screen&#10;&#10;progress in login page" />
     <MESSAGE value="feat: finished login screen ui&#10;&#10;progress in register screen" />
     <MESSAGE value="feat: progress in register screen&#10;&#10;added a drop-down input component&#10;added a two input fields component" />
     <MESSAGE value="feat: user inputs are handled with useState hook in login screen&#10;&#10;when login button is clicked, data is fetched from localhost api" />
@@ -370,6 +377,7 @@
     <MESSAGE value="feat: user can decide, on checkout page,  to rate the store later &#10;&#10;user has to type only the 8 numbers in the phone number entry field on the registration page, instead of adding the +569 prefix as well&#10;&#10;fixed issues where components were not re-rendering as expected" />
     <MESSAGE value="feat: categories on index page are retrieved from available stores" />
     <MESSAGE value="feat: improved error handling on register and login pages&#10;&#10;fixed duplicated cities in city dropdown input field on register page&#10;&#10;user can go back to the first step of registration on register page" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: improved error handling on register and login pages&#10;&#10;fixed duplicated cities in city dropdown input field on register page&#10;&#10;user can go back to the first step of registration on register page" />
+    <MESSAGE value="fix: category filter on the index page only shows categories based on the current stores&#10;&#10;fixed overflow in Store component on the index page when the store name was too long" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: category filter on the index page only shows categories based on the current stores&#10;&#10;fixed overflow in Store component on the index page when the store name was too long" />
   </component>
 </project>

@@ -12,6 +12,7 @@ import {CityDropDownSchema, FirstSignUpSchema, SecondSignUpSchema, StoreSchema} 
 import PhoneNumberInputField from "@/components/ui/PhoneNumberInputField";
 import ErrorText from "@/components/ui/ErrorText";
 import UnderlineTextButton from "@/components/ui/UnderlineTextButton";
+import PasswordInputField from "@/components/ui/PasswordInputField";
 
 export default function RegisterScreen() {
     const [secondRegisterStep, setSecondRegisterStep] = useState<boolean>(false);
@@ -19,6 +20,7 @@ export default function RegisterScreen() {
     const [errorMsg, setErrorMsg] = useState<string>('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
@@ -81,6 +83,14 @@ export default function RegisterScreen() {
             if (errors.firstName) setErrorMsg(errors.firstName[0]);
             if (errors.password) setErrorMsg(errors.password[0]);
             if (errors.email) setErrorMsg(errors.email[0]);
+
+            return;
+        }
+
+        if (password !== confirmPassword) {
+            setError(true);
+
+            setErrorMsg('Passwords do not match');
 
             return;
         }
@@ -156,8 +166,8 @@ export default function RegisterScreen() {
                 <View style={[styles.registerContainer, LIB.container, LIB.shadow]}>
                     <InputField label={'Email'} placeholder={'Email'} inputMode={'email'} value={email}
                                 setValue={setEmail}/>
-                    <InputField label={'Password'} placeholder={'Password'} isSecure={true} value={password}
-                                setValue={setPassword}/>
+                    <PasswordInputField password={password} setPassword={setPassword} confirmPassword={confirmPassword}
+                                        setConfirmPassword={setConfirmPassword}/>
                     <TwoInputField label={'Full name'} placeholders={['First Name', 'Last Name']}
                                    values={[firstName, lastName]} setValues={[setFirstName, setLastName]}/>
 

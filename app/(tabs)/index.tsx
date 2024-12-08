@@ -32,50 +32,29 @@ export default function Index() {
 
             if (data) {
                 setStoresRaw(data);
+
+                const availableCategories: string[] = Array.from(
+                    new Set(
+                        data.map((store: StoreSchema) =>
+                            store.category
+                        )
+                    )
+                );
+
+                const categoriesWithIds = availableCategories.map((category, index) => ({
+                    id: (index + 1).toString(),
+                    label: category,
+                }));
+
+                const finalCategories = [{id: '0', label: 'All'}, ...categoriesWithIds];
+
+                setCategories(finalCategories);
             }
 
         } catch (error) {
             setError(true);
         }
     };
-
-    useEffect(() => {
-        const fetchAllStores = async () => {
-
-            try {
-                const {error, data} = await fetchUrl({
-                    endPoint: `api/store?cityName=`,
-                    method: 'GET'
-                });
-
-                setError(error);
-
-                if (data) {
-                    const availableCategories: string[] = Array.from(
-                        new Set(
-                            data.map((store: StoreSchema) =>
-                                store.cityName === userCity ? store.category : ''
-                            )
-                        )
-                    ).filter(Boolean) as string[];
-
-                    const categoriesWithIds = availableCategories.map((category, index) => ({
-                        id: (index + 1).toString(),
-                        label: category,
-                    }));
-
-                    const finalCategories = [{id: '0', label: 'All'}, ...categoriesWithIds];
-
-                    setCategories(finalCategories);
-                }
-
-            } catch (error) {
-                setError(true);
-            }
-        };
-
-        fetchAllStores();
-    }, [userCity]);
 
     useEffect(() => {
         return navigation.addListener('focus', () => {
