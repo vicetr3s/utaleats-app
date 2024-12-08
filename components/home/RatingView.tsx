@@ -31,6 +31,8 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         gap: 15,
         alignItems: 'center',
+        flexWrap: 'wrap',
+        height: 'auto',
     },
     text: {
         fontSize: MISC.smallFontSize,
@@ -40,5 +42,6 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         gap: 3,
+        width: 'auto',
     }
 })

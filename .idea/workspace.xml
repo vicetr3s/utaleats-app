@@ -4,21 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a459033b-439d-4d63-aac2-72256168ce17" name="Changes" comment="feat: categories on index page are retrieved from available stores">
-      <change afterPath="$PROJECT_DIR$/components/ui/ErrorText.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/ui/UnderlineTextButton.tsx" afterDir="false" />
+    <list default="true" id="a459033b-439d-4d63-aac2-72256168ce17" name="Changes" comment="feat: improved error handling on register and login pages&#10;&#10;fixed duplicated cities in city dropdown input field on register page&#10;&#10;user can go back to the first step of registration on register page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(tabs)/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/_layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(tabs)/cart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/cart.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(tabs)/checkout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/checkout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(tabs)/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/login.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/register.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/register.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/TabBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/TabBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/home/CategoriesCarousel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/CategoriesCarousel.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/PhoneNumberInputField.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/PhoneNumberInputField.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/constants/schemas.ts" beforeDir="false" afterPath="$PROJECT_DIR$/constants/schemas.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/fetchUrl.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/fetchUrl.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/home/RatingView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/RatingView.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/home/Store.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/Store.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +117,7 @@
       <workItem from="1733533989193" duration="5266000" />
       <workItem from="1733590752935" duration="751000" />
       <workItem from="1733609329182" duration="11277000" />
-      <workItem from="1733669796914" duration="3058000" />
+      <workItem from="1733669796914" duration="5824000" />
     </task>
     <task id="LOCAL-00001" summary="feat: added profile screen navigation">
       <option name="closed" value="true" />
@@ -328,7 +319,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733616306553</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="feat: improved error handling on register and login pages&#10;&#10;fixed duplicated cities in city dropdown input field on register page&#10;&#10;user can go back to the first step of registration on register page">
+      <option name="closed" value="true" />
+      <created>1733673013421</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1733673013421</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -346,7 +345,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: added profile screen navigation" />
     <MESSAGE value="feat: added tab bar at the bottom of the screen&#10;&#10;progress in login page" />
     <MESSAGE value="feat: finished login screen ui&#10;&#10;progress in register screen" />
     <MESSAGE value="feat: progress in register screen&#10;&#10;added a drop-down input component&#10;added a two input fields component" />
@@ -371,6 +369,7 @@
     <MESSAGE value="feat: validate login and signup user fields using Zod" />
     <MESSAGE value="feat: user can decide, on checkout page,  to rate the store later &#10;&#10;user has to type only the 8 numbers in the phone number entry field on the registration page, instead of adding the +569 prefix as well&#10;&#10;fixed issues where components were not re-rendering as expected" />
     <MESSAGE value="feat: categories on index page are retrieved from available stores" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: categories on index page are retrieved from available stores" />
+    <MESSAGE value="feat: improved error handling on register and login pages&#10;&#10;fixed duplicated cities in city dropdown input field on register page&#10;&#10;user can go back to the first step of registration on register page" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: improved error handling on register and login pages&#10;&#10;fixed duplicated cities in city dropdown input field on register page&#10;&#10;user can go back to the first step of registration on register page" />
   </component>
 </project>

@@ -36,7 +36,7 @@ export default function Store({id, name, category, imageUrl, rating, reviews}: p
                 <View style={styles.logo}>
                     <Image style={styles.image} source={BASE_URL + imageUrl}/>
                     <View style={styles.label}>
-                        <Text style={styles.name}>{name}</Text>
+                        <Text style={styles.name} numberOfLines={2}>{name}</Text>
                         <Text style={styles.category}>{category}</Text>
                     </View>
                 </View>
@@ -55,7 +55,10 @@ const styles = StyleSheet.create({
         borderRadius: MISC.borderInnerRadius,
     },
     label: {
+        width:'auto',
+        maxWidth:200,
         flexDirection: "column",
+        alignItems:'flex-start'
     },
     name: {
         fontSize: MISC.largeFontSize,

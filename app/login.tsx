@@ -106,6 +106,8 @@ export default function LoginScreen() {
 const styles = StyleSheet.create({
     loginSection: {
         marginTop: 30,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     loginPage: {
         flex: 1,

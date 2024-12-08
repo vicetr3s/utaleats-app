@@ -51,9 +51,13 @@ export default function Index() {
                 setError(error);
 
                 if (data) {
-                    const availableCategories: string[] = Array.from(new Set(data
-                        .map((store: StoreSchema) => (store.category
-                        ))));
+                    const availableCategories: string[] = Array.from(
+                        new Set(
+                            data.map((store: StoreSchema) =>
+                                store.cityName === userCity ? store.category : ''
+                            )
+                        )
+                    ).filter(Boolean) as string[];
 
                     const categoriesWithIds = availableCategories.map((category, index) => ({
                         id: (index + 1).toString(),
@@ -71,7 +75,7 @@ export default function Index() {
         };
 
         fetchAllStores();
-    }, []);
+    }, [userCity]);
 
     useEffect(() => {
         return navigation.addListener('focus', () => {
