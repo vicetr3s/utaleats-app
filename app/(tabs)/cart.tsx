@@ -1,13 +1,13 @@
 import {StyleSheet, View} from "react-native";
 import IconButton from "@/components/ui/IconButton";
 import {router, useLocalSearchParams} from "expo-router";
-import {useCartContext} from "@/components/contexts/CartContext";
+import {useCartContext} from "@/contexts/CartContext";
 import {MISC} from "@/constants/styles";
 import CartProductCarousel from "@/components/cart/CartProductCarousel";
 import Section from "@/components/home/Section";
 import {fetchUrl} from "@/lib/fetchUrl";
 import {useState} from "react";
-import {useAuthContext} from "@/components/contexts/AuthContext";
+import {useAuthContext} from "@/contexts/AuthContext";
 import {ProductSchema} from "@/constants/schemas";
 import CartHeader from "@/components/cart/CartHeader";
 import ErrorText from "@/components/ui/ErrorText";

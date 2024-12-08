@@ -3,7 +3,7 @@ import React from "react";
 import {COLORS, LIB, MISC} from "@/constants/styles";
 import {ProductSchema} from "@/constants/schemas";
 import Product from "@/components/store/Product";
-import {useCartContext} from "@/components/contexts/CartContext";
+import {useCartContext} from "@/contexts/CartContext";
 
 type props = {
     data: ProductSchema[];

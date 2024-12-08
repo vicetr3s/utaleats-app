@@ -3,7 +3,7 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import {MISC} from "@/constants/styles";
 import IconButton from "@/components/ui/IconButton";
 import {router, useLocalSearchParams} from "expo-router";
-import {useCartContext} from "@/components/contexts/CartContext";
+import {useCartContext} from "@/contexts/CartContext";
 
 export default function StoreHeader() {
     const {id, name, rating} = useLocalSearchParams();

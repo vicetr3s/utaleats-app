@@ -28,10 +28,10 @@ export default function TwoInputField({
             }}>{label}</Text>
             <View style={styles.twoInputs}>
                 <TextInput placeholder={placeholders[0]} inputMode={inputModeText} style={styles.textField}
-                           maxLength={20}
+                           maxLength={18}
                            secureTextEntry={isSecure} value={values[0]} onChangeText={setValues[0]}/>
                 <TextInput placeholder={placeholders[1]} inputMode={inputModeText} style={styles.textField}
-                           maxLength={20}
+                           maxLength={18}
                            secureTextEntry={isSecure} value={values[1]} onChangeText={setValues[1]}/>
             </View>
         </View>

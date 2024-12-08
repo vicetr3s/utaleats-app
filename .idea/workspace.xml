@@ -4,12 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a459033b-439d-4d63-aac2-72256168ce17" name="Changes" comment="feat: added a password confirm input field on register page&#10;&#10;the user has to type the same password twice to reduce the risk of accidentally typing an incorrect password">
+    <list default="true" id="a459033b-439d-4d63-aac2-72256168ce17" name="Changes" comment="fix: overflow issues in some components&#10;&#10;&#10;fixed overflow issues in CartProduct, OrderDetail and Product components if the name text was too long">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(tabs)/cart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/cart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(tabs)/checkout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/checkout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(tabs)/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(tabs)/profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/profile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(tabs)/stores/[id].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/stores/[id].tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/_layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/register.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/register.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/cart/CartProduct.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/cart/CartProduct.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/checkout/OrderDetail.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/checkout/OrderDetail.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/store/Product.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/store/Product.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/contexts/AuthContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/contexts/AuthContext.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/contexts/CartContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/contexts/CartContext.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/profile/ProfileHeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/profile/ProfileHeader.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/store/ProductContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/store/ProductContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/store/StoreHeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/store/StoreHeader.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/TabBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/TabBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/TwoInputField.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/TwoInputField.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,11 +84,11 @@
       <recent name="C:\Users\viced\Desktop\tests\utaleats-app\components" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\viced\Desktop\tests\utaleats-app" />
+      <recent name="C:\Users\viced\Desktop\tests\utaleats-app\app" />
       <recent name="C:\Users\viced\Desktop\tests\utaleats-app\components\ui" />
       <recent name="C:\Users\viced\Desktop\tests\utaleats-app\components\cart" />
       <recent name="C:\Users\viced\Desktop\tests\utaleats-app\components\contexts" />
-      <recent name="C:\Users\viced\Desktop\tests\utaleats-app" />
-      <recent name="C:\Users\viced\Desktop\tests\utaleats-app\constants" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -117,7 +129,7 @@
       <workItem from="1733533989193" duration="5266000" />
       <workItem from="1733590752935" duration="751000" />
       <workItem from="1733609329182" duration="11277000" />
-      <workItem from="1733669796914" duration="13034000" />
+      <workItem from="1733669796914" duration="16143000" />
     </task>
     <task id="LOCAL-00001" summary="feat: added profile screen navigation">
       <option name="closed" value="true" />
@@ -343,7 +355,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733693082487</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="fix: overflow issues in some components&#10;&#10;&#10;fixed overflow issues in CartProduct, OrderDetail and Product components if the name text was too long">
+      <option name="closed" value="true" />
+      <created>1733694703669</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1733694703669</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -361,7 +381,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: progress in register screen&#10;&#10;added a drop-down input component&#10;added a two input fields component" />
     <MESSAGE value="feat: user inputs are handled with useState hook in login screen&#10;&#10;when login button is clicked, data is fetched from localhost api" />
     <MESSAGE value="feat: progress in home screen ui&#10;&#10;added a header&#10;added a categories carousel component" />
     <MESSAGE value="feat: user can log in and create an account&#10;&#10;used React Context and Expo Secure Store to handle user auth&#10;progress in home screen ui" />
@@ -386,6 +405,7 @@
     <MESSAGE value="feat: improved error handling on register and login pages&#10;&#10;fixed duplicated cities in city dropdown input field on register page&#10;&#10;user can go back to the first step of registration on register page" />
     <MESSAGE value="fix: category filter on the index page only shows categories based on the current stores&#10;&#10;fixed overflow in Store component on the index page when the store name was too long" />
     <MESSAGE value="feat: added a password confirm input field on register page&#10;&#10;the user has to type the same password twice to reduce the risk of accidentally typing an incorrect password" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: added a password confirm input field on register page&#10;&#10;the user has to type the same password twice to reduce the risk of accidentally typing an incorrect password" />
+    <MESSAGE value="fix: overflow issues in some components&#10;&#10;&#10;fixed overflow issues in CartProduct, OrderDetail and Product components if the name text was too long" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: overflow issues in some components&#10;&#10;&#10;fixed overflow issues in CartProduct, OrderDetail and Product components if the name text was too long" />
   </component>
 </project>

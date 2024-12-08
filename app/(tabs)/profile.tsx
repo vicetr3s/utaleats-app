@@ -1,6 +1,6 @@
 import {View} from "react-native";
 import {useNavigation, useRouter} from "expo-router";
-import {useAuthContext} from "@/components/contexts/AuthContext";
+import {useAuthContext} from "@/contexts/AuthContext";
 import {useEffect, useState} from "react";
 import ProfileHeader from "@/components/profile/ProfileHeader";
 import Section from "@/components/home/Section";
@@ -23,7 +23,6 @@ export default function ProfileScreen() {
             });
 
             if (data) {
-
                 const orders = data.map((item: any) => {
                     const total = item.products.reduce((total: number, item: ProductOrderSchema) => total + (item.price * item.quantity), 0);
 
@@ -54,10 +53,6 @@ export default function ProfileScreen() {
         if (!userId) {
             router.replace('/login');
         }
-    }, [userId]);
-
-    useEffect(() => {
-        if (!userId) return;
 
         fetchOrdersRaw();
     }, [userId]);

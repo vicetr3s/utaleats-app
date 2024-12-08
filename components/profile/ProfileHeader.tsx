@@ -1,10 +1,12 @@
 import {StyleSheet, Text, View} from "react-native";
 import {MISC} from "@/constants/styles";
 import IconButton from "@/components/ui/IconButton";
-import {useAuthContext} from "@/components/contexts/AuthContext";
+import {useAuthContext} from "@/contexts/AuthContext";
 
 export default function ProfileHeader() {
     const {userName, setUserId} = useAuthContext();
+    const userNameText = userName ? userName : 'Unknown username';
+    const navText = userNameText + ' profile';
 
     const handleClick = () => {
         setUserId(null);
@@ -13,8 +15,7 @@ export default function ProfileHeader() {
     return (
         <View style={styles.nav}>
             <View style={styles.headerText}>
-                <Text style={[styles.userName, styles.capitalize]}>{userName ? userName : 'Unknown username'}</Text>
-                <Text style={styles.userName}>profile</Text>
+                <Text style={styles.text}>{navText}</Text>
             </View>
             <View style={styles.logout}>
                 <IconButton label={'Log out'} onPress={handleClick} primary={false}/>
@@ -31,10 +32,8 @@ const styles = StyleSheet.create({
         paddingHorizontal: 15,
         paddingVertical: 25,
     },
-    capitalize: {
+    text: {
         textTransform: 'capitalize',
-    },
-    userName: {
         color: '#000000',
         fontSize: MISC.largeFontSize,
         fontWeight: 600,
@@ -43,8 +42,9 @@ const styles = StyleSheet.create({
         width: 'auto',
     },
     headerText: {
-        justifyContent: 'center',
+        justifyContent: 'flex-start',
         flexDirection: 'row',
         gap: 5,
+        width: '70%',
     }
 })

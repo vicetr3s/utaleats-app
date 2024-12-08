@@ -5,7 +5,7 @@ import {Link, useRouter} from "expo-router";
 import IconButton from "@/components/ui/IconButton";
 import {useEffect, useState} from "react";
 import {fetchUrl} from "@/lib/fetchUrl";
-import {useAuthContext} from "@/components/contexts/AuthContext";
+import {useAuthContext} from "@/contexts/AuthContext";
 import {LogInSchema} from "@/constants/schemas";
 import ErrorText from "@/components/ui/ErrorText";
 

@@ -2,7 +2,7 @@ import {StyleSheet, Text, View} from "react-native";
 import {COLORS, MISC} from "@/constants/styles";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import {PlatformPressable} from '@react-navigation/elements';
-import {useAuthContext} from "@/components/contexts/AuthContext";
+import {useAuthContext} from "@/contexts/AuthContext";
 
 type TapBar = {
     state: any,
@@ -43,9 +43,11 @@ export default function TabBar({state, navigation}: TapBar) {
                             />
                             <Text style={{
                                 color: COLORS.fntOverPrimary,
-                                fontSize: MISC.midFontSize
+                                fontSize: MISC.midFontSize,
+                                width: 110,
+                                textTransform:'capitalize'
                             }}>
-                                {userName ? userName : 'Profile'}
+                                {userName ? userName.split(' ')[0] : 'Profile'}
                             </Text>
                         </PlatformPressable>
                     );
@@ -61,7 +63,7 @@ export default function TabBar({state, navigation}: TapBar) {
                                 borderless: true,
                                 radius: styles.homeTab.borderRadius
                             }}
-                            style={[styles.homeTab, ]}
+                            style={[styles.homeTab,]}
                         >
                             <Ionicons
                                 name={'home-sharp'}

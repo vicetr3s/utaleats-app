@@ -6,7 +6,7 @@ import ProductContainer from "@/components/store/ProductContainer";
 import {useEffect, useState} from "react";
 import {ProductSchema, ReviewSchema} from "@/constants/schemas";
 import {fetchUrl} from "@/lib/fetchUrl";
-import {useCartContext} from "@/components/contexts/CartContext";
+import {useCartContext} from "@/contexts/CartContext";
 import ReviewsCarousel from "@/components/store/ReviewsCarousel";
 
 export default function StoreScreen() {

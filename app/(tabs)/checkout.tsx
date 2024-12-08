@@ -1,6 +1,6 @@
 import {StyleSheet, Text, View} from "react-native";
 import {router, useLocalSearchParams} from "expo-router";
-import {useCartContext} from "@/components/contexts/CartContext";
+import {useCartContext} from "@/contexts/CartContext";
 import OrderDetailCarousel from "@/components/checkout/OrderDetailCarousel";
 import Section from "@/components/home/Section";
 import RatingInput from "@/components/checkout/RatingInput";

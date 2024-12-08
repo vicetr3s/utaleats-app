@@ -4,7 +4,7 @@ import {Image} from "expo-image";
 import {getPlatformUrl} from "@/lib/getPlatformUrl";
 import IconButton from "@/components/ui/IconButton";
 import {COLORS, MISC} from "@/constants/styles";
-import {useCartContext} from "@/components/contexts/CartContext";
+import {useCartContext} from "@/contexts/CartContext";
 import {getCurrency} from "@/lib/getCurrency";
 
 export default function CartProduct({imagePath, name, price, amount}: ProductSchema) {

@@ -6,7 +6,7 @@ import TwoInputField from "@/components/ui/TwoInputField";
 import {useEffect, useState} from "react";
 import DropDownInputField from "@/components/ui/DropDownInputField";
 import {fetchUrl} from "@/lib/fetchUrl";
-import {useAuthContext} from "@/components/contexts/AuthContext";
+import {useAuthContext} from "@/contexts/AuthContext";
 import {Link} from "expo-router";
 import {CityDropDownSchema, FirstSignUpSchema, SecondSignUpSchema, StoreSchema} from "@/constants/schemas";
 import PhoneNumberInputField from "@/components/ui/PhoneNumberInputField";

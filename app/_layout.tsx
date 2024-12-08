@@ -1,10 +1,10 @@
 import {Stack, useRouter} from "expo-router";
-import {AuthContext} from "@/components/contexts/AuthContext";
+import {AuthContext} from "@/contexts/AuthContext";
 import {useEffect, useState} from "react";
 import {deleteUserId, getUserId, saveUserId} from "@/lib/handleUserId";
 import {fetchUrl} from "@/lib/fetchUrl";
 import {ProductSchema} from "@/constants/schemas";
-import {CartContext} from "@/components/contexts/CartContext";
+import {CartContext} from "@/contexts/CartContext";
 
 export default function RootLayout() {
     const [currentUserId, setCurrentUserId] = useState<string | null>(null);
