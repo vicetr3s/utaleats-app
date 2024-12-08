@@ -31,6 +31,7 @@ export default function Product({imagePath, name, price, onPress}: props) {
 
 const styles = StyleSheet.create({
     item: {
+        position: 'relative',
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: COLORS.base,
@@ -49,9 +50,7 @@ const styles = StyleSheet.create({
         maxWidth: 35,
         minHeight: 35,
         maxHeight: 35,
-        transform: [
-            {translateY: '210%'},
-        ],
+        bottom: -15,
     },
     price: {
         flexDirection: 'row',

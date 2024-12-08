@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a459033b-439d-4d63-aac2-72256168ce17" name="Changes" comment="fix: category filter on the index page only shows categories based on the current stores&#10;&#10;fixed overflow in Store component on the index page when the store name was too long">
-      <change afterPath="$PROJECT_DIR$/components/ui/PasswordInputField.tsx" afterDir="false" />
+    <list default="true" id="a459033b-439d-4d63-aac2-72256168ce17" name="Changes" comment="feat: added a password confirm input field on register page&#10;&#10;the user has to type the same password twice to reduce the risk of accidentally typing an incorrect password">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(tabs)/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/register.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/register.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/TwoInputField.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/TwoInputField.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/_layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/cart/CartProduct.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/cart/CartProduct.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/checkout/OrderDetail.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/checkout/OrderDetail.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/store/Product.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/store/Product.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +117,7 @@
       <workItem from="1733533989193" duration="5266000" />
       <workItem from="1733590752935" duration="751000" />
       <workItem from="1733609329182" duration="11277000" />
-      <workItem from="1733669796914" duration="11311000" />
+      <workItem from="1733669796914" duration="13034000" />
     </task>
     <task id="LOCAL-00001" summary="feat: added profile screen navigation">
       <option name="closed" value="true" />
@@ -335,7 +335,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733675858532</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="feat: added a password confirm input field on register page&#10;&#10;the user has to type the same password twice to reduce the risk of accidentally typing an incorrect password">
+      <option name="closed" value="true" />
+      <created>1733693082487</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1733693082487</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -353,7 +361,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: finished login screen ui&#10;&#10;progress in register screen" />
     <MESSAGE value="feat: progress in register screen&#10;&#10;added a drop-down input component&#10;added a two input fields component" />
     <MESSAGE value="feat: user inputs are handled with useState hook in login screen&#10;&#10;when login button is clicked, data is fetched from localhost api" />
     <MESSAGE value="feat: progress in home screen ui&#10;&#10;added a header&#10;added a categories carousel component" />
@@ -378,6 +385,7 @@
     <MESSAGE value="feat: categories on index page are retrieved from available stores" />
     <MESSAGE value="feat: improved error handling on register and login pages&#10;&#10;fixed duplicated cities in city dropdown input field on register page&#10;&#10;user can go back to the first step of registration on register page" />
     <MESSAGE value="fix: category filter on the index page only shows categories based on the current stores&#10;&#10;fixed overflow in Store component on the index page when the store name was too long" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: category filter on the index page only shows categories based on the current stores&#10;&#10;fixed overflow in Store component on the index page when the store name was too long" />
+    <MESSAGE value="feat: added a password confirm input field on register page&#10;&#10;the user has to type the same password twice to reduce the risk of accidentally typing an incorrect password" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: added a password confirm input field on register page&#10;&#10;the user has to type the same password twice to reduce the risk of accidentally typing an incorrect password" />
   </component>
 </project>

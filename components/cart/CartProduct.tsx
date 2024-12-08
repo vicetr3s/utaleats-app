@@ -94,7 +94,9 @@ const styles = StyleSheet.create({
     },
     nameText: {
         fontWeight: 500,
-        fontSize: MISC.largeFontSize
+        fontSize: MISC.largeFontSize,
+        width:'auto',
+        maxWidth:160,
     },
     container: {
         flexDirection: 'row',

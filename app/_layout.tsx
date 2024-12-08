@@ -36,6 +36,9 @@ export default function RootLayout() {
                     router.replace('/login');
                 }
             } else {
+                setCurrentUserId(null);
+                setUserCity(null);
+                setUserName(null);
                 router.replace('/login');
             }
         };
