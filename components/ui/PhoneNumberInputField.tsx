@@ -19,7 +19,7 @@ export default function PhoneNumberInputField({value, setValue}: InputField) {
                 <View style={styles.prefix}>
                     <Text style={styles.textPrefix}>+569</Text>
                 </View>
-                <TextInput placeholder={'12345678'} inputMode={'text'} style={styles.textField} maxLength={8}
+                <TextInput placeholder={'12345678'} inputMode={'numeric'} style={styles.textField} maxLength={8}
                            value={value} onChangeText={setValue}/>
             </View>
 

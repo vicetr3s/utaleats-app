@@ -10,6 +10,8 @@ import {useAuthContext} from "@/components/contexts/AuthContext";
 import {Link} from "expo-router";
 import {CityDropDownSchema, FirstSignUpSchema, SecondSignUpSchema, StoreSchema} from "@/constants/schemas";
 import PhoneNumberInputField from "@/components/ui/PhoneNumberInputField";
+import ErrorText from "@/components/ui/ErrorText";
+import UnderlineTextButton from "@/components/ui/UnderlineTextButton";
 
 export default function RegisterScreen() {
     const [secondRegisterStep, setSecondRegisterStep] = useState<boolean>(false);
@@ -38,14 +40,17 @@ export default function RegisterScreen() {
                 setError(error);
 
                 if (data) {
-                    const availableCities = data
-                        .map((store: StoreSchema) => ({
-                            label: store.cityName,
-                            value: store.cityName,
-                        }))
-                        .filter((city: CityDropDownSchema) => city.label);
+                    const availableCities: string[] = Array.from(new Set(data
+                        .map((store: StoreSchema) => (store.cityName))
+                    ));
 
-                    setCities(availableCities);
+                    const availableCitiesFinal = availableCities
+                        .map((category: string) => ({
+                            label: category,
+                            value: category,
+                        }));
+
+                    setCities(availableCitiesFinal);
                 }
 
             } catch (error) {
@@ -123,13 +128,20 @@ export default function RegisterScreen() {
                 })
 
                 setError(error);
-                setErrorMsg(errorMsg);
-                setUserId(String(data.id));
+
+                if (error) setErrorMsg(data);
+
+                if (!error && data.id) setUserId(String(data.id));
+
             } catch (error) {
                 setError(true);
-                setErrorMsg('Something happened');
+                setErrorMsg('Unexpected error occurred');
             }
         })();
+    }
+
+    const goToFirstStep = () => {
+        setSecondRegisterStep(false);
     }
 
     if (!secondRegisterStep) {
@@ -148,10 +160,8 @@ export default function RegisterScreen() {
                                 setValue={setPassword}/>
                     <TwoInputField label={'Full name'} placeholders={['First Name', 'Last Name']}
                                    values={[firstName, lastName]} setValues={[setFirstName, setLastName]}/>
-                    {error &&
-                        <Text style={{
-                            fontSize: MISC.smallFontSize
-                        }}>{errorMsg}</Text>}
+
+                    {error && <ErrorText message={errorMsg}/>}
 
                     <IconButton label={'Continue'} onPress={handleFirstClick} btnStyle={styles.continueBtn}/>
                     <Link href={'/login'} style={styles.login}>I have an account</Link>
@@ -182,13 +192,10 @@ export default function RegisterScreen() {
 
                 <InputField label={'Street Address'} placeholder={'Eg: Mulberry Street 147'} value={address}
                             setValue={setAddress}/>
-                {error &&
-                    <Text style={{
-                        fontSize: MISC.smallFontSize
-                    }}>{errorMsg}</Text>}
+                {error && <ErrorText message={errorMsg}/>}
                 <IconButton label={'Create'} onPress={handleSecondClick} btnStyle={styles.continueBtn}/>
-                <Link href={'/login'} style={styles.login}>I have an account</Link>
 
+                <UnderlineTextButton label={'Go back'} onPress={goToFirstStep}/>
             </View>
         </View>
     )

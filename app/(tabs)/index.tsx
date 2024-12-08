@@ -6,7 +6,7 @@ import {useAuthContext} from "@/components/contexts/AuthContext";
 import {fetchUrl} from "@/lib/fetchUrl";
 import {useEffect, useState} from "react";
 import StoresCarousel from "@/components/home/StoresCarousel";
-import {category, StoreSchema} from "@/constants/schemas";
+import {CategorySchema, StoreSchema} from "@/constants/schemas";
 import {useNavigation} from "expo-router";
 
 export default function Index() {
@@ -15,7 +15,7 @@ export default function Index() {
     const [storesRaw, setStoresRaw] = useState<StoreSchema[]>([]);
     const [stores, setStores] = useState<StoreSchema[]>([]);
     const [category, setCategory] = useState<string>('All');
-    const [categories, setCategories] = useState<category[]>([]);
+    const [categories, setCategories] = useState<CategorySchema[]>([]);
 
     const navigation = useNavigation();
 

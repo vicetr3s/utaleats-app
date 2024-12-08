@@ -7,6 +7,7 @@ import {useEffect, useState} from "react";
 import {fetchUrl} from "@/lib/fetchUrl";
 import {useAuthContext} from "@/components/contexts/AuthContext";
 import {LogInSchema} from "@/constants/schemas";
+import ErrorText from "@/components/ui/ErrorText";
 
 export default function LoginScreen() {
     const [email, setEmail] = useState('');
@@ -68,7 +69,7 @@ export default function LoginScreen() {
 
             } catch (error) {
                 setError(true);
-                setErrorMsg('Something happened');
+                setErrorMsg('Unexpected error occurred');
             }
         })();
     }
@@ -91,13 +92,11 @@ export default function LoginScreen() {
                                 setValue={setEmail}/>
                     <InputField label={'Password'} placeholder={'Password'} isSecure={true} value={password}
                                 setValue={setPassword}/>
-                    {error &&
-                        <Text style={{
-                            fontSize: MISC.smallFontSize
-                        }}>{errorMsg}</Text>
-                    }
+
+                    {error && <ErrorText message={errorMsg}/>}
+
                     <IconButton label={'Log in'} onPress={handleClick} btnStyle={styles.loginBtn}/>
-                    <Link href={'/register'} style={styles.register}>No account?, Create one!</Link>
+                    <Link href={'/register'} style={styles.register}>No account? Create one!</Link>
                 </View>
             </View>
         </View>

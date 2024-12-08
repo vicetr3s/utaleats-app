@@ -39,22 +39,21 @@ export async function fetchUrl({endPoint, body, method}: props): Promise<fetchUr
         }
 
         if (!response.ok) {
-            return {error: true, data: null};
+            const contentType = response.headers.get('Content-Type') || '';
+            const errorMessage = contentType.includes('application/json')
+                ? (await response.json()).message || JSON.stringify(await response.json())
+                : await response.text();
+
+            return {error: true, data: errorMessage};
         }
 
         const contentType = response.headers.get('Content-Type') || '';
+        const data = contentType.includes('application/json')
+            ? await response.json()
+            : await response.text();
 
-        if (contentType.includes('application/json')) {
-            const json = await response.json();
-
-            return {error: false, data: json};
-        } else {
-            const text = await response.text();
-
-            return {error: false, data: text};
-        }
-
+        return {error: false, data};
     } catch (error) {
-        return {error: true, data: null};
+        return {error: true, data: 'Unexpected error occurred'};
     }
 }

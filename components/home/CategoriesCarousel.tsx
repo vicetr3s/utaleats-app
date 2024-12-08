@@ -2,11 +2,11 @@ import React, {useState} from 'react';
 import {FlatList, StyleSheet, View} from 'react-native';
 import IconButton from "@/components/ui/IconButton";
 import {COLORS} from "@/constants/styles";
-import {category} from "@/constants/schemas";
+import {CategorySchema} from "@/constants/schemas";
 
 type props = {
     setCategory: (newCategory: string) => void;
-    categories: category[];
+    categories: CategorySchema[];
 }
 
 export default function CategoriesCarousel({setCategory,categories}: props) {
@@ -14,7 +14,7 @@ export default function CategoriesCarousel({setCategory,categories}: props) {
 
     const handleClick = (index: number) => {
         setSelectedIndex(index);
-        const selectedCategory : category = categories[index];
+        const selectedCategory : CategorySchema = categories[index];
         setCategory(selectedCategory.label);
     }
 

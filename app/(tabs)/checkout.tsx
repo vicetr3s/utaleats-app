@@ -9,6 +9,7 @@ import TextAreaInputField from "@/components/ui/TextAreaInputField";
 import IconButton from "@/components/ui/IconButton";
 import {fetchUrl} from "@/lib/fetchUrl";
 import {MISC} from "@/constants/styles";
+import ErrorText from "@/components/ui/ErrorText";
 
 export default function CheckoutScreen() {
     const {id, orderId} = useLocalSearchParams();
@@ -88,7 +89,9 @@ export default function CheckoutScreen() {
                     </View>
 
                 </View>
-                {error && <Text style={styles.errorMsg}>{errorMsg}</Text>}
+
+                {error && <ErrorText message={errorMsg}/>}
+
             </Section>
         </View>
 

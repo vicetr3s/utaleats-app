@@ -1,4 +1,4 @@
-import {StyleSheet, Text, View} from "react-native";
+import {StyleSheet, View} from "react-native";
 import IconButton from "@/components/ui/IconButton";
 import {router, useLocalSearchParams} from "expo-router";
 import {useCartContext} from "@/components/contexts/CartContext";
@@ -10,6 +10,7 @@ import {useState} from "react";
 import {useAuthContext} from "@/components/contexts/AuthContext";
 import {ProductSchema} from "@/constants/schemas";
 import CartHeader from "@/components/cart/CartHeader";
+import ErrorText from "@/components/ui/ErrorText";
 
 export default function CartScreen() {
     const {id, name, rating} = useLocalSearchParams();
@@ -82,7 +83,9 @@ export default function CartScreen() {
             <Section style={{height: '50%'}}>
                 <CartProductCarousel data={cartProducts}/>
             </Section>
-            {error && <Text style={styles.errorText}>{errorMsg}</Text>}
+
+            {error && <ErrorText message={errorMsg}/>}
+
             <Section style={{height: '35%'}}>
                 <View style={styles.actions}>
                     <IconButton label={'Clear'} primary={false} onPress={clearCart}/>
