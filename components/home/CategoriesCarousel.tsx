@@ -2,31 +2,19 @@ import React, {useState} from 'react';
 import {FlatList, StyleSheet, View} from 'react-native';
 import IconButton from "@/components/ui/IconButton";
 import {COLORS} from "@/constants/styles";
+import {category} from "@/constants/schemas";
 
 type props = {
     setCategory: (newCategory: string) => void;
+    categories: category[];
 }
 
-type category = {
-    id: string;
-    label: string;
-}
-
-export default function CategoriesCarousel({setCategory}: props) {
+export default function CategoriesCarousel({setCategory,categories}: props) {
     const [selectedIndex, setSelectedIndex] = useState(0);
-
-    //Fetch categories maybe
-    const data = [
-        {id: '1', label: 'All'},
-        {id: '2', label: 'Healthy'},
-        {id: '3', label: 'Vegan'},
-        {id: '4', label: 'Comfortable'},
-        {id: '5', label: 'FastFood'},
-    ];
 
     const handleClick = (index: number) => {
         setSelectedIndex(index);
-        const selectedCategory : category = data[index];
+        const selectedCategory : category = categories[index];
         setCategory(selectedCategory.label);
     }
 
@@ -38,7 +26,7 @@ export default function CategoriesCarousel({setCategory}: props) {
     return (
         <View style={styles.container}>
             <FlatList
-                data={data}
+                data={categories}
                 renderItem={renderItem}
                 keyExtractor={(item) => item.id}
                 horizontal={true}

@@ -49,6 +49,11 @@ export type PastOrderSchema = {
     id: string;
 }
 
+export type category = {
+    id: string;
+    label: string;
+}
+
 export const FirstSignUpSchema = z.object({
     email: z.string().email({message: 'Please enter a valid email'}).trim(),
     password: z

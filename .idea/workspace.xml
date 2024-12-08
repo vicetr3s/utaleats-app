@@ -5,26 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a459033b-439d-4d63-aac2-72256168ce17" name="Changes" comment="feat: user can decide, on checkout page,  to rate the store later &#10;&#10;user has to type only the 8 numbers in the phone number entry field on the registration page, instead of adding the +569 prefix as well&#10;&#10;fixed issues where components were not re-rendering as expected">
-      <change afterPath="$PROJECT_DIR$/components/ui/PhoneNumberInputField.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(tabs)/cart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/cart.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(tabs)/checkout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/checkout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(tabs)/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(tabs)/stores/[id].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/stores/[id].tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/_layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/register.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/register.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/TabBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/TabBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/home/Store.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/Store.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/home/StoresCarousel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/StoresCarousel.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/store/Product.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/store/Product.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/store/ProductContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/store/ProductContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/store/Review.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/store/Review.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/store/ReviewsCarousel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/store/ReviewsCarousel.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/CartAndCheckoutHeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/cart/CartHeader.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/InputField.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/InputField.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/home/CategoriesCarousel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/CategoriesCarousel.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/constants/schemas.ts" beforeDir="false" afterPath="$PROJECT_DIR$/constants/schemas.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +116,7 @@
       <workItem from="1733448407502" duration="3068000" />
       <workItem from="1733533989193" duration="5266000" />
       <workItem from="1733590752935" duration="751000" />
-      <workItem from="1733609329182" duration="4000000" />
+      <workItem from="1733609329182" duration="6062000" />
     </task>
     <task id="LOCAL-00001" summary="feat: added profile screen navigation">
       <option name="closed" value="true" />
@@ -317,7 +302,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733451393383</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="feat: user can decide, on checkout page,  to rate the store later &#10;&#10;user has to type only the 8 numbers in the phone number entry field on the registration page, instead of adding the +569 prefix as well&#10;&#10;fixed issues where components were not re-rendering as expected">
+      <option name="closed" value="true" />
+      <created>1733614184872</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1733614184872</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

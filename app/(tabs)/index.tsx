@@ -6,7 +6,7 @@ import {useAuthContext} from "@/components/contexts/AuthContext";
 import {fetchUrl} from "@/lib/fetchUrl";
 import {useEffect, useState} from "react";
 import StoresCarousel from "@/components/home/StoresCarousel";
-import {StoreSchema} from "@/constants/schemas";
+import {category, StoreSchema} from "@/constants/schemas";
 import {useNavigation} from "expo-router";
 
 export default function Index() {
@@ -15,6 +15,8 @@ export default function Index() {
     const [storesRaw, setStoresRaw] = useState<StoreSchema[]>([]);
     const [stores, setStores] = useState<StoreSchema[]>([]);
     const [category, setCategory] = useState<string>('All');
+    const [categories, setCategories] = useState<category[]>([]);
+
     const navigation = useNavigation();
 
     const fetchStores = async () => {
@@ -36,6 +38,40 @@ export default function Index() {
             setError(true);
         }
     };
+
+    useEffect(() => {
+        const fetchAllStores = async () => {
+
+            try {
+                const {error, data} = await fetchUrl({
+                    endPoint: `api/store?cityName=`,
+                    method: 'GET'
+                });
+
+                setError(error);
+
+                if (data) {
+                    const availableCategories: string[] = Array.from(new Set(data
+                        .map((store: StoreSchema) => (store.category
+                        ))));
+
+                    const categoriesWithIds = availableCategories.map((category, index) => ({
+                        id: (index + 1).toString(),
+                        label: category,
+                    }));
+
+                    const finalCategories = [{id: '0', label: 'All'}, ...categoriesWithIds];
+
+                    setCategories(finalCategories);
+                }
+
+            } catch (error) {
+                setError(true);
+            }
+        };
+
+        fetchAllStores();
+    }, []);
 
     useEffect(() => {
         return navigation.addListener('focus', () => {
@@ -85,7 +121,7 @@ export default function Index() {
         <View>
             <HomeHeader city={userCity}/>
             <Section label={'Categories'}>
-                <CategoriesCarousel setCategory={setCategory}/>
+                <CategoriesCarousel setCategory={setCategory} categories={categories}/>
             </Section>
             <Section label={'Stores'} style={{height: '65%'}}>
                 <StoresCarousel storesData={stores} category={category}/>

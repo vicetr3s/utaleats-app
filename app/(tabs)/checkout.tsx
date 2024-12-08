@@ -67,9 +67,8 @@ export default function CheckoutScreen() {
                 setErrorMsg('Could not send your review');
             }
         })();
-
-
     }
+
     return (
         <View>
             <View style={styles.header}>
