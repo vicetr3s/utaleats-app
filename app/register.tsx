@@ -141,7 +141,7 @@ export default function RegisterScreen() {
 
                 if (error) setErrorMsg(data);
 
-                if (!error && data.id) setUserId(String(data.id));
+                if (!error && data) setUserId(String(data));
 
             } catch (error) {
                 setError(true);
@@ -152,6 +152,7 @@ export default function RegisterScreen() {
 
     const goToFirstStep = () => {
         setSecondRegisterStep(false);
+        setError(false);
     }
 
     if (!secondRegisterStep) {

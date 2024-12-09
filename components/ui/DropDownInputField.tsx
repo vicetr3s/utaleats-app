@@ -1,4 +1,4 @@
-import {StyleSheet, Text, View} from "react-native";
+import {Keyboard, StyleSheet, Text, View} from "react-native";
 import {COLORS, MISC} from "@/constants/styles";
 import DropDownPicker from "react-native-dropdown-picker";
 import React from "react";
@@ -25,6 +25,16 @@ export default function DropDownInputField({
                                                setItems
                                            }: InputField) {
 
+    const handleOpen = () => {
+        Keyboard.dismiss();
+
+        setOpen(true);
+    }
+
+    const handleClose = () => {
+        setOpen(false);
+    }
+
     return (
         <View>
             <Text style={{
@@ -34,7 +44,8 @@ export default function DropDownInputField({
                 open={open}
                 value={value}
                 items={items}
-                setOpen={setOpen}
+                setOpen={handleOpen}
+                onClose={handleClose}
                 setValue={setValue}
                 setItems={setItems}
                 placeholder={placeholder}

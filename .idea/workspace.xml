@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a459033b-439d-4d63-aac2-72256168ce17" name="Changes" comment="fix: replace navigation listener with useIsFocused for component updates">
+    <list default="true" id="a459033b-439d-4d63-aac2-72256168ce17" name="Changes" comment="fix: replaced localhost URL in data fetching with UtalEats domain">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/login.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/getPlatformUrl.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/getPlatformUrl.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/register.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/register.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/DropDownInputField.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/DropDownInputField.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +117,7 @@
       <workItem from="1733590752935" duration="751000" />
       <workItem from="1733609329182" duration="11277000" />
       <workItem from="1733669796914" duration="17209000" />
-      <workItem from="1733750915528" duration="9467000" />
+      <workItem from="1733750915528" duration="13709000" />
     </task>
     <task id="LOCAL-00001" summary="feat: added profile screen navigation">
       <option name="closed" value="true" />
@@ -390,7 +391,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733761454688</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="fix: replaced localhost URL in data fetching with UtalEats domain">
+      <option name="closed" value="true" />
+      <created>1733763334242</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1733763334242</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -408,7 +417,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix: Stores carousel was not working correctly" />
     <MESSAGE value="fix: finished home screen&#10;&#10;added username and user's city to react context&#10;progress in profile screen ui" />
     <MESSAGE value="feat: the available cities are fetched from the store database and are used as values in the user's city input&#10;&#10;deleted dummy store values in home page" />
     <MESSAGE value="feat: store products are shown in store page&#10;&#10;The number of columns in the product list of the store depends on the width of the device" />
@@ -433,6 +441,7 @@
     <MESSAGE value="fix: user's city selection was not checked correctly" />
     <MESSAGE value="fix: image URLs in components" />
     <MESSAGE value="fix: replace navigation listener with useIsFocused for component updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: replace navigation listener with useIsFocused for component updates" />
+    <MESSAGE value="fix: replaced localhost URL in data fetching with UtalEats domain" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: replaced localhost URL in data fetching with UtalEats domain" />
   </component>
 </project>
