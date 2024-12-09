@@ -1,5 +1,5 @@
 import {StyleSheet, Text, View} from "react-native";
-import {MISC} from "@/constants/styles";
+import {COLORS, MISC} from "@/constants/styles";
 
 type props = {
     message: string,
@@ -21,6 +21,7 @@ const styles = StyleSheet.create({
     text: {
         height: 'auto',
         fontSize: MISC.smallFontSize,
+        color: COLORS.red,
         textAlign: 'center',
     }
 })

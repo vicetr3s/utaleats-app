@@ -12,7 +12,7 @@ type props = {
 export default function CartProductCarousel({data}: props) {
     const total = data ? data.reduce((acc, item) => acc + (item.price * item.amount), 0) : 0;
 
-    const renderItem = ({item}: { item: ProductSchema}) => (
+    const renderItem = ({item}: { item: ProductSchema }) => (
         <CartProduct imagePath={item.imagePath} name={item.name} price={item.price} amount={item.amount}/>
     )
 

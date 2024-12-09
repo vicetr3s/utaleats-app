@@ -95,8 +95,8 @@ const styles = StyleSheet.create({
     nameText: {
         fontWeight: 500,
         fontSize: MISC.largeFontSize,
-        width:'auto',
-        maxWidth:160,
+        width: 'auto',
+        maxWidth: 160,
     },
     container: {
         flexDirection: 'row',
@@ -110,11 +110,11 @@ const styles = StyleSheet.create({
         height: 55,
         width: 55,
         borderRadius: MISC.borderRadius,
-        backgroundColor:COLORS.baseDkr,
+        backgroundColor: COLORS.baseDkr,
     },
     product: {
         flexDirection: 'row',
         gap: 10,
-        alignItems:'center',
+        alignItems: 'center',
     }
 })

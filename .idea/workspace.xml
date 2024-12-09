@@ -5,16 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a459033b-439d-4d63-aac2-72256168ce17" name="Changes" comment="feat: total price is shown on cart page">
-      <change afterPath="$PROJECT_DIR$/components/checkout/TotalProductsPrice.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(tabs)/cart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/cart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/cart/CartProduct.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/cart/CartProduct.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/cart/CartProductCarousel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/cart/CartProductCarousel.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/checkout/OrderDetailCarousel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/checkout/OrderDetailCarousel.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/home/Store.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/Store.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/profile/Order.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/profile/Order.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/store/Product.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/store/Product.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/store/ProductContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/store/ProductContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/ErrorText.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/ErrorText.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants/schemas.ts" beforeDir="false" afterPath="$PROJECT_DIR$/constants/schemas.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants/styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/constants/styles.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +121,7 @@
       <workItem from="1733590752935" duration="751000" />
       <workItem from="1733609329182" duration="11277000" />
       <workItem from="1733669796914" duration="17209000" />
-      <workItem from="1733750915528" duration="2282000" />
+      <workItem from="1733750915528" duration="4220000" />
     </task>
     <task id="LOCAL-00001" summary="feat: added profile screen navigation">
       <option name="closed" value="true" />
@@ -365,7 +363,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733699302299</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="feat: total price is shown on cart page">
+      <option name="closed" value="true" />
+      <created>1733753229712</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1733753229712</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

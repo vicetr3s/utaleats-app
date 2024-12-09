@@ -12,7 +12,7 @@ type props = {
 export default function OrderDetailCarousel({data}: props) {
     const total = data ? data.reduce((acc, item) => acc + (item.price * item.amount), 0) : 0;
 
-    const renderItem = ({item}: { item: ProductSchema}) => (
+    const renderItem = ({item}: { item: ProductSchema }) => (
         <OrderDetail imagePath={item.imagePath} name={item.name} price={item.price} quantity={item.amount}/>
     )
 

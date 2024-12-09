@@ -4,6 +4,8 @@ UtalEats is a mobile application for food delivery, designed as part of a larger
 
 The mobile app integrates seamlessly with the backend system, which manages user accounts, stores, orders, and ratings. The backend repository is available [here](https://github.com/fraco-oxza/utalEats.git).
 
+Developed as part of the Software Design 2024 course project at Universidad de Talca.
+
 ## Key Features
 
 - **Account Management**: User registration and login.
