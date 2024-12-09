@@ -1,26 +1,23 @@
 import {ProductSchema} from "@/constants/schemas";
 import React from "react";
 import {COLORS, MISC} from "@/constants/styles";
-import {FlatList, StyleSheet, Text, View} from "react-native";
+import {FlatList, StyleSheet, View} from "react-native";
 import OrderDetail from "@/components/checkout/OrderDetail";
-import {getCurrency} from "@/lib/getCurrency";
+import TotalProductsPrice from "@/components/checkout/TotalProductsPrice";
 
 type props = {
     data: ProductSchema[] | null;
 }
 
 export default function OrderDetailCarousel({data}: props) {
-    const total = data ? data.reduce((acc, item) => acc + (item.price * item.amount), 0).toFixed(2) : 0;
-    const currency = getCurrency();
+    const total = data ? data.reduce((acc, item) => acc + (item.price * item.amount), 0) : 0;
 
-    const renderItem = ({item, index}: { item: ProductSchema, index: number }) => (
+    const renderItem = ({item}: { item: ProductSchema}) => (
         <OrderDetail imagePath={item.imagePath} name={item.name} price={item.price} quantity={item.amount}/>
     )
 
     const renderFooter = () => (
-        <View>
-            <Text style={styles.footerText}>Total: {currency} ${total}</Text>
-        </View>
+        <TotalProductsPrice total={total}/>
     )
 
     return (
@@ -46,12 +43,6 @@ const styles = StyleSheet.create({
     contentContainer: {
         justifyContent: 'center',
         gap: 10,
-        padding: 10,
-    },
-    footerText: {
-        textAlign: 'right',
-        fontSize: MISC.largeFontSize,
-        fontWeight: 600,
         padding: 10,
     }
 })

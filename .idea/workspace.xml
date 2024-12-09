@@ -4,24 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a459033b-439d-4d63-aac2-72256168ce17" name="Changes" comment="fix: overflow issues in some components&#10;&#10;&#10;fixed overflow issues in CartProduct, OrderDetail and Product components if the name text was too long">
+    <list default="true" id="a459033b-439d-4d63-aac2-72256168ce17" name="Changes" comment="feat: total price is shown on cart page">
+      <change afterPath="$PROJECT_DIR$/components/checkout/TotalProductsPrice.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(tabs)/cart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/cart.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(tabs)/checkout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/checkout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(tabs)/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(tabs)/profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/profile.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(tabs)/stores/[id].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/stores/[id].tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/_layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/login.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/register.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/register.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/cart/CartProduct.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/cart/CartProduct.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/contexts/AuthContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/contexts/AuthContext.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/contexts/CartContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/contexts/CartContext.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/profile/ProfileHeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/profile/ProfileHeader.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/cart/CartProductCarousel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/cart/CartProductCarousel.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/checkout/OrderDetailCarousel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/checkout/OrderDetailCarousel.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/home/Store.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/Store.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/profile/Order.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/profile/Order.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/store/Product.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/store/Product.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/store/ProductContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/store/ProductContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/store/StoreHeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/store/StoreHeader.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/TabBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/TabBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/TwoInputField.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/TwoInputField.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +122,8 @@
       <workItem from="1733533989193" duration="5266000" />
       <workItem from="1733590752935" duration="751000" />
       <workItem from="1733609329182" duration="11277000" />
-      <workItem from="1733669796914" duration="16143000" />
+      <workItem from="1733669796914" duration="17209000" />
+      <workItem from="1733750915528" duration="2282000" />
     </task>
     <task id="LOCAL-00001" summary="feat: added profile screen navigation">
       <option name="closed" value="true" />
@@ -363,7 +357,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733694703669</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="fix: overflow issues if username is too long">
+      <option name="closed" value="true" />
+      <created>1733699302299</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1733699302299</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -381,8 +383,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: user inputs are handled with useState hook in login screen&#10;&#10;when login button is clicked, data is fetched from localhost api" />
-    <MESSAGE value="feat: progress in home screen ui&#10;&#10;added a header&#10;added a categories carousel component" />
     <MESSAGE value="feat: user can log in and create an account&#10;&#10;used React Context and Expo Secure Store to handle user auth&#10;progress in home screen ui" />
     <MESSAGE value="feat: finished store component in home&#10;&#10;clicking on a store redirects to the store's page&#10;used dynamic routes for the store page" />
     <MESSAGE value="fix: HomeHeader gets the user's city as a prop" />
@@ -406,6 +406,8 @@
     <MESSAGE value="fix: category filter on the index page only shows categories based on the current stores&#10;&#10;fixed overflow in Store component on the index page when the store name was too long" />
     <MESSAGE value="feat: added a password confirm input field on register page&#10;&#10;the user has to type the same password twice to reduce the risk of accidentally typing an incorrect password" />
     <MESSAGE value="fix: overflow issues in some components&#10;&#10;&#10;fixed overflow issues in CartProduct, OrderDetail and Product components if the name text was too long" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: overflow issues in some components&#10;&#10;&#10;fixed overflow issues in CartProduct, OrderDetail and Product components if the name text was too long" />
+    <MESSAGE value="fix: overflow issues if username is too long" />
+    <MESSAGE value="feat: total price is shown on cart page" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: total price is shown on cart page" />
   </component>
 </project>

@@ -3,14 +3,21 @@ import React from "react";
 import {COLORS, MISC} from "@/constants/styles";
 import {FlatList, StyleSheet, View} from "react-native";
 import CartProduct from "@/components/cart/CartProduct";
+import TotalProductsPrice from "@/components/checkout/TotalProductsPrice";
 
 type props = {
     data: ProductSchema[] | null;
 }
 
 export default function CartProductCarousel({data}: props) {
-    const renderItem = ({item, index}: { item: ProductSchema, index: number }) => (
+    const total = data ? data.reduce((acc, item) => acc + (item.price * item.amount), 0) : 0;
+
+    const renderItem = ({item}: { item: ProductSchema}) => (
         <CartProduct imagePath={item.imagePath} name={item.name} price={item.price} amount={item.amount}/>
+    )
+
+    const renderFooter = () => (
+        <TotalProductsPrice total={total}/>
     )
 
     return (
@@ -20,6 +27,7 @@ export default function CartProductCarousel({data}: props) {
                 renderItem={renderItem}
                 keyExtractor={(item) => item.name}
                 contentContainerStyle={styles.contentContainer}
+                ListFooterComponent={renderFooter}
             />
         </View>
     )

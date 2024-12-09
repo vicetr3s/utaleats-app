@@ -71,6 +71,8 @@ const styles = StyleSheet.create({
         backgroundColor: COLORS.baseDkr,
         borderRadius: MISC.borderRadius,
         flex: 1,
+        borderWidth: 1,
+        borderColor: '#ffffff',
     },
     contentContainer: {
         justifyContent: 'center',

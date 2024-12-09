@@ -80,13 +80,13 @@ export default function CartScreen() {
     return (
         <View>
             <CartHeader label={'Your cart'} onPress={goBack}/>
-            <Section style={{height: '50%'}}>
+            <Section style={{height: '60%'}}>
                 <CartProductCarousel data={cartProducts}/>
             </Section>
 
             {error && <ErrorText message={errorMsg}/>}
 
-            <Section style={{height: '35%'}}>
+            <Section style={{height: '25%'}}>
                 <View style={styles.actions}>
                     <IconButton label={'Clear'} primary={false} onPress={clearCart}/>
                     <IconButton label={'Checkout'} onPress={checkoutCart}/>

@@ -68,5 +68,6 @@ const styles = StyleSheet.create({
         width: 60,
         borderRadius: MISC.borderInnerRadius,
         marginBottom: 5,
+        backgroundColor: COLORS.baseDkr,
     }
 })

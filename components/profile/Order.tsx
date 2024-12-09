@@ -41,6 +41,7 @@ const styles = StyleSheet.create({
         width: 50,
         height: 50,
         borderRadius: MISC.borderInnerRadius,
+        backgroundColor: COLORS.baseDkr,
     },
     priceText: {
         flexDirection: 'row',

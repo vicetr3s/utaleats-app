@@ -110,6 +110,7 @@ const styles = StyleSheet.create({
         height: 55,
         width: 55,
         borderRadius: MISC.borderRadius,
+        backgroundColor:COLORS.baseDkr,
     },
     product: {
         flexDirection: 'row',
