@@ -1,4 +1,4 @@
-import {FlatList} from "react-native";
+import {FlatList, StyleSheet} from "react-native";
 import Store from "@/components/home/Store";
 import {StoreSchema} from "@/constants/schemas";
 
@@ -17,6 +17,17 @@ export default function StoresCarousel({storesData, category}: props) {
     )
 
     return (
-        <FlatList data={filteredData} renderItem={renderStore} keyExtractor={item => item.storeId}/>
+        <FlatList data={filteredData} renderItem={renderStore} keyExtractor={item => item.storeId}
+                  style={styles.container}/>
     )
 }
+
+const styles = StyleSheet.create({
+    container: {
+        paddingHorizontal: 5,
+        paddingTop: 5,
+        transform: [
+            {translateY: -5},
+        ],
+    }
+})

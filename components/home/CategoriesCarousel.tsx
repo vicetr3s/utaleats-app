@@ -42,11 +42,13 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'flex-start',
         transform: [
-            {translateY: -5},
+            {translateY: -10},
         ],
+        paddingHorizontal: 5,
+
     },
     flatListContent: {
-        paddingVertical: 5,
+        paddingVertical: 10,
         gap: 10,
     },
     selectedBtn: {

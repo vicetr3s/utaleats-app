@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a459033b-439d-4d63-aac2-72256168ce17" name="Changes" comment="fix: replaced localhost URL in data fetching with UtalEats domain">
+    <list default="true" id="a459033b-439d-4d63-aac2-72256168ce17" name="Changes" comment="fix: user had to double tap to select the city on register page&#10;&#10;decreased icon app size">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/register.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/register.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/DropDownInputField.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/DropDownInputField.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/home/CategoriesCarousel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/CategoriesCarousel.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/home/StoresCarousel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/StoresCarousel.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +116,7 @@
       <workItem from="1733590752935" duration="751000" />
       <workItem from="1733609329182" duration="11277000" />
       <workItem from="1733669796914" duration="17209000" />
-      <workItem from="1733750915528" duration="13709000" />
+      <workItem from="1733750915528" duration="14962000" />
     </task>
     <task id="LOCAL-00001" summary="feat: added profile screen navigation">
       <option name="closed" value="true" />
@@ -399,7 +398,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733763334242</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="fix: user had to double tap to select the city on register page&#10;&#10;decreased icon app size">
+      <option name="closed" value="true" />
+      <created>1733771683212</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1733771683212</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -417,7 +424,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix: finished home screen&#10;&#10;added username and user's city to react context&#10;progress in profile screen ui" />
     <MESSAGE value="feat: the available cities are fetched from the store database and are used as values in the user's city input&#10;&#10;deleted dummy store values in home page" />
     <MESSAGE value="feat: store products are shown in store page&#10;&#10;The number of columns in the product list of the store depends on the width of the device" />
     <MESSAGE value="feat: you can click on a product and save it in the shopping cart&#10;&#10;finished products container style&#10;used React context for the shopping cart" />
@@ -442,6 +448,7 @@
     <MESSAGE value="fix: image URLs in components" />
     <MESSAGE value="fix: replace navigation listener with useIsFocused for component updates" />
     <MESSAGE value="fix: replaced localhost URL in data fetching with UtalEats domain" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: replaced localhost URL in data fetching with UtalEats domain" />
+    <MESSAGE value="fix: user had to double tap to select the city on register page&#10;&#10;decreased icon app size" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: user had to double tap to select the city on register page&#10;&#10;decreased icon app size" />
   </component>
 </project>
