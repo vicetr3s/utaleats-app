@@ -54,8 +54,7 @@ const styles = StyleSheet.create({
         backgroundColor: COLORS.baseDkr,
     },
     label: {
-        width: 'auto',
-        maxWidth: 200,
+        maxWidth: 160,
         flexDirection: "column",
         alignItems: 'flex-start'
     },

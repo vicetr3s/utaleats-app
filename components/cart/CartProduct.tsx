@@ -93,7 +93,6 @@ const styles = StyleSheet.create({
     nameText: {
         fontWeight: 500,
         fontSize: MISC.largeFontSize,
-        width: 'auto',
         maxWidth: 160,
     },
     container: {

@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a459033b-439d-4d63-aac2-72256168ce17" name="Changes" comment="fix: improved some components shadow">
+    <list default="true" id="a459033b-439d-4d63-aac2-72256168ce17" name="Changes" comment="fix: added a padding to the text area input field on checkout page&#10;&#10;centered error text on checkout page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(tabs)/checkout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/checkout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/TextAreaInputField.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/TextAreaInputField.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/cart/CartProduct.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/cart/CartProduct.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/checkout/OrderDetail.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/checkout/OrderDetail.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/home/Store.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/Store.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +117,7 @@
       <workItem from="1733590752935" duration="751000" />
       <workItem from="1733609329182" duration="11277000" />
       <workItem from="1733669796914" duration="17209000" />
-      <workItem from="1733750915528" duration="16519000" />
+      <workItem from="1733750915528" duration="18037000" />
     </task>
     <task id="LOCAL-00001" summary="feat: added profile screen navigation">
       <option name="closed" value="true" />
@@ -415,7 +415,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733772700119</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="fix: added a padding to the text area input field on checkout page&#10;&#10;centered error text on checkout page">
+      <option name="closed" value="true" />
+      <created>1733774376688</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1733774376688</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -433,7 +441,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: store products are shown in store page&#10;&#10;The number of columns in the product list of the store depends on the width of the device" />
     <MESSAGE value="feat: you can click on a product and save it in the shopping cart&#10;&#10;finished products container style&#10;used React context for the shopping cart" />
     <MESSAGE value="feat: reviews are shown in the store page" />
     <MESSAGE value="feat: products are shown in the cart page&#10;&#10;you can modify the product quantity in the cart page" />
@@ -458,6 +465,7 @@
     <MESSAGE value="fix: replaced localhost URL in data fetching with UtalEats domain" />
     <MESSAGE value="fix: user had to double tap to select the city on register page&#10;&#10;decreased icon app size" />
     <MESSAGE value="fix: improved some components shadow" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: improved some components shadow" />
+    <MESSAGE value="fix: added a padding to the text area input field on checkout page&#10;&#10;centered error text on checkout page" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: added a padding to the text area input field on checkout page&#10;&#10;centered error text on checkout page" />
   </component>
 </project>
