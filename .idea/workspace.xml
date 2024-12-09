@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a459033b-439d-4d63-aac2-72256168ce17" name="Changes" comment="feat: total price is shown on cart page">
+    <list default="true" id="a459033b-439d-4d63-aac2-72256168ce17" name="Changes" comment="fix: user's city selection was not checked correctly">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/cart/CartProduct.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/cart/CartProduct.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/cart/CartProductCarousel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/cart/CartProductCarousel.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/checkout/OrderDetailCarousel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/checkout/OrderDetailCarousel.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/ErrorText.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/ErrorText.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/constants/schemas.ts" beforeDir="false" afterPath="$PROJECT_DIR$/constants/schemas.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/constants/styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/constants/styles.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +115,7 @@
       <workItem from="1733590752935" duration="751000" />
       <workItem from="1733609329182" duration="11277000" />
       <workItem from="1733669796914" duration="17209000" />
-      <workItem from="1733750915528" duration="4220000" />
+      <workItem from="1733750915528" duration="5730000" />
     </task>
     <task id="LOCAL-00001" summary="feat: added profile screen navigation">
       <option name="closed" value="true" />
@@ -371,7 +365,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733753229712</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="fix: user's city selection was not checked correctly">
+      <option name="closed" value="true" />
+      <created>1733755544317</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1733755544317</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -389,7 +391,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: user can log in and create an account&#10;&#10;used React Context and Expo Secure Store to handle user auth&#10;progress in home screen ui" />
     <MESSAGE value="feat: finished store component in home&#10;&#10;clicking on a store redirects to the store's page&#10;used dynamic routes for the store page" />
     <MESSAGE value="fix: HomeHeader gets the user's city as a prop" />
     <MESSAGE value="fix: Stores carousel was not working correctly" />
@@ -414,6 +415,7 @@
     <MESSAGE value="fix: overflow issues in some components&#10;&#10;&#10;fixed overflow issues in CartProduct, OrderDetail and Product components if the name text was too long" />
     <MESSAGE value="fix: overflow issues if username is too long" />
     <MESSAGE value="feat: total price is shown on cart page" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: total price is shown on cart page" />
+    <MESSAGE value="fix: user's city selection was not checked correctly" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: user's city selection was not checked correctly" />
   </component>
 </project>

@@ -1,7 +1,6 @@
 import {StyleSheet, Text, View} from "react-native";
 import {Image} from "expo-image";
 import {COLORS, MISC} from "@/constants/styles";
-import {getPlatformUrl} from "@/lib/getPlatformUrl";
 import {getCurrency} from "@/lib/getCurrency";
 
 type props = {
@@ -12,14 +11,13 @@ type props = {
 }
 
 export default function OrderDetail({imagePath, name, quantity, price}: props) {
-    const BASE_URL = getPlatformUrl();
     const currency = getCurrency();
     const subTotal = (price * quantity).toFixed(2);
 
     return (
         <View style={styles.container}>
             <View style={styles.product}>
-                <Image source={BASE_URL + imagePath} style={styles.img}></Image>
+                <Image source={imagePath} style={styles.img}></Image>
                 <View>
                     <Text style={styles.nameText}>{name}</Text>
                     <Text style={styles.text}>{currency} ${price} x {quantity}</Text>
@@ -50,8 +48,8 @@ const styles = StyleSheet.create({
     nameText: {
         fontWeight: 500,
         fontSize: MISC.largeFontSize,
-        width:'auto',
-        maxWidth:180,
+        width: 'auto',
+        maxWidth: 180,
     },
     container: {
         flexDirection: 'row',

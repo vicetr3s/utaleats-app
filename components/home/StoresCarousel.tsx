@@ -10,7 +10,7 @@ type props = {
 export default function StoresCarousel({storesData, category}: props) {
     const filteredData = storesData.filter((store) => store.category === category || category === 'All');
 
-    const renderStore = ({item}: { item: StoreSchema}) => (
+    const renderStore = ({item}: { item: StoreSchema }) => (
         <Store id={item.storeId} name={item.storeName} category={item.category} rating={item.rating}
                reviews={item.reviews}
                imageUrl={item.imagePath}/>

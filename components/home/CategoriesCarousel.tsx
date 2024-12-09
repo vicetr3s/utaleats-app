@@ -9,12 +9,12 @@ type props = {
     categories: CategorySchema[];
 }
 
-export default function CategoriesCarousel({setCategory,categories}: props) {
+export default function CategoriesCarousel({setCategory, categories}: props) {
     const [selectedIndex, setSelectedIndex] = useState(0);
 
     const handleClick = (index: number) => {
         setSelectedIndex(index);
-        const selectedCategory : CategorySchema = categories[index];
+        const selectedCategory: CategorySchema = categories[index];
         setCategory(selectedCategory.label);
     }
 

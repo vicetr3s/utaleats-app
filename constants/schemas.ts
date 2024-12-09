@@ -70,7 +70,7 @@ export const FirstSignUpSchema = z.object({
 
 export const SecondSignUpSchema = z.object({
     phoneNumber: z.string().min(8, {message: 'Phone number must be at least 8 characters'}).trim(),
-    city: z.string().min(1, {message : 'Please select a city'}).trim(),
+    city: z.string().min(1, {message: 'Please select a city'}).trim(),
     streetAddress: z.string().min(8, {message: 'Street must be at least 8 characters'}).trim(),
 })
 

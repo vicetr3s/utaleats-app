@@ -47,6 +47,6 @@ const styles = StyleSheet.create({
         height: '85%',
     },
     userImgAndRating: {
-        alignItems:'center'
+        alignItems: 'center'
     }
 })

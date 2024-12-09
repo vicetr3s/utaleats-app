@@ -45,7 +45,7 @@ export default function TabBar({state, navigation}: TapBar) {
                                 color: COLORS.fntOverPrimary,
                                 fontSize: MISC.midFontSize,
                                 width: 110,
-                                textTransform:'capitalize'
+                                textTransform: 'capitalize'
                             }}>
                                 {userName ? userName.split(' ')[0] : 'Profile'}
                             </Text>

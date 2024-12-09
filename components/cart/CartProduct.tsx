@@ -1,14 +1,12 @@
 import {StyleSheet, Text, View} from "react-native";
 import {ProductSchema} from "@/constants/schemas";
 import {Image} from "expo-image";
-import {getPlatformUrl} from "@/lib/getPlatformUrl";
 import IconButton from "@/components/ui/IconButton";
 import {COLORS, MISC} from "@/constants/styles";
 import {useCartContext} from "@/contexts/CartContext";
 import {getCurrency} from "@/lib/getCurrency";
 
 export default function CartProduct({imagePath, name, price, amount}: ProductSchema) {
-    const BASE_URL = getPlatformUrl();
     const currency = getCurrency();
     const {setCartProducts} = useCartContext();
 
@@ -35,7 +33,7 @@ export default function CartProduct({imagePath, name, price, amount}: ProductSch
     return (
         <View style={styles.container}>
             <View style={styles.product}>
-                <Image source={BASE_URL + imagePath} style={styles.img}></Image>
+                <Image source={imagePath} style={styles.img}></Image>
                 <View>
                     <Text style={styles.nameText}>{name}</Text>
                     <View style={styles.price}>

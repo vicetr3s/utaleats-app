@@ -2,7 +2,6 @@ import {StyleSheet, Text, View} from "react-native";
 import {Image} from "expo-image";
 import IconButton from "@/components/ui/IconButton";
 import {COLORS, LIB, MISC} from "@/constants/styles";
-import {getPlatformUrl} from "@/lib/getPlatformUrl";
 import {getCurrency} from "@/lib/getCurrency";
 
 type props = {
@@ -13,12 +12,11 @@ type props = {
 }
 
 export default function Product({imagePath, name, price, onPress}: props) {
-    const BASE_URL = getPlatformUrl();
     const currency = getCurrency();
 
     return (
         <View style={[styles.item, LIB.shadow]}>
-            <Image source={BASE_URL + imagePath} style={styles.image}/>
+            <Image source={imagePath} style={styles.image}/>
             <Text style={styles.text}>{name}</Text>
             <View style={styles.price}>
                 <Text style={styles.text}>{currency} </Text>
