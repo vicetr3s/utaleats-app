@@ -63,9 +63,9 @@ export default function LoginScreen() {
                     setErrorMsg('Incorrect email or password. Please try again.');
                 }
 
-                if (data.accountId) {
-                    setUserId(String(data.accountId));
-                }
+                if (error && data) setErrorMsg(data);
+
+                if (!error && data.accountId) setUserId(String(data.accountId));
 
             } catch (error) {
                 setError(true);

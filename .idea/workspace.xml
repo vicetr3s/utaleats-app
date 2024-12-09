@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a459033b-439d-4d63-aac2-72256168ce17" name="Changes" comment="fix: image URLs in components">
+    <list default="true" id="a459033b-439d-4d63-aac2-72256168ce17" name="Changes" comment="fix: replace navigation listener with useIsFocused for component updates">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(tabs)/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(tabs)/profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/profile.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(tabs)/stores/[id].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/stores/[id].tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/register.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/register.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/getPlatformUrl.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/getPlatformUrl.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +38,7 @@
   }
 }</component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -118,7 +116,7 @@
       <workItem from="1733590752935" duration="751000" />
       <workItem from="1733609329182" duration="11277000" />
       <workItem from="1733669796914" duration="17209000" />
-      <workItem from="1733750915528" duration="7500000" />
+      <workItem from="1733750915528" duration="9467000" />
     </task>
     <task id="LOCAL-00001" summary="feat: added profile screen navigation">
       <option name="closed" value="true" />
@@ -384,7 +382,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733759864907</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="fix: replace navigation listener with useIsFocused for component updates">
+      <option name="closed" value="true" />
+      <created>1733761454688</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1733761454688</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -402,7 +408,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix: HomeHeader gets the user's city as a prop" />
     <MESSAGE value="fix: Stores carousel was not working correctly" />
     <MESSAGE value="fix: finished home screen&#10;&#10;added username and user's city to react context&#10;progress in profile screen ui" />
     <MESSAGE value="feat: the available cities are fetched from the store database and are used as values in the user's city input&#10;&#10;deleted dummy store values in home page" />
@@ -427,6 +432,7 @@
     <MESSAGE value="feat: total price is shown on cart page" />
     <MESSAGE value="fix: user's city selection was not checked correctly" />
     <MESSAGE value="fix: image URLs in components" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: image URLs in components" />
+    <MESSAGE value="fix: replace navigation listener with useIsFocused for component updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: replace navigation listener with useIsFocused for component updates" />
   </component>
 </project>
