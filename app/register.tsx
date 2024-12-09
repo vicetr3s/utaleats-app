@@ -114,8 +114,8 @@ export default function RegisterScreen() {
             setError(true);
 
             if (errors.streetAddress) setErrorMsg(errors.streetAddress[0]);
-            if (errors.phoneNumber) setErrorMsg(errors.phoneNumber[0]);
             if (errors.city) setErrorMsg(errors.city[0]);
+            if (errors.phoneNumber) setErrorMsg(errors.phoneNumber[0]);
 
             return;
         }

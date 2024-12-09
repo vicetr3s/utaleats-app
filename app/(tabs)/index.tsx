@@ -7,7 +7,7 @@ import {fetchUrl} from "@/lib/fetchUrl";
 import {useEffect, useState} from "react";
 import StoresCarousel from "@/components/home/StoresCarousel";
 import {CategorySchema, StoreSchema} from "@/constants/schemas";
-import {useNavigation} from "expo-router";
+import {useIsFocused} from '@react-navigation/native';
 
 export default function Index() {
     const {userCity} = useAuthContext();
@@ -17,7 +17,7 @@ export default function Index() {
     const [category, setCategory] = useState<string>('All');
     const [categories, setCategories] = useState<CategorySchema[]>([]);
 
-    const navigation = useNavigation();
+    const isFocused = useIsFocused();
 
     const fetchStores = async () => {
         if (!userCity) return;
@@ -57,15 +57,10 @@ export default function Index() {
     };
 
     useEffect(() => {
-        return navigation.addListener('focus', () => {
+        if (isFocused || userCity) {
             fetchStores();
-        });
-
-    }, [navigation]);
-
-    useEffect(() => {
-        fetchStores();
-    }, [userCity]);
+        }
+    }, [isFocused, userCity]);
 
     useEffect(() => {
         if (!storesRaw) return;

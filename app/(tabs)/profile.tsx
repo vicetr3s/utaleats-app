@@ -1,5 +1,5 @@
 import {View} from "react-native";
-import {useNavigation, useRouter} from "expo-router";
+import {useRouter} from "expo-router";
 import {useAuthContext} from "@/contexts/AuthContext";
 import {useEffect, useState} from "react";
 import ProfileHeader from "@/components/profile/ProfileHeader";
@@ -7,13 +7,14 @@ import Section from "@/components/home/Section";
 import OrderCarousel from "@/components/profile/OrderCarousel";
 import {fetchUrl} from "@/lib/fetchUrl";
 import {PastOrderRawSchema, PastOrderSchema, ProductOrderSchema, StoreSchema} from "@/constants/schemas";
+import {useIsFocused} from "@react-navigation/native";
 
 export default function ProfileScreen() {
     const {userId} = useAuthContext();
     const router = useRouter();
     const [pastOrdersRaw, setPastOrdersRaw] = useState<PastOrderRawSchema[]>([]);
     const [pastOrders, setPastOrders] = useState<PastOrderSchema[]>([]);
-    const navigation = useNavigation();
+    const isFocused = useIsFocused();
 
     const fetchOrdersRaw = async () => {
         try {
@@ -44,18 +45,15 @@ export default function ProfileScreen() {
     };
 
     useEffect(() => {
-        return navigation.addListener('focus', () => {
-            fetchOrdersRaw();
-        });
-    }, [navigation]);
-
-    useEffect(() => {
         if (!userId) {
             router.replace('/login');
+            return;
         }
 
-        fetchOrdersRaw();
-    }, [userId]);
+        if (isFocused) {
+            fetchOrdersRaw();
+        }
+    }, [isFocused, userId]);
 
     useEffect(() => {
         if (!pastOrdersRaw) return;

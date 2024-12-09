@@ -1,5 +1,5 @@
 import {View} from "react-native";
-import {useLocalSearchParams, useNavigation} from "expo-router";
+import {useLocalSearchParams} from "expo-router";
 import StoreHeader from "@/components/store/StoreHeader";
 import Section from "@/components/home/Section";
 import ProductContainer from "@/components/store/ProductContainer";
@@ -8,13 +8,14 @@ import {ProductSchema, ReviewSchema} from "@/constants/schemas";
 import {fetchUrl} from "@/lib/fetchUrl";
 import {useCartContext} from "@/contexts/CartContext";
 import ReviewsCarousel from "@/components/store/ReviewsCarousel";
+import {useIsFocused} from "@react-navigation/native";
 
 export default function StoreScreen() {
     const {id} = useLocalSearchParams();
     const [items, setItems] = useState<ProductSchema[]>([]);
     const [reviews, setReviews] = useState<ReviewSchema[]>([]);
     const {setCartProducts} = useCartContext();
-    const navigation = useNavigation();
+    const isFocused = useIsFocused();
 
     const fetchReviews = async () => {
         try {
@@ -31,10 +32,12 @@ export default function StoreScreen() {
     };
 
     useEffect(() => {
-        return navigation.addListener('focus', () => {
+        if (!id) return;
+
+        if (isFocused) {
             fetchReviews();
-        });
-    }, [navigation]);
+        }
+    }, [id, isFocused]);
 
     useEffect(() => {
         setCartProducts([]);
@@ -61,12 +64,6 @@ export default function StoreScreen() {
 
         fetchStoreItems();
 
-    }, [id]);
-
-    useEffect(() => {
-        if (!id) return;
-
-        fetchReviews();
     }, [id]);
 
     return (
