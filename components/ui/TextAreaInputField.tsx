@@ -25,5 +25,6 @@ const styles = StyleSheet.create({
     input: {
         fontSize: MISC.midFontSize,
         paddingHorizontal: 10,
+        paddingTop: 10,
     }
 })

@@ -90,7 +90,9 @@ export default function CheckoutScreen() {
 
                 </View>
 
-                {error && <ErrorText message={errorMsg}/>}
+                <View style={styles.error}>
+                    {error && <ErrorText message={errorMsg}/>}
+                </View>
 
             </Section>
         </View>
@@ -101,10 +103,6 @@ export default function CheckoutScreen() {
 const styles = StyleSheet.create({
     rating: {
         gap: 15,
-    },
-    errorMsg: {
-        textAlign: 'center',
-        fontSize: MISC.midFontSize,
     },
     header: {
         flexDirection: 'row',
@@ -120,5 +118,10 @@ const styles = StyleSheet.create({
     actions: {
         flexDirection: 'row',
         justifyContent: 'space-between',
+    },
+    error: {
+        marginTop:20,
+        flexDirection:'row',
+        justifyContent:'center'
     }
 })
