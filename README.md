@@ -23,3 +23,24 @@ Developed as part of the Software Design 2024 course project at Universidad de T
 - **React Native**: For cross-platform mobile app development.
 - **React Navigation**: For managing navigation between screens.
 - **Expo**: For fast development and testing.
+
+## Screenshots
+
+**Home**
+
+![image](https://github.com/user-attachments/assets/ee994541-2b7f-40c5-8d33-2300b6909ee3)
+
+**Store**
+
+![image](https://github.com/user-attachments/assets/a465fc6f-fd5b-44a2-bc0e-4076a9287ec6)
+
+**Order details**
+
+![image](https://github.com/user-attachments/assets/161d7773-b8b2-4179-a573-3ccabe3bb01d)
+
+**Login**
+
+![image](https://github.com/user-attachments/assets/26f90864-82fe-40d4-b425-500dfa911773)
+
+
+
